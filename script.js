@@ -1,13 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  // ===== Animate On Scroll =====
-  AOS.init({
-    duration: 800,
-    once: true,
-    offset: 100,
-  });
+  // ===== AOS (ANIMATE ON SCROLL) INITIALIZATION =====
+  if (typeof AOS !== "undefined") {
+    AOS.init({
+      duration: 800, // Animation duration in ms
+      once: true,    // Animate only once
+      offset: 100,   // Offset from trigger point
+    });
+  }
 
-  // ===== MENU TOGGLE =====
+  // ===== MOBILE MENU TOGGLE =====
   const menuToggle = document.getElementById("menu-toggle");
   const navMenu = document.getElementById("nav-menu");
 
@@ -16,26 +18,27 @@ document.addEventListener("DOMContentLoaded", () => {
       navMenu.classList.toggle("active");
       menuToggle.classList.toggle("active");
 
+      // Update ARIA attribute for accessibility
       const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
       menuToggle.setAttribute("aria-expanded", !isExpanded);
     });
   }
 
-  // ===== CLOSE MENU ON LINK CLICK =====
+  // ===== CLOSE MOBILE MENU ON LINK CLICK =====
   const navLinks = document.querySelectorAll(".nav-links a");
   navLinks.forEach(link => {
     link.addEventListener("click", () => {
-      if (navMenu.classList.contains("active")) {
-        navMenu.classList.remove("active");
-        menuToggle.classList.remove("active");
-        menuToggle.setAttribute("aria-expanded", "false");
-      }
+      navMenu.classList.remove("active");
+      menuToggle.classList.remove("active");
+      menuToggle.setAttribute("aria-expanded", "false");
     });
   });
 
   // ===== CLOSE MENU ON OUTSIDE CLICK =====
   document.addEventListener("click", (e) => {
-    if (navMenu.classList.contains("active") && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+    if (navMenu.classList.contains("active") && 
+        !navMenu.contains(e.target) && 
+        !menuToggle.contains(e.target)) {
       navMenu.classList.remove("active");
       menuToggle.classList.remove("active");
       menuToggle.setAttribute("aria-expanded", "false");
