@@ -22,8 +22,7 @@ header {
   background: var(--primary);
   color: #fff;
   padding: 15px 0;
-  position: relative;
-  z-index: 1000;
+  position: relative; /* needed for dropdown menu positioning */
 }
 
 .header {
@@ -46,7 +45,6 @@ header {
   padding: 5px;
 }
 
-/* NAV LINKS */
 .nav-links {
   display: flex;
   list-style: none;
@@ -57,7 +55,6 @@ header {
   color: #fff;
   text-decoration: none;
   font-weight: 600;
-  transition: 0.3s;
 }
 
 .nav-links a:hover {
@@ -73,6 +70,7 @@ header {
   padding: 10px;
   flex-wrap: wrap;
 }
+
 .logo-strip img {
   width: 60px;
   height: 40px;
@@ -80,6 +78,7 @@ header {
   border-radius: 6px;
   transition: 0.3s;
 }
+
 .logo-strip img:hover { transform: scale(1.1); }
 
 /* HERO */
@@ -89,15 +88,18 @@ header {
   text-align: center;
   padding: 60px 20px;
 }
+
 .hero h2 {
   font-family: 'Orbitron', sans-serif;
   font-size: 26px;
 }
+
 .hero p {
   margin-top: 10px;
   max-width: 700px;
   margin-inline: auto;
 }
+
 .btn {
   display: inline-block;
   background: #fff;
@@ -109,6 +111,7 @@ header {
   cursor: pointer;
   border: none;
 }
+
 .btn:hover {
   background: var(--accent);
   color: #fff;
@@ -116,11 +119,13 @@ header {
 
 /* Sections */
 section { padding: 50px 0; }
+
 h3 {
   font-family: 'Orbitron', sans-serif;
   color: var(--primary);
   margin-bottom: 15px;
 }
+
 ul { margin-top: 10px; padding-left: 20px; }
 
 /* Cards and Leaders */
@@ -129,18 +134,21 @@ ul { margin-top: 10px; padding-left: 20px; }
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
+
 .card {
   background: #fff;
   padding: 20px;
   border-radius: var(--radius);
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
+
 .leaders {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 15px;
 }
+
 .leader-card {
   background: #fff;
   padding: 15px;
@@ -149,6 +157,7 @@ ul { margin-top: 10px; padding-left: 20px; }
   width: 250px;
   text-align: center;
 }
+
 .leader-img {
   width: 120px;
   height: 120px;
@@ -164,17 +173,21 @@ ul { margin-top: 10px; padding-left: 20px; }
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 15px;
 }
+
 .gallery img {
   width: 100%;
   border-radius: var(--radius);
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   transition: 0.3s;
 }
+
 .gallery img:hover { transform: scale(1.03); }
 
 /* Contact */
 .contact { text-align: center; }
+
 .contact a { color: var(--primary); text-decoration: none; }
+
 .contact a:hover { text-decoration: underline; }
 
 /* Footer */
@@ -187,54 +200,8 @@ footer {
 }
 
 /* ==============================
-   🔹 HAMBURGER MENU STYLES (MOBILE)
-   ============================== */
-
-#menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  width: 34px; /* slightly taller for mobile */
-  height: 34px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  gap: 6px;
-  z-index: 1001;
-}
-
-#menu-toggle .bar {
-  width: 100%;
-  height: 3px;
-  background-color: white;
-  border-radius: 3px;
-  transition: all 0.3s ease;
-}
-
-/* Active animation - forms X */
-#menu-toggle.active .bar:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-#menu-toggle.active .bar:nth-child(2) {
-  opacity: 0;
-}
-#menu-toggle.active .bar:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
-
-/* Ensure visibility */
-#menu-toggle.active .bar {
-  background-color: #fff;
-  opacity: 1;
-}
-
-/* ==============================
    🔹 MOBILE MENU
    ============================== */
-header {
-  position: relative; /* Important for dropdown */
-}
-
 #menu-toggle {
   display: none;
   flex-direction: column;
@@ -249,7 +216,7 @@ header {
 
 #menu-toggle .bar {
   width: 100%;
-  height: 5px;   /* thicker bars */
+  height: 5px;  /* thicker bars */
   background-color: white;
   border-radius: 3px;
   transition: all 0.3s ease;
@@ -266,7 +233,7 @@ header {
   transform: rotate(-45deg) translateY(-12px);
 }
 
-/* Mobile menu */
+/* Mobile menu dropdown */
 @media (max-width: 900px) {
   #menu-toggle {
     display: flex;
@@ -275,7 +242,7 @@ header {
   nav {
     display: none;
     position: absolute;
-    top: 100%;           /* below header */
+    top: 100%; /* dropdown below header */
     left: 0;
     width: 100%;
     background-color: var(--primary);
@@ -301,7 +268,7 @@ header {
 
   nav ul li a {
     display: block;
-    padding: 16px 20px;   /* bigger click area */
+    padding: 16px 20px; /* bigger click area */
     color: white;
   }
 
