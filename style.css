@@ -1,3 +1,14 @@
+/* ===== VARIABLES FOR LIGHT & DARK MODE ===== */
+:root {
+  --primary: #0b3d91;
+  --accent: #228B22;
+  --bg-light: #f8fafc;
+  --text-light: #111;
+  --bg-dark: #0a0a0a;
+  --text-dark: #fff;
+  --radius: 12px;
+}
+
 /* ===== BASE STYLES ===== */
 * {
   margin: 0;
@@ -8,9 +19,16 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  color: #fff;
-  background: #0a0a0a;
+  background: var(--bg-light);
+  color: var(--text-light);
   line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ===== DARK MODE ===== */
+body.dark-mode {
+  background: var(--bg-dark);
+  color: var(--text-dark);
 }
 
 /* ===== CONTAINER ===== */
@@ -22,11 +40,18 @@ body {
 
 /* ===== HEADER ===== */
 header {
-  background: #111;
-  border-bottom: 2px solid #00b3ff;
+  background: var(--primary);
+  color: #fff;
+  border-bottom: 2px solid var(--accent);
   position: sticky;
   top: 0;
   z-index: 100;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+body.dark-mode header {
+  background: #111;
+  border-color: #00b3ff;
 }
 
 .header {
@@ -52,12 +77,16 @@ header {
 .brand h1 {
   font-family: "Orbitron", sans-serif;
   font-size: 1.6rem;
+  color: #fff;
+}
+
+body.dark-mode .brand h1 {
   color: #00b3ff;
 }
 
 .brand p {
   font-size: 0.9rem;
-  color: #ccc;
+  color: #ddd;
 }
 
 /* ===== NAVIGATION ===== */
@@ -75,19 +104,15 @@ header {
 }
 
 .nav-links a:hover {
-  color: #00b3ff;
+  color: var(--accent);
 }
 
 /* ===== HAMBURGER MENU ===== */
 .menu-toggle {
   display: none;
   font-size: 2rem;
-  color: #00b3ff;
+  color: #fff;
   cursor: pointer;
-}
-
-#nav-menu.active {
-  display: block;
 }
 
 /* ===== LOGO STRIP ===== */
@@ -98,18 +123,28 @@ header {
   flex-wrap: wrap;
   gap: 10px;
   padding: 15px 0;
-  background: #0d0d0d;
-  border-top: 1px solid #222;
-  border-bottom: 1px solid #222;
+  background: #fff;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+body.dark-mode .logo-strip {
+  background: #111;
+  border-color: #222;
 }
 
 .logo-strip a {
   text-align: center;
-  color: #ccc;
+  color: #333;
   text-decoration: none;
   font-size: 0.85rem;
   width: 110px;
   transition: 0.3s;
+}
+
+body.dark-mode .logo-strip a {
+  color: #ccc;
 }
 
 .logo-strip img {
@@ -124,34 +159,34 @@ header {
 }
 
 .logo-strip a:hover {
-  color: #00b3ff;
+  color: var(--accent);
 }
 
 /* ===== HERO SECTION ===== */
 .hero {
-  background: linear-gradient(to bottom right, #00111f, #001f33);
+  background: linear-gradient(to bottom right, #0b3d91, #228B22);
   padding: 80px 20px;
   text-align: center;
   color: #fff;
+  transition: background 0.3s;
 }
 
 .hero h2 {
   font-family: "Orbitron", sans-serif;
   font-size: 2rem;
   margin-bottom: 10px;
-  color: #00b3ff;
 }
 
 .hero p {
   font-size: 1rem;
   margin-bottom: 20px;
-  color: #ccc;
+  color: #eee;
 }
 
 .btn {
   display: inline-block;
-  background: #00b3ff;
-  color: #000;
+  background: #fff;
+  color: var(--accent);
   padding: 10px 25px;
   border-radius: 25px;
   font-weight: bold;
@@ -160,11 +195,11 @@ header {
 }
 
 .btn:hover {
-  background: #fff;
-  color: #00b3ff;
+  background: var(--accent);
+  color: #fff;
 }
 
-/* ===== SECTION STYLES ===== */
+/* ===== SECTIONS ===== */
 section {
   padding: 60px 0;
 }
@@ -173,25 +208,37 @@ section h3 {
   text-align: center;
   font-family: "Orbitron", sans-serif;
   font-size: 1.8rem;
-  color: #00b3ff;
+  color: var(--primary);
   margin-bottom: 15px;
+}
+
+body.dark-mode section h3 {
+  color: #00b3ff;
 }
 
 section p {
   text-align: center;
-  color: #ccc;
+  color: #111;
   max-width: 900px;
   margin: 10px auto;
   font-size: 1rem;
+}
+
+body.dark-mode section p {
+  color: #ccc;
 }
 
 .read-more {
   display: block;
   text-align: center;
   margin-top: 15px;
-  color: #00b3ff;
+  color: var(--primary);
   font-weight: bold;
   text-decoration: none;
+}
+
+body.dark-mode .read-more {
+  color: #00b3ff;
 }
 
 .read-more:hover {
@@ -208,34 +255,47 @@ section p {
 }
 
 .card {
-  background: #111;
-  border: 1px solid #222;
+  background: #fff;
+  border: 1px solid #ccc;
   padding: 20px;
-  border-radius: 12px;
+  border-radius: var(--radius);
   width: 45%;
   min-width: 300px;
   transition: 0.3s;
 }
 
+body.dark-mode .card {
+  background: #111;
+  border-color: #222;
+}
+
 .card:hover {
   transform: translateY(-5px);
-  border-color: #00b3ff;
+  border-color: var(--accent);
 }
 
 .card h4 {
-  color: #00b3ff;
+  color: var(--primary);
   margin-bottom: 10px;
   text-align: center;
 }
 
+body.dark-mode .card h4 {
+  color: #00b3ff;
+}
+
 .card ul {
   list-style: none;
+  color: #333;
+}
+
+body.dark-mode .card ul {
   color: #ccc;
 }
 
 .card ul li::before {
   content: "★ ";
-  color: #00b3ff;
+  color: var(--accent);
 }
 
 /* ===== ACHIEVEMENTS ===== */
@@ -243,6 +303,10 @@ section p {
   list-style: none;
   max-width: 900px;
   margin: 20px auto;
+  color: #111;
+}
+
+body.dark-mode #achievements ul {
   color: #ccc;
 }
 
@@ -265,13 +329,13 @@ section p {
   width: 300px;
   height: 200px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: var(--radius);
   transition: 0.3s;
 }
 
 .gallery img:hover {
   transform: scale(1.05);
-  border: 2px solid #00b3ff;
+  border: 2px solid var(--accent);
 }
 
 /* ===== CONTACT ===== */
@@ -280,21 +344,53 @@ section p {
 }
 
 .contact p {
+  color: #111;
+}
+
+body.dark-mode .contact p {
   color: #ccc;
-  margin-bottom: 10px;
 }
 
 /* ===== FOOTER ===== */
 footer {
-  background: #0d0d0d;
+  background: #f1f1f1;
   text-align: center;
   padding: 20px 0;
-  border-top: 2px solid #00b3ff;
+  border-top: 2px solid var(--primary);
+  transition: background 0.3s, border-color 0.3s;
+}
+
+body.dark-mode footer {
+  background: #111;
+  border-color: #00b3ff;
 }
 
 footer p {
-  color: #999;
-  font-size: 0.9rem;
+  color: #333;
+}
+
+body.dark-mode footer p {
+  color: #ccc;
+}
+
+/* ===== DARK MODE BUTTON ===== */
+.mode-toggle {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 25px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode .mode-toggle {
+  background: #00b3ff;
+  color: #000;
 }
 
 /* ===== MOBILE RESPONSIVENESS ===== */
