@@ -175,3 +175,76 @@ footer {
   padding: 20px 10px;
   font-size: 14px;
 }
+/* ================================
+   🔹 HAMBURGER MENU STYLES (MOBILE)
+   ================================ */
+
+#menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 32px;
+  height: 28px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  gap: 6px;
+}
+
+#menu-toggle .bar {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Active animation */
+#menu-toggle.active .bar:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+#menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+#menu-toggle.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Mobile Menu Styling */
+@media (max-width: 900px) {
+  #menu-toggle {
+    display: flex;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary);
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 999;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav ul li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 12px 20px;
+    color: white;
+  }
+}
