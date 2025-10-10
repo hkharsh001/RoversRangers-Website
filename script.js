@@ -1,32 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  // ===== AOS (ANIMATE ON SCROLL) INITIALIZATION =====
+  // ===== Animate On Scroll =====
   AOS.init({
-    duration: 800, // Animation duration in ms
-    once: true, // Whether animation should happen only once
-    offset: 100, // Offset (in px) from the original trigger point
+    duration: 800,
+    once: true,
+    offset: 100,
   });
 
-  // ===== MOBILE MENU TOGGLE =====
+  // ===== MENU TOGGLE =====
   const menuToggle = document.getElementById("menu-toggle");
   const navMenu = document.getElementById("nav-menu");
 
   if (menuToggle && navMenu) {
     menuToggle.addEventListener("click", () => {
-      // Toggle classes for CSS animations/transitions
       navMenu.classList.toggle("active");
       menuToggle.classList.toggle("active");
 
-      // Update ARIA attribute for accessibility
       const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
       menuToggle.setAttribute("aria-expanded", !isExpanded);
     });
   }
 
-  // ===== CLOSE MOBILE MENU ON LINK CLICK & OUTSIDE CLICK =====
+  // ===== CLOSE MENU ON LINK CLICK =====
   const navLinks = document.querySelectorAll(".nav-links a");
-
-  // Close on link click
   navLinks.forEach(link => {
     link.addEventListener("click", () => {
       if (navMenu.classList.contains("active")) {
@@ -37,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Close on outside click
+  // ===== CLOSE MENU ON OUTSIDE CLICK =====
   document.addEventListener("click", (e) => {
     if (navMenu.classList.contains("active") && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
       navMenu.classList.remove("active");
@@ -46,13 +42,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-
   // ===== BACK TO TOP BUTTON =====
   const backToTopButton = document.getElementById("back-to-top");
-
   if (backToTopButton) {
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) { // Show button after scrolling 300px
+      if (window.scrollY > 300) {
         backToTopButton.classList.add("visible");
       } else {
         backToTopButton.classList.remove("visible");
@@ -69,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let current = "";
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 150) { // 150px offset to trigger a bit earlier
+        if (pageYOffset >= sectionTop - 150) {
           current = section.getAttribute("id");
         }
       });
@@ -83,28 +77,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-});
-// ===== HAMBURGER MENU TOGGLE =====
-document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.getElementById("menu-toggle");
-  const nav = document.querySelector("nav");
-
-  menuToggle.addEventListener("click", () => {
-    nav.classList.toggle("active");
-    menuToggle.classList.toggle("active");
-
-    // Accessibility attribute toggle
-    const expanded = menuToggle.getAttribute("aria-expanded") === "true";
-    menuToggle.setAttribute("aria-expanded", !expanded);
-  });
-
-  // Close menu when a nav link is clicked (mobile)
-  const navLinks = nav.querySelectorAll("a");
-  navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("active");
-      menuToggle.classList.remove("active");
-      menuToggle.setAttribute("aria-expanded", false);
-    });
-  });
 });
