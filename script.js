@@ -1,30 +1,46 @@
-// ===== Initialize AOS =====
-AOS.init({ duration: 800, once: true });
+// ===== Initialize AOS (Animation on Scroll) =====
+AOS.init({
+  duration: 800,
+  once: true, // Animation runs only once when scrolled into view
+});
 
 // ===== MOBILE MENU TOGGLE =====
 const menuToggle = document.getElementById("menu-toggle");
 const navMenu = document.getElementById("nav-menu");
 
+// Toggle menu visibility when clicking ☰ icon
 menuToggle.addEventListener("click", () => {
   navMenu.classList.toggle("active");
+  // Toggle icon between ☰ and ✖
   menuToggle.textContent = menuToggle.textContent === "☰" ? "✖" : "☰";
 });
 
-// ===== SMOOTH SCROLL =====
-document.querySelectorAll(".nav-links a").forEach(link => {
-  link.addEventListener("click", e => {
-    if(link.getAttribute("href").startsWith("#")) {
+// ===== SMOOTH SCROLL FOR NAV LINKS =====
+const navLinks = document.querySelectorAll(".nav-links a");
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    // Only for internal links starting with #
+    if (link.getAttribute("href").startsWith("#")) {
       e.preventDefault();
-      document.querySelector(link.getAttribute("href")).scrollIntoView({ behavior: "smooth" });
+      const targetId = link.getAttribute("href");
+      document.querySelector(targetId).scrollIntoView({
+        behavior: "smooth",
+      });
+      // Close mobile menu after clicking
       navMenu.classList.remove("active");
       menuToggle.textContent = "☰";
     }
   });
 });
 
-// ===== DARK MODE TOGGLE =====
-const modeToggle = document.getElementById("mode-toggle");
-modeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-  modeToggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+// ===== OPTIONAL: Add shadow effect on header on scroll =====
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 30) {
+    header.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.3)";
+  } else {
+    header.style.boxShadow = "none";
+  }
 });
