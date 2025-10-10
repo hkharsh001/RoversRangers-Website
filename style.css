@@ -231,21 +231,51 @@ footer {
 /* ==============================
    🔹 MOBILE MENU
    ============================== */
+header {
+  position: relative; /* Important for dropdown */
+}
+
+#menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 50px;   /* bigger button */
+  height: 50px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  gap: 8px;
+}
+
+#menu-toggle .bar {
+  width: 100%;
+  height: 5px;   /* thicker bars */
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger X animation */
+#menu-toggle.active .bar:nth-child(1) {
+  transform: rotate(45deg) translateY(12px);
+}
+#menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+#menu-toggle.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translateY(-12px);
+}
+
+/* Mobile menu */
 @media (max-width: 900px) {
   #menu-toggle {
     display: flex;
-    width: 40px;   /* bigger button */
-    height: 40px;
-  }
-
-  #menu-toggle .bar {
-    height: 4px;   /* thicker bars */
   }
 
   nav {
     display: none;
     position: absolute;
-    top: 100%;           /* opens below header */
+    top: 100%;           /* below header */
     left: 0;
     width: 100%;
     background-color: var(--primary);
@@ -271,7 +301,7 @@ footer {
 
   nav ul li a {
     display: block;
-    padding: 16px 20px;   /* bigger clickable area */
+    padding: 16px 20px;   /* bigger click area */
     color: white;
   }
 
