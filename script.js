@@ -1,12 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  // ===== AOS (ANIMATE ON SCROLL) INITIALIZATION =====
+  // ===== AOS (ANIMATE ON SCROLL) =====
   if (typeof AOS !== "undefined") {
-    AOS.init({
-      duration: 800, // Animation duration in ms
-      once: true,    // Animate only once
-      offset: 100,   // Offset from trigger point
-    });
+    AOS.init({ duration: 800, once: true, offset: 100 });
   }
 
   // ===== MOBILE MENU TOGGLE =====
@@ -18,13 +14,13 @@ document.addEventListener("DOMContentLoaded", () => {
       navMenu.classList.toggle("active");
       menuToggle.classList.toggle("active");
 
-      // Update ARIA attribute for accessibility
+      // Update ARIA
       const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
       menuToggle.setAttribute("aria-expanded", !isExpanded);
     });
   }
 
-  // ===== CLOSE MOBILE MENU ON LINK CLICK =====
+  // ===== CLOSE MENU ON LINK CLICK =====
   const navLinks = document.querySelectorAll(".nav-links a");
   navLinks.forEach(link => {
     link.addEventListener("click", () => {
@@ -36,8 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ===== CLOSE MENU ON OUTSIDE CLICK =====
   document.addEventListener("click", (e) => {
-    if (navMenu.classList.contains("active") && 
-        !navMenu.contains(e.target) && 
+    if (navMenu.classList.contains("active") &&
+        !navMenu.contains(e.target) &&
         !menuToggle.contains(e.target)) {
       navMenu.classList.remove("active");
       menuToggle.classList.remove("active");
@@ -49,11 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const backToTopButton = document.getElementById("back-to-top");
   if (backToTopButton) {
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) {
-        backToTopButton.classList.add("visible");
-      } else {
-        backToTopButton.classList.remove("visible");
-      }
+      if (window.scrollY > 300) backToTopButton.classList.add("visible");
+      else backToTopButton.classList.remove("visible");
     });
   }
 
@@ -66,16 +59,12 @@ document.addEventListener("DOMContentLoaded", () => {
       let current = "";
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 150) {
-          current = section.getAttribute("id");
-        }
+        if (pageYOffset >= sectionTop - 150) current = section.getAttribute("id");
       });
 
       navLinksForScroll.forEach(link => {
         link.classList.remove("active");
-        if (link.getAttribute("href").includes(current)) {
-          link.classList.add("active");
-        }
+        if (link.getAttribute("href").includes(current)) link.classList.add("active");
       });
     });
   }
