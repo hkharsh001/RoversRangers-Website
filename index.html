@@ -3,33 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Official website of the Rover & Ranger Unit of N.S.C.B.M. Govt. College, Hamirpur (H.P.), affiliated with Bharat Scouts and Guides." />
   <title>Rover & Ranger Unit | NSCBM Govt. College Hamirpur</title>
-  <link rel="icon" href="assets/unit logo.png" />
+  <link rel="icon" href="assets/unit-logo.png" />
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
-
+  <!-- ===== HEADER ===== -->
   <header>
     <div class="container header">
-      <a href="#" class="brand">
-        <img src="assets/colege logo.jpg" alt="NSCBM Govt. College Logo">
-        <img src="assets/unit logo.png" alt="Rover & Ranger Unit Logo">
+      <div class="brand">
+        <img src="assets\colege logo.jpg" alt="College Logo">
+        <img src="assets\unit logo.png" alt="College Logo">
         <div>
           <h1>Rover & Ranger Unit</h1>
           <p>N.S.C.B.M. Govt. College, Hamirpur (Est. 2007)</p>
         </div>
-      </a>
-
-      <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu">
-        <span class="hamburger-icon"></span>
-      </button>
-
-      <nav id="nav-menu">
+      </div>
+      <nav>
         <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#history">History</a></li>
           <li><a href="#activities">Activities</a></li>
@@ -40,11 +32,9 @@
         </ul>
       </nav>
     </div>
-  </header>
 
-  <main>
-
-    <div class="logo-strip">
+    <!-- Logo strip -->
+  <div class="logo-strip">
         <a href="https://www.gchamirpur.org" target="_blank">
           <img src="assets/colege logo.jpg" alt="College Logo">
           <div>NSCBM Govt. College Hamirpur</div>
@@ -71,29 +61,35 @@
         </a>
     </div>
 
-    <section id="home" class="hero">
-      <div class="container" data-aos="fade-up">
-        <h2>“Service” — To Serve the Nation and Create a Better World</h2>
-        <p>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container">
+      <h2>“Service” — To Serve the Nation and Create a Better World</h2>
+      <p>
           Affiliated with Bharat Scouts and Guides, Himachal Pradesh&nbsp;| 
           Charter&nbsp;No:&nbsp;<strong>BSGHP-20-044&nbsp;/&nbsp;2020</strong>
         </p>
-        <a href="#contact" class="btn">Join the Movement</a>
-      </div>
+      <a href="#contact" class="btn">Join the Movement</a>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+<section id="about" class="container">
+  <h3>About Our Unit</h3>
+  <p>
+    The Rover & Ranger Unit of N.S.C.B.M. Govt. College, Hamirpur (established 2007),
+    aims to empower youth through discipline, leadership, community service, and the values
+    of the Bharat Scouts and Guides. We nurture character, citizenship, and commitment
+    toward the betterment of society.
+  </p>
+  <a href="about.html" class="read-more">Read More →</a>
     </section>
 
-    <section id="about" class="container" data-aos="fade-up">
-      <h3>About Our Unit</h3>
-      <p>
-        The Rover & Ranger Unit of N.S.C.B.M. Govt. College, Hamirpur (est. 2007)
-        aims to empower youth through leadership, discipline, and community service. 
-        Operating under Bharat Scouts and Guides, Himachal Pradesh, our Unit inspires
-        young minds to live by the motto <strong>“Service.”</strong>
-      </p>
-      <a href="about.html" class="read-more">Read More →</a>
-    </section>
-
-    <section id="history" class="container" data-aos="fade-up">
+ 
+  <!-- ===== HISTORY ===== -->
+  <section id="history" class="container" data-aos="fade-up">
       <h3>History of Scouting & Guiding</h3>
       <p>
         Scouting began in 1907 under <strong>Lord Robert Baden-Powell</strong> and reached India in 1909. 
@@ -102,28 +98,30 @@
       <a href="history.html" class="read-more">Read More →</a>
     </section>
 
-    <section id="activities" class="container" data-aos="fade-up">
-      <h3>Activities & Projects</h3>
-      <div class="cards">
-        <div class="card">
-          <h4>Community Service</h4>
-          <ul>
-            <li>Tree Plantation & Cleanliness Drives</li>
-            <li>Blood Donation Camps</li>
-            <li>Peace & Unity Marches</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h4>Adventure & Training</h4>
-          <ul>
-            <li>Leadership Workshops</li>
-            <li>Rajya Puraskar & Rashtrapati Award Preparation</li>
-          </ul>
-        </div>
+  <!-- ===== ACTIVITIES ===== -->
+  <section id="activities" class="container">
+    <h3>Activities & Projects</h3>
+    <div class="cards">
+      <div class="card">
+        <h4>Community Service</h4>
+        <ul>
+          <li>Tree Plantation & Cleanliness Drives</li>
+          <li>Blood Donation & Awareness Camps</li>
+          <li>Peace & Unity Marches</li>
+        </ul>
       </div>
-    </section>
-
-    <section id="achievements" class="container" data-aos="fade-up">
+      <div class="card">
+        <h4>Training & Adventure</h4>
+        <ul>
+          <li>Leadership & First Aid Workshops</li>
+          <li>Trekking & Adventure Camps</li>
+          <li>Rajya Puraskar & Rashtrapati Award Preparation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+<!-- ===== Achievements ===== -->
+<section id="achievements" class="container" data-aos="fade-up">
       <h3>Our Achievements</h3>
       <p>
         The Rover & Ranger Unit has earned recognition at district, state, and national levels.
@@ -136,44 +134,41 @@
       </ul>
       <a href="achievements.html" class="read-more">Explore More →</a>
     </section>
-
-    <section id="gallery" class="container" data-aos="fade-up">
-      <h3>Gallery Highlights</h3>
-      <div class="gallery">
-        <img src="assets/scarf day.jpeg" alt="Rovers celebrating World Scarf Day">
-        <img src="assets/Peace Day.jpeg" alt="Unit participating in a Peace Day march">
-      </div>
-      <a href="gallery.html" class="read-more">View Full Gallery →</a>
+  <!-- ===== GALLERY ===== -->
+  <section id="gallery" class="container">
+    <h3>Gallery Highlights</h3>
+    <div class="gallery">
+      <img src="assets/scarf day.jpeg" alt="Scarf Day">
+      <img src="assets/Peace Day.jpeg" alt="Peace Day">
+    </div> 
+    <a href="gallery.html" class="read-more">View Full Gallery →</a>
     </section>
 
-    <section id="resources" class="container" data-aos="fade-up">
-      <h3>Documents & Downloads</h3>
-      <ul>
-        <li><a href="assets/Upholding the Ideals of Discipline, Loyalty, Service, and Integrity.pdf" target="_blank">Upholding the Ideals (PDF)</a></li>
-        <li><a href="assets/ACTIVITIES REPORT 2024-25.pdf" target="_blank">Annual Report 2024–25</a></li>
-      </ul>
-      <a href="resources.html" class="read-more">More Resources →</a>
-    </section>
+  <!-- ===== RESOURCES ===== -->
+  <section id="resources" class="container">
+    <h3>Documents & Downloads</h3>
+    <ul>
+      <li><a href="assets/Upholding the Ideals of Discipline, Loyalty, Service, and Integrity.pdf" target="_blank">Upholding the Ideals of Discipline, Loyalty, Service & Integrity (PDF)</a></li>
+      <li><a href="assets/ACTIVITIES REPORT 2024-25.pdf">Annual Report 2024–25 </a></li>
+    </ul>
+    <a href="resources.html" class="read-more">More Resources →</a>
+  </section>
 
-    <section id="contact" class="container contact" data-aos="fade-up">
-      <h3>Contact Us</h3>
-      <p>📧 <a href="mailto:rrgchamirpur@gmail.com">rrgchamirpur@gmail.com</a></p>
-      <p>🏫 N.S.C.B.M. Govt. College, Hamirpur, Himachal Pradesh</p>
-      <a href="assets/enrollment.pdf" class="btn" download>📄 Download Join Form</a>
-    </section>
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="container contact">
+    <h3>Contact Us</h3>
+    <p>📧 <a href="mailto:rrgchamirpur@gmail.com">rrgchamirpur@gmail.com</a></p>
+    <p>🏫 N.S.C.B.M. Govt. College, Hamirpur, Himachal Pradesh</p>
+    <a href="assets/enrollment.pdf" class="btn" download>📄 Download Join Form</a>
 
-  </main>
+  </section>
 
+  <!-- ===== FOOTER ===== -->
   <footer>
-    <div class="container">
-      <p>© 2025 Rover & Ranger Unit, NSCBM Govt. College Hamirpur | Charter No: BSGHP-20-044 / 2020</p>
-      <p>Designed by Rover & Ranger Web Team</p>
-    </div>
+    <p>© 2025 Rover & Ranger Unit, NSCBM Govt. College Hamirpur | Charter No: BSGHP-20-044 / 2020</p>
+    <p>Designed by Rover & Ranger Unit</p>
   </footer>
 
-  <a href="#" class="back-to-top" id="back-to-top" aria-label="Scroll back to top">↑</a>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
