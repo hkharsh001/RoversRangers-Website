@@ -22,17 +22,22 @@ header {
   background: var(--primary);
   color: #fff;
   padding: 15px 0;
+  position: relative;
+  z-index: 1000;
 }
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .brand {
   display: flex;
   align-items: center;
   gap: 12px;
 }
+
 .brand img {
   width: 55px;
   height: 55px;
@@ -40,16 +45,21 @@ header {
   border-radius: var(--radius);
   padding: 5px;
 }
+
+/* NAV LINKS */
 .nav-links {
   display: flex;
   list-style: none;
   gap: 18px;
 }
+
 .nav-links a {
   color: #fff;
   text-decoration: none;
   font-weight: 600;
+  transition: 0.3s;
 }
+
 .nav-links a:hover {
   color: #ffed4a;
 }
@@ -175,20 +185,22 @@ footer {
   padding: 20px 10px;
   font-size: 14px;
 }
-/* ================================
+
+/* ==============================
    🔹 HAMBURGER MENU STYLES (MOBILE)
-   ================================ */
+   ============================== */
 
 #menu-toggle {
   display: none;
   flex-direction: column;
   justify-content: center;
-  width: 32px;
-  height: 28px;
+  width: 34px; /* slightly taller for mobile */
+  height: 34px;
   cursor: pointer;
   background: none;
   border: none;
   gap: 6px;
+  z-index: 1001;
 }
 
 #menu-toggle .bar {
@@ -199,18 +211,26 @@ footer {
   transition: all 0.3s ease;
 }
 
-/* Active animation */
+/* Active animation - forms X */
 #menu-toggle.active .bar:nth-child(1) {
-  transform: rotate(45deg) translateY(8px);
+  transform: translateY(8px) rotate(45deg);
 }
 #menu-toggle.active .bar:nth-child(2) {
   opacity: 0;
 }
 #menu-toggle.active .bar:nth-child(3) {
-  transform: rotate(-45deg) translateY(-8px);
+  transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Mobile Menu Styling */
+/* Ensure visibility */
+#menu-toggle.active .bar {
+  background-color: #fff;
+  opacity: 1;
+}
+
+/* ==============================
+   🔹 MOBILE MENU
+   ============================== */
 @media (max-width: 900px) {
   #menu-toggle {
     display: flex;
@@ -230,6 +250,7 @@ footer {
 
   nav.active {
     display: flex;
+    animation: slideDown 0.3s ease forwards;
   }
 
   nav ul {
@@ -246,5 +267,10 @@ footer {
     display: block;
     padding: 12px 20px;
     color: white;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 }
