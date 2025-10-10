@@ -1,18 +1,15 @@
-// ===== Initialize AOS (Animation on Scroll) =====
-AOS.init({
-  duration: 800,
-  once: true, // Animation runs only once when scrolled into view
-});
-
 // ===== MOBILE MENU TOGGLE =====
 const menuToggle = document.getElementById("menu-toggle");
-const navMenu = document.getElementById("nav-menu");
+const navMenu = document.querySelector("#nav-menu .nav-links"); // target the ul inside nav
 
-// Toggle menu visibility when clicking ☰ icon
 menuToggle.addEventListener("click", () => {
   navMenu.classList.toggle("active");
   // Toggle icon between ☰ and ✖
-  menuToggle.textContent = menuToggle.textContent === "☰" ? "✖" : "☰";
+  if (menuToggle.textContent === "☰") {
+    menuToggle.textContent = "✖";
+  } else {
+    menuToggle.textContent = "☰";
+  }
 });
 
 // ===== SMOOTH SCROLL FOR NAV LINKS =====
@@ -20,27 +17,15 @@ const navLinks = document.querySelectorAll(".nav-links a");
 
 navLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
-    // Only for internal links starting with #
     if (link.getAttribute("href").startsWith("#")) {
       e.preventDefault();
       const targetId = link.getAttribute("href");
       document.querySelector(targetId).scrollIntoView({
         behavior: "smooth",
       });
-      // Close mobile menu after clicking
+      // Close menu on mobile
       navMenu.classList.remove("active");
       menuToggle.textContent = "☰";
     }
   });
-});
-
-// ===== OPTIONAL: Add shadow effect on header on scroll =====
-const header = document.querySelector("header");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 30) {
-    header.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.3)";
-  } else {
-    header.style.boxShadow = "none";
-  }
 });
