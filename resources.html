@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources | Rover & Ranger Unit, NSCBM College Hamirpur</title>
+  <link rel="icon" href="assets/unit-logo.png" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <style>
+    /* Page-specific styles for the resource list */
+    .resource-list ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .resource-list li {
+      background-color: #fff;
+      border: 1px solid #eee;
+      border-radius: var(--radius);
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
+    }
+    .resource-list li:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      border-color: var(--accent);
+    }
+    .resource-list a {
+      display: block;
+      padding: 20px;
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+    }
+    .resource-list a p {
+      color: var(--text);
+      font-weight: 400;
+      font-size: 0.9rem;
+      margin-top: 5px;
+    }
+    .resource-list a::after {
+      content: '→';
+      float: right;
+      font-size: 1.5rem;
+      color: var(--accent);
+      transition: transform 0.3s ease;
+    }
+    .resource-list a:hover::after {
+      transform: translateX(5px);
+    }
+    
+    /* NEW CSS for the Download Corner Cards */
+    #unit-docs .card {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    #unit-docs .card h4 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+     #unit-docs .card p {
+        flex-grow: 1; /* Pushes the button to the bottom */
+        margin-bottom: 20px;
+        font-size: 0.9rem;
+     }
+    #unit-docs .card .btn {
+        margin-top: auto; /* Aligns button at the bottom */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header">
+      <div class="brand">
+        <img src="assets/colege logo.jpg" alt="College Logo">
+        <img src="assets/unit logo.png" alt="Unit Logo">
+        <div>
+          <h1>Rover & Ranger Unit</h1>
+          <p>N.S.C.B.M. Govt. College, Hamirpur</p>
+        </div>
+      </div>
+      <button id="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="history.html">History</a></li>
+          <li><a href="announcements.html">Announcements</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="resources.html" class="active">Resources</a></li> <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="logo-strip">
+      </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h2>Scouting Resources</h2>
+      <p>A curated list of important documents, official websites, and foundational books.</p>
+       <a href="index.html" class="btn">← Back to Homepage</a>
+    </div>
+  </section>
+
+  <main>
+    <section id="official-sites" class="container section resource-list">
+      <h3 data-aos="fade-up">Official Websites</h3>
+      <ul data-aos="fade-up">
+        <li>
+          <a href="https://www.scout.org/" target="_blank" rel="noopener noreferrer">
+            World Organization of the Scout Movement (WOSM)
+            <p>The official portal for the global Scouting movement, representing over 57 million Scouts.</p>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.wagggs.org/" target="_blank" rel="noopener noreferrer">
+            World Association of Girl Guides and Girl Scouts (WAGGGS)
+            <p>The global association for Guiding and Scouting for girls and young women.</p>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.bsgindia.org/" target="_blank" rel="noopener noreferrer">
+            The Bharat Scouts and Guides (BSG) - India
+            <p>The official website for the National Scout and Guide Association of India.</p>
+          </a>
+        </li>
+        <li>
+          <a href="https://bsghp.org/" target="_blank" rel="noopener noreferrer">
+            BSG - Himachal Pradesh State Association
+            <p>Official news, events, and information for Scouting in Himachal Pradesh.</p>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="bsg-docs" class="container section resource-list" style="background-color: #f9f9f9;">
+      <h3 data-aos="fade-up">BSG Programmes & Documents</h3>
+      <ul data-aos="fade-up">
+        <li>
+          <a href="https://bsgindia.org/bsg-rules-apro/" target="_blank" rel="noopener noreferrer">
+            BSG Rules: A.P.R.O.
+            <p>Download the official Aims, Policy, Rules & Organisation (A.P.R.O.) documents that govern the BSG.</p>
+          </a>
+        </li>
+        <li>
+          <a href="https://bsgindia.org/c-i-circulars/" target="_blank" rel="noopener noreferrer">
+            Circulars & Notifications
+            <p>Stay updated with the latest official circulars from the BSG National Headquarters.</p>
+          </a>
+        </li>
+        <li>
+          <a href="https://bsgindia.org/adult-training-scheme/" target="_blank" rel="noopener noreferrer">
+            Adult Leaders Training Scheme
+            <p>Information on the training pathway for adult leaders in the movement.</p>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="global-initiatives" class="container section resource-list">
+        <h3 data-aos="fade-up">Global Initiatives</h3>
+        <ul data-aos="fade-up">
+          <li>
+            <a href="https://sdgs.scout.org/" target="_blank" rel="noopener noreferrer">
+              Scouts for SDGs
+              <p>Learn how Scouts worldwide are contributing to the UN Sustainable Development Goals.</p>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.scout.org/messengersofpeace" target="_blank" rel="noopener noreferrer">
+              Messengers of Peace
+              <p>Explore the global initiative that encourages Scouts to do community service and create a better world.</p>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.scout.org/earth_tribe" target="_blank" rel="noopener noreferrer">
+              Earth Tribe
+              <p>An initiative that brings together all of WOSM's environmental programmes to promote sustainability.</p>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+    <section id="unit-docs" class="container section" style="background-color: #f9f9f9;">
+        <h3 data-aos="fade-up">Downloadable Unit Resources</h3>
+        <div class="cards" data-aos="fade-up">
+            <div class="card">
+                <h4>📄 Enrollment Form</h4>
+                <p>The official form to join our Rover & Ranger unit for the current session.</p>
+                <a href="assets/enrollment.pdf" class="btn" download>Download PDF</a>
+            </div>
+            <div class="card">
+                <h4>📊 Annual Report 2024-25</h4>
+                <p>Read about our unit's activities and achievements from the past year.</p>
+                <a href="assets/ACTIVITIES REPORT 2024-25.pdf" class="btn" download>Download PDF</a>
+            </div>
+            <div class="card">
+                <h4>🛡️ Our Core Ideals</h4>
+                <p>A document on the principles of Discipline, Loyalty, Service, and Integrity.</p>
+                <a href="assets/Upholding the Ideals of Discipline, Loyalty, Service, and Integrity.pdf" class="btn" download>Download PDF</a>
+            </div>
+        </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Rover & Ranger Unit, NSCBM Govt. College Hamirpur | Charter No: BSGHP-20-044 / 2020</p>
+    <p>Designed by Rover & Ranger Unit</p>
+  </footer>
+
+  <a href="#" id="back-to-top" title="Go to top">↑</a>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+  </html>
+  
