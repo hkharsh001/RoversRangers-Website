@@ -199,17 +199,14 @@ footer {
 }
 
 /* ==============================
-   🔹 NEW STYLES ADDED BELOW
+   🔹 RECENT ACTIVITIES SLIDER (CORRECTED)
    ============================== */
-
-/* Recent Activities Slider */
 #recent-activities {
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #f9f9f9;
 }
 .slider-container {
-  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
@@ -235,16 +232,16 @@ footer {
 }
 .slider-track {
   display: flex;
-  width: 200%;
-  animation: scroll 30s linear infinite;
+  width: calc(280px * 16); /* CORRECTED: Based on 8 original images + 8 duplicates */
+  animation: scroll 40s linear infinite; /* CORRECTED: Duration can be adjusted */
 }
 .slider-container:hover .slider-track {
   animation-play-state: paused;
 }
 .slide {
-  flex-shrink: 0;
-  width: calc(100% / 8);
+  width: 280px; /* CORRECTED: Fixed width prevents stretching on mobile */
   height: 200px;
+  flex-shrink: 0;
   padding: 0 10px;
   box-sizing: border-box;
 }
@@ -255,18 +252,25 @@ footer {
   border-radius: 8px;
 }
 @keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* CORRECTED: Scrolls by the width of the original 8 images */
+    transform: translateX(calc(-280px * 8));
+  }
 }
 
-/* Announcements Box */
+/* ==============================
+   🔹 ANNOUNCEMENTS & OTHER STYLES
+   ============================== */
 .announcements-box {
   border: 1px solid #ddd;
   border-radius: var(--radius);
   background-color: #fff;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
-#announcements .announcements-box { /* Only apply on homepage */
+#announcements .announcements-box { /* Only apply scrollbox on homepage */
   max-height: 300px;
   overflow-y: auto;
 }
@@ -320,8 +324,6 @@ footer {
   50% { opacity: 0.2; }
   100% { opacity: 1; }
 }
-
-/* Back to Top Button */
 #back-to-top {
   position: fixed;
   bottom: 20px;
@@ -347,7 +349,6 @@ footer {
   visibility: visible;
   transform: translateY(0);
 }
-
 
 /* ==============================
    🔹 HAMBURGER MENU & RESPONSIVE
