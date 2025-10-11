@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Achievements | Rover & Ranger Unit, NSCBM College Hamirpur</title>
+  <link rel="icon" href="assets/unit-logo.png" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <style>
+    /* Page-specific styles for the awardee cards */
+    .awardee-card {
+        text-align: center;
+        padding-top: 20px;
+    }
+    .awardee-card img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid var(--accent);
+        margin-bottom: 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    .awardee-card h4 { /* Name */
+        font-family: 'Poppins', sans-serif;
+        color: var(--primary);
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+    }
+    .awardee-card .award-name { /* Award Name */
+        font-weight: 600;
+        color: var(--accent);
+        font-size: 1.1rem;
+    }
+    .achievement-list li {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header">
+      <div class="brand">
+        <img src="assets/colege logo.jpg" alt="College Logo">
+        <img src="assets/unit logo.png" alt="Unit Logo">
+        <div>
+          <h1>Rover & Ranger Unit</h1>
+          <p>N.S.C.B.M. Govt. College, Hamirpur</p>
+        </div>
+      </div>
+      <button id="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="history.html">History</a></li>
+          <li><a href="announcements.html">Announcements</a></li>
+          <li><a href="achievements.html" class="active">Achievements</a></li> <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="logo-strip">
+      </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h2>Our Achievements & Recognition</h2>
+      <p>Celebrating the dedication, service, and excellence of our Rovers and Rangers.</p>
+       <a href="index.html" class="btn">← Back to Homepage</a>
+    </div>
+  </section>
+
+  <main>
+    <section id="top-awards" class="container section">
+      <h3 data-aos="fade-up">Highest State Awards: Rajya Puraskar</h3>
+      <p data-aos="fade-up" style="max-width: 800px; margin: 0 auto 30px auto; text-align: center;">
+        The Rajya Puraskar is the highest award a Rover or Ranger can earn at the state level. It is a testament to their sustained commitment to scouting principles, advanced skills, and significant service to the community. We are incredibly proud of our awardees.
+      </p>
+      <div class="cards" data-aos="fade-up">
+        <div class="card awardee-card">
+          <img src="assets/awardee-placeholder-1.jpg" alt="Photo of Tanish Devkaran">
+          <h4>Rover Tanish Devkaran</h4>
+          <p class="award-name">🏅 Rajya Puraskar</p>
+        </div>
+        <div class="card awardee-card">
+          <img src="assets/awardee-placeholder-2.jpg" alt="Photo of Karan Thakur">
+          <h4>Rover Karan Thakur</h4>
+          <p class="award-name">🏅 Rajya Puraskar</p>
+        </div>
+        </div>
+    </section>
+
+    <section id="community-impact" class="container section" style="background-color: #f9f9f9;">
+        <h3 data-aos="fade-up">Key Initiatives & Community Impact</h3>
+        <ul class="achievement-list" data-aos="fade-up">
+            <li>
+                <strong>🌿 Environmental Stewardship:</strong> Our unit actively participates in Swachhta Campaigns under the Swachh Bharat Abhiyan, organizing cleanliness drives on campus and in the local community. We have also conducted numerous tree plantation drives to promote environmental awareness.
+            </li>
+            <li>
+                <strong>❤️ Blood Donation Camps:</strong> In service to humanity, our Rovers and Rangers regularly organize and volunteer at blood donation camps, contributing to this life-saving cause.
+            </li>
+            <li>
+                <strong>🕊️ Peace & Unity Marches:</strong> To promote social harmony and peace, our unit has organized and participated in several peace marches and awareness rallies on important national and international days.
+            </li>
+        </ul>
+    </section>
+    
+    <section id="active-participation" class="container section">
+      <h3 data-aos="fade-up">Active Participation & Representation</h3>
+      <ul class="achievement-list" data-aos="fade-up">
+        <li>
+          <strong>🤝 Messengers of Peace (MoP):</strong> Our unit is an active participant in the global Messengers of Peace initiative, with members logging thousands of service hours towards community projects that promote peace and sustainable development.
+        </li>
+        <li>
+          <strong>🧣 World Scarf Day:</strong> Every year on August 1st, our members proudly wear their Scout scarves in public to showcase the unity of the movement and participate in local events to celebrate this special day.
+        </li>
+        <li>
+          <strong>🎓 State-Level Representation:</strong> We consistently send a strong contingent of Rovers and Rangers to represent our college and district at the BSG Himachal Pradesh State-Level Meets, participating in various competitions and workshops.
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Rover & Ranger Unit, NSCBM Govt. College Hamirpur | Charter No: BSGHP-20-044 / 2020</p>
+    <p>Designed by Rover & Ranger Unit</p>
+  </footer>
+
+  <a href="#" id="back-to-top" title="Go to top">↑</a>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
