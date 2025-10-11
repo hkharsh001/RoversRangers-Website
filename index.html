@@ -6,14 +6,13 @@
   <title>Rover & Ranger Unit | NSCBM Govt. College Hamirpur</title>
   <link rel="icon" href="assets/unit-logo.png" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css?v=1.0" />
+  <link rel="stylesheet" href="style.css" />
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
-  <!-- ===== HEADER ===== -->
   <header>
     <div class="container header">
       <div class="brand">
@@ -25,14 +24,12 @@
         </div>
       </div>
 
-      <!-- Hamburger Button -->
       <button id="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </button>
 
-      <!-- Navigation Menu -->
       <nav id="nav-menu">
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
@@ -46,13 +43,12 @@
       </nav>
     </div>
 
-    <!-- Logo Strip -->
     <div class="logo-strip">
       <a href="https://www.gchamirpur.org" target="_blank">
         <img src="assets/colege logo.jpg" alt="College Logo">
         <div>NSCBM Govt. College Hamirpur</div>
       </a>
-      <a href="https://rrgchamirpur.vercel.app/">
+      <a href="https://hkharsh001.github.io/RoversRangers-Website/">
         <img src="assets/unit logo.png" alt="Unit Logo">
         <div>Rover & Ranger Unit</div>
       </a>
@@ -75,7 +71,6 @@
     </div>
   </header>
 
-  <!-- ===== HERO ===== -->
   <section class="hero">
     <div class="container">
       <h2>“Service” — To Serve the Nation and Create a Better World</h2>
@@ -86,8 +81,66 @@
       <a href="#contact" class="btn">Join the Movement</a>
     </div>
   </section>
+  
+  <section id="recent-activities">
+    <div class="container">
+        <h3>Recent Activities</h3>
+        <div class="slider-container">
+            <div class="slider-track">
+                <div class="slide"><img src="assets/scarf day.jpeg" alt="Scarf Day Celebration"></div>
+                <div class="slide"><img src="assets/Peace Day.jpeg" alt="Peace Day March"></div>
+                <div class="slide"><img src="assets/activity1.jpg" alt="Tree Plantation Drive"></div>
+                <div class="slide"><img src="assets/activity2.jpg" alt="First Aid Training"></div>
+                <div class="slide"><img src="assets/scarf day.jpeg" alt="Scarf Day Celebration"></div>
+                <div class="slide"><img src="assets/Peace Day.jpeg" alt="Peace Day March"></div>
+                <div class="slide"><img src="assets/activity1.jpg" alt="Tree Plantation Drive"></div>
+                <div class="slide"><img src="assets/activity2.jpg" alt="First Aid Training"></div>
+            </div>
+        </div>
+    </div>
+  </section>
 
-  <!-- ===== ABOUT ===== -->
+  <section id="announcements" class="container">
+    <h3>Announcements & Notices</h3>
+    <div class="announcements-box">
+      <ul>
+        <li>
+          <a href="assets/docs/RajyaPuraskarCamp_Notice.pdf" target="_blank">
+            <span class="announcement-date">11-Oct-2025</span>
+            <span class="announcement-text">Enrollment for the Rajya Puraskar testing camp is now open.</span>
+            <span class="new-badge">New</span>
+          </a>
+        </li>
+        <li>
+          <a href="assets/docs/FirstAid_Workshop_Schedule.pdf" target="_blank">
+            <span class="announcement-date">09-Oct-2025</span>
+            <span class="announcement-text">Schedule for the upcoming district-level First Aid workshop.</span>
+            <span class="new-badge">New</span>
+          </a>
+        </li>
+        <li>
+          <a href="assets/docs/CleanlinessDrive_Meeting.pdf" target="_blank">
+            <span class="announcement-date">05-Oct-2025</span>
+            <span class="announcement-text">Unit meeting to discuss the annual cleanliness drive.</span>
+          </a>
+        </li>
+        <li>
+          <a href="assets/docs/NewRecruits_Welcome.pdf" target="_blank">
+            <span class="announcement-date">01-Oct-2025</span>
+            <span class="announcement-text">Congratulations to our new Rover and Ranger recruits!</span>
+          </a>
+        </li>
+        <li>
+          <a href="assets/docs/PlantationProject_Report.pdf" target="_blank">
+            <span class="announcement-date">25-Sep-2025</span>
+            <span class="announcement-text">Report on the successful completion of the tree plantation project.</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <a href="announcements.html" class="read-more" style="display: block; text-align: right;">View All Announcements →</a>
+  </section>
+
   <section id="about" class="container">
     <h3>About Our Unit</h3>
     <p>
@@ -99,7 +152,6 @@
     <a href="about.html" class="read-more">Read More →</a>
   </section>
 
-  <!-- ===== HISTORY ===== -->
   <section id="history" class="container" data-aos="fade-up">
     <h3>History of Scouting & Guiding</h3>
     <p>
@@ -109,11 +161,10 @@
     <a href="history.html" class="read-more">Read More →</a>
   </section>
 
-  <!-- ===== ACTIVITIES ===== -->
   <section id="activities" class="container">
     <h3>Activities & Projects</h3>
     <div class="cards">
-      <div class="card">
+      <div class="card" data-aos="fade-up">
         <h4>Community Service</h4>
         <ul>
           <li>Tree Plantation & Cleanliness Drives</li>
@@ -121,7 +172,7 @@
           <li>Peace & Unity Marches</li>
         </ul>
       </div>
-      <div class="card">
+      <div class="card" data-aos="fade-up" data-aos-delay="100">
         <h4>Training & Adventure</h4>
         <ul>
           <li>Leadership & First Aid Workshops</li>
@@ -130,10 +181,8 @@
         </ul>
       </div>
     </div>
-    <a href="activities.html" class="all-activies">All Activities →</a>
   </section>
 
-  <!-- ===== ACHIEVEMENTS ===== -->
   <section id="achievements" class="container" data-aos="fade-up">
     <h3>Our Achievements</h3>
     <ul>
@@ -145,17 +194,15 @@
     <a href="achievements.html" class="read-more">Explore More →</a>
   </section>
 
-  <!-- ===== GALLERY ===== -->
   <section id="gallery" class="container">
     <h3>Gallery Highlights</h3>
     <div class="gallery">
-      <img src="assets/scarf day.jpeg" alt="Scarf Day">
-      <img src="assets/Peace Day.jpeg" alt="Peace Day">
+      <img src="assets/scarf day.jpeg" alt="Scarf Day" data-aos="zoom-in">
+      <img src="assets/Peace Day.jpeg" alt="Peace Day" data-aos="zoom-in" data-aos-delay="100">
     </div> 
     <a href="gallery.html" class="read-more">View Full Gallery →</a>
   </section>
 
-  <!-- ===== RESOURCES ===== -->
   <section id="resources" class="container">
     <h3>Documents & Downloads</h3>
     <ul>
@@ -165,32 +212,24 @@
     <a href="resources.html" class="read-more">More Resources →</a>
   </section>
 
-  <!-- ===== CONTACT ===== -->
   <section id="contact" class="container contact">
     <h3>Contact Us</h3>
     <p>📧 <a href="mailto:rrgchamirpur@gmail.com">rrgchamirpur@gmail.com</a></p>
     <p>🏫 N.S.C.B.M. Govt. College, Hamirpur, Himachal Pradesh</p>
-    
     <p>📸 Follow us on Instagram: 
         <a href="https://www.instagram.com/rrgchamirpur?igsh=OTBldHJvc2pjd2di" target="_blank" rel="noopener noreferrer">@rrgchamirpur</a>
     </p>
-    
     <a href="assets/enrollment.pdf" class="btn" download>📄 Download Join Form</a>
   </section>
 
-  <!-- ===== FOOTER ===== -->
   <footer>
     <p>© 2025 Rover & Ranger Unit, NSCBM Govt. College Hamirpur | Charter No: BSGHP-20-044 / 2020</p>
     <p>Designed by Rover & Ranger Unit</p>
   </footer>
 
-  <!-- JS -->
+  <a href="#" id="back-to-top" title="Go to top">↑</a>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="script.js"></script>
-  <a href="#" id="back-to-top" class="btn" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 999;">↑</a>
-  
 </body>
-  </html>
-
-
-
-
+</html>
