@@ -1,0 +1,37 @@
+# =====================================================
+# robots.txt for Rover & Ranger Unit
+# NSCBM Govt. College Hamirpur (HP)
+# Website: https://rrgchamirpur.vercel.app
+# Purpose: Allow search engines to crawl the site safely
+# =====================================================
+
+# Allow all search engines to access the full site
+User-agent: *
+Allow: /
+
+# =====================================================
+# Disallowed sections (uncomment if you have such folders)
+# =====================================================
+# Disallow: /admin/
+# Disallow: /private/
+# Disallow: /temp/
+# Disallow: /drafts/
+# Disallow: /api/
+
+# =====================================================
+# Sitemap — helps search engines find all your pages
+# =====================================================
+Sitemap: https://rrgchamirpur.vercel.app/sitemap.xml
+
+# =====================================================
+# Additional crawler guidance (optional but useful)
+# =====================================================
+# Crawl-delay: 10     # (Use only if your server is slow)
+# Clean-param: ref,utm_source,utm_medium,utm_campaign  # ignore tracking parameters
+
+# =====================================================
+# Notes:
+# - Keep this file in your site root (same folder as index.html)
+# - Accessible at: https://rrgchamirpur.vercel.app/robots.txt
+# - Update Sitemap URL if your domain changes
+# =====================================================
