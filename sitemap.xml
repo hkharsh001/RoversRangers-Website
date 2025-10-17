@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>https://rrgchamirpur.vercel.app/</loc>
+  <lastmod>2025-10-17T06:00:22+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://rrgchamirpur.vercel.app/index.html</loc>
+  <lastmod>2025-10-17T06:00:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rrgchamirpur.vercel.app/announcements.html</loc>
+  <lastmod>2025-10-17T06:00:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rrgchamirpur.vercel.app/about.html</loc>
+  <lastmod>2025-10-17T06:00:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rrgchamirpur.vercel.app/history.html</loc>
+  <lastmod>2025-10-17T06:00:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rrgchamirpur.vercel.app/achievements.html</loc>
+  <lastmod>2025-10-17T06:00:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rrgchamirpur.vercel.app/gallery.html</loc>
+  <lastmod>2025-10-17T06:00:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rrgchamirpur.vercel.app/resources.html</loc>
+  <lastmod>2025-10-17T06:00:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+</urlset>
