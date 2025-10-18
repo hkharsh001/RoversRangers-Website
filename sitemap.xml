@@ -1,88 +1,44 @@
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!--  created with Free Online Sitemap Generator www.xml-sitemaps.com  -->
-<url>
-<loc>https://rrgchamirpur.vercel.app/</loc>
-<lastmod>2025-10-17T09:43:35+00:00</lastmod>
-<priority>1.00</priority>
-</url>
-<url>
-<loc>https://rrgchamirpur.vercel.app/assets/Rules%20for%20Unit.pdf</loc>
-<lastmod>2025-10-17T09:43:35+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://rrgchamirpur.vercel.app/assets/campus%20cleanliness%20report%2010-10-2025.pdf</loc>
-<lastmod>2025-10-17T09:43:36+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://rrgchamirpur.vercel.app/assets/Upholding%20the%20Ideals%20of%20Discipline,%20Loyalty,%20Service,%20and%20Integrity.pdf</loc>
-<lastmod>2025-10-17T09:43:36+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://rrgchamirpur.vercel.app/assets/ADVISORY%20ON%20FUNDAMENTALS%20OF%20BSG.pdf</loc>
-<lastmod>2025-10-17T09:43:37+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://rrgchamirpur.vercel.app/assets/Circular%202025%20Nipun%20Rovers.pdf</loc>
-<lastmod>2025-10-17T09:43:37+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://rrgchamirpur.vercel.app/announcements.html</loc>
-<lastmod>2025-10-17T09:43:37+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://rrgchamirpur.vercel.app/about.html</loc>
-<lastmod>2025-10-17T09:43:38+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://rrgchamirpur.vercel.app/history.html</loc>
-<lastmod>2025-10-17T09:43:38+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://rrgchamirpur.vercel.app/achievements.html</loc>
-<lastmod>2025-10-17T09:43:38+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://rrgchamirpur.vercel.app/gallery.html</loc>
-<lastmod>2025-10-17T09:43:38+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://rrgchamirpur.vercel.app/assets/ACTIVITIES%20REPORT%202024-25.pdf</loc>
-<lastmod>2025-10-17T09:43:39+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://rrgchamirpur.vercel.app/resources.html</loc>
-<lastmod>2025-10-17T09:43:39+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://rrgchamirpur.vercel.app/assets/enrollment.pdf</loc>
-<lastmod>2025-10-17T09:43:39+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://rrgchamirpur.vercel.app/index.html</loc>
-<lastmod>2025-10-17T09:43:39+00:00</lastmod>
-<priority>0.64</priority>
-</url>
-<url>
-<loc>https://rrgchamirpur.vercel.app/assets/SERVICE%20TEAM%20RR-%20PLW2025%20(2).pdf</loc>
-<lastmod>2025-10-17T09:43:39+00:00</lastmod>
-<priority>0.64</priority>
-</url>
-<url>
-<loc>https://rrgchamirpur.vercel.app/assets/International%20Peace%20Day.pdf</loc>
-<lastmod>2025-10-17T09:43:40+00:00</lastmod>
-<priority>0.64</priority>
-</url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://rrgchamirpur.vercel.app/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://rrgchamirpur.vercel.app/index.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://rrgchamirpur.vercel.app/about.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://rrgchamirpur.vercel.app/announcements.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://rrgchamirpur.vercel.app/history.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://rrgchamirpur.vercel.app/achievements.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://rrgchamirpur.vercel.app/gallery.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://rrgchamirpur.vercel.app/resources.html</loc>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
