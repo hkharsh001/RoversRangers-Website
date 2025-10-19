@@ -292,7 +292,7 @@ footer {
 .slider-track {
   display: flex;
   width: 200%;
-  animation: scroll 45s linear infinite;
+  animation: scroll 20s linear infinite;
 }
 
 .slider-container:hover .slider-track {
@@ -544,3 +544,4 @@ footer {
     }
   }
 }
+
