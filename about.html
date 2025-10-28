@@ -3,12 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Detailed History of Scouting | Rover & Ranger Unit, NSCBM College Hamirpur</title>
+  <title>About | Rover & Ranger Unit, NSCBM College Hamirpur</title>
   <link rel="icon" href="assets/unit-logo.png" />
 
   <link rel="stylesheet" href="style.css?v=1.0" />
-
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <style>
+    /* Leader Card Styling */
+    .card {
+      text-align: center;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    }
+    .leader-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--accent);
+      margin-bottom: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    .leader-info h4 {
+      font-family: 'Poppins', sans-serif;
+      color: var(--primary);
+      font-size: 1.3rem;
+      margin-bottom: 5px;
+    }
+    .leader-info p {
+      font-weight: 600;
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+
+    /* Responsive layout */
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    @media (max-width: 768px) {
+      .card {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -31,13 +81,11 @@
       <nav id="nav-menu">
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
-          
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html"class="active">About</a></li>
+          <li><a href="about.html" class="active">About</a></li>
           <li><a href="history.html">History</a></li>
           <li><a href="index.html#activities">Activities</a></li>
           <li><a href="announcements.html">Announcements</a></li>
-          <li><a href="achievements.html">Achievements</a></li> 
+          <li><a href="achievements.html">Achievements</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="resources.html">Resources</a></li>
           <li><a href="index.html#contact">Contact</a></li>
@@ -46,32 +94,32 @@
     </div>
   </header>
 
- <div class="logo-strip">
-       <a href="https://www.gchamirpur.org" target="_blank">
-        <img src="assets/colege logo.jpg" alt="College Logo">
-        <div>NSCBM Govt. College Hamirpur</div>
-      </a>
-      <a href="https://rrgchamirpur.vercel.app/">
-        <img src="assets/unit logo.png" alt="Unit Logo">
-        <div>Rover & Ranger Unit</div>
-      </a>
-      <a href="https://bsghp.org" target="_blank">
-        <img src="assets/bsghp.jpg" alt="BSG HP Logo">
-        <div>BSG Himachal Pradesh</div>
-      </a>
-      <a href="https://www.bsgindia.org" target="_blank">
-        <img src="assets/Bharat_Scouts_and_Guides logo.svg.png" alt="BSG India Logo">
-        <div>Bharat Scouts & Guides India</div>
-      </a>
-      <a href="https://www.scout.org" target="_blank">
-        <img src="assets/wosm .png" alt="WOSM Logo">
-        <div>WOSM</div>
-      </a>
-      <a href="https://www.wagggs.org" target="_blank">
-        <img src="assets/waggs.png" alt="WAGGGS Logo">
-        <div>WAGGGS</div>
-      </a>
-    </div>
+  <div class="logo-strip">
+    <a href="https://www.gchamirpur.org" target="_blank">
+      <img src="assets/colege logo.jpg" alt="College Logo">
+      <div>NSCBM Govt. College Hamirpur</div>
+    </a>
+    <a href="https://rrgchamirpur.vercel.app/">
+      <img src="assets/unit logo.png" alt="Unit Logo">
+      <div>Rover & Ranger Unit</div>
+    </a>
+    <a href="https://bsghp.org" target="_blank">
+      <img src="assets/bsghp.jpg" alt="BSG HP Logo">
+      <div>BSG Himachal Pradesh</div>
+    </a>
+    <a href="https://www.bsgindia.org" target="_blank">
+      <img src="assets/Bharat_Scouts_and_Guides logo.svg.png" alt="BSG India Logo">
+      <div>Bharat Scouts & Guides India</div>
+    </a>
+    <a href="https://www.scout.org" target="_blank">
+      <img src="assets/wosm .png" alt="WOSM Logo">
+      <div>WOSM</div>
+    </a>
+    <a href="https://www.wagggs.org" target="_blank">
+      <img src="assets/waggs.png" alt="WAGGGS Logo">
+      <div>WAGGGS</div>
+    </a>
+  </div>
 
   <section class="hero">
     <div class="container" data-aos="fade-in">
@@ -81,15 +129,14 @@
     </div>
   </section>
 
- <main>
+  <main>
     <section id="leadership" class="container">
       <h3 data-aos="fade-up">Our Leadership</h3>
       <p data-aos="fade-up" style="text-align:center; max-width:800px; margin:-15px auto 30px auto;">Our unit is guided by dedicated leaders who volunteer their time to mentor and support our Rovers and Rangers.</p>
       
       <div class="cards">
-        
         <div class="card" data-aos="fade-up">
-          <img src="assets/patial.jpg" alt="Photo of Dr. Pramod Singh Patial" class="leader-photo">
+          <img src="assets/patial.jpg" alt="Dr. Pramod Singh Patial" class="leader-photo">
           <div class="leader-info">
             <h4>Group Leader</h4>
             <p>Dr. Pramod Singh Patial</p>
@@ -97,7 +144,7 @@
         </div>
 
         <div class="card" data-aos="fade-up" data-aos-delay="100">
-          <img src="assets/sood.jpg" alt="Photo of Prof. Saurabh Sood" class="leader-photo">
+          <img src="assets/sood.jpg" alt="Prof. Saurabh Sood" class="leader-photo">
           <div class="leader-info">
             <h4>Rover Scout Leader (RSL)</h4>
             <p>Prof. Saurabh Sood</p>
@@ -105,7 +152,7 @@
         </div>
 
         <div class="card" data-aos="fade-up" data-aos-delay="200">
-          <img src="assets/thakur.jpg" alt="Photo of Prof. Shilpa Thakur" class="leader-photo">
+          <img src="assets/thakur.jpg" alt="Prof. Shilpa Thakur" class="leader-photo">
           <div class="leader-info">
             <h4>Ranger Leader (RL)</h4>
             <p>Prof. Shilpa Thakur</p>
@@ -113,16 +160,16 @@
         </div>
       </div>
     </section>
-</section>
 
-  <section id="mission" class="container">
-        <h3 data-aos="fade-up">Our Mission & Values</h3>
-        <p data-aos="fade-up" style="text-align: center; max-width: 900px; margin-inline: auto;">The Rover & Ranger Unit is dedicated to fostering the holistic development of young adults, transforming them into self-reliant, responsible, and compassionate citizens. Our mission is rooted in the core principles of the Scout and Guide movement: <strong>Duty to God</strong>, <strong>Duty to Others</strong>, and <strong>Duty to Self</strong>. We strive to instill leadership, discipline, integrity, and a lifelong spirit of selfless service to the community and the nation.</p>
+    <section id="mission" class="container">
+      <h3 data-aos="fade-up">Our Mission & Values</h3>
+      <p data-aos="fade-up" style="text-align: center; max-width: 900px; margin-inline: auto;">The Rover & Ranger Unit is dedicated to fostering the holistic development of young adults, transforming them into self-reliant, responsible, and compassionate citizens. Our mission is rooted in the core principles of the Scout and Guide movement: <strong>Duty to God</strong>, <strong>Duty to Others</strong>, and <strong>Duty to Self</strong>. We strive to instill leadership, discipline, integrity, and a lifelong spirit of selfless service to the community and the nation.</p>
     </section>
 
     <section id="what-we-do" class="container">
       <h3 data-aos="fade-up">What is Rovers & Rangers?</h3>
       <p data-aos="fade-up" style="text-align:center; max-width:800px; margin:-15px auto 30px auto;">Rovers (boys) and Rangers (girls) are the senior youth section of Bharat Scouts & Guides, serving ages 15–25. The program contributes to young people’s development to help them reach their full physical, intellectual, social, and spiritual potential as responsible citizens.</p>
+      
       <div class="cards">
         <div class="card" data-aos="fade-up">
           <h4>Stages in the Journey</h4>
@@ -132,31 +179,32 @@
             <li><strong>Rover/Ranger-in-Service:</strong> Advanced roles for experienced members who mentor others and lead service projects.</li>
           </ul>
         </div>
+
         <div class="card" data-aos="fade-up" data-aos-delay="100">
           <h4>Advancement & Awards</h4>
           <p>The advancement structure includes key milestones like Pravesh, Nipun, Rajya Puraskar, and the prestigious Rashtrapati Rover/Ranger Award, earned through service and skill development.</p>
         </div>
+
         <div class="card" data-aos="fade-up" data-aos-delay="200">
-            <h4>Purpose & Objectives</h4>
-            <ul>
-              <li>Leadership & character building</li>
-              <li>Service to society & nation building</li>
-              <li>Environmental awareness & sustainability</li>
-              <li>Promoting peace, respect, and unity</li>
-            </ul>
+          <h4>Purpose & Objectives</h4>
+          <ul>
+            <li>Leadership & character building</li>
+            <li>Service to society & nation building</li>
+            <li>Environmental awareness & sustainability</li>
+            <li>Promoting peace, respect, and unity</li>
+          </ul>
         </div>
+
         <div class="card" data-aos="fade-up" data-aos-delay="300">
-            <h4>Uniform & Identity</h4>
-            <p>The uniform (steel-grey shirt, navy trousers, scarf, badges, etc.) represents discipline, unity, and pride in the movement. It is a symbol of our commitment to the Scout/Guide Promise and Law.</p>
+          <h4>Uniform & Identity</h4>
+          <p>The uniform (steel-grey shirt, navy trousers, scarf, badges, etc.) represents discipline, unity, and pride in the movement. It is a symbol of our commitment to the Scout/Guide Promise and Law.</p>
         </div>
       </div>
     </section>
-
   </main>
 
   <a href="#" id="back-to-top" title="Go to top">↑</a>
-  
-  <!-- Footer (site-wide footer) -->
+
   <footer>
     <div class="container">
       <p>© 2025 Rover & Ranger Unit, NSCBM Govt College, Hamirpur</p>
@@ -164,6 +212,10 @@
     </div>
   </footer>
 
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
   <script src="script.js"></script>
 </body>
-                                                         </html>
+</html>
