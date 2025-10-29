@@ -292,7 +292,7 @@ footer {
 .slider-track {
   display: flex;
   width: 200%;
-  animation: scroll 20s linear infinite;
+  animation: scroll 12s linear infinite; /* Faster speed */
 }
 
 .slider-container:hover .slider-track {
@@ -324,7 +324,7 @@ footer {
    ============================== */
 @media (max-width: 768px) {
   .slider-track {
-    animation: scroll 50s linear infinite;
+    animation: scroll 30s linear infinite; /* was 50s */
   }
 
   .slide {
@@ -341,7 +341,7 @@ footer {
 
 @media (max-width: 480px) {
   .slider-track {
-    animation: scroll 55s linear infinite;
+    animation: scroll 35s linear infinite; /* was 55s */
   }
 
   .slide {
@@ -353,7 +353,6 @@ footer {
     height: 140px;
   }
 }
-
 /* Announcements Box */
 .announcements-box {
   border: 1px solid #ddd;
@@ -544,4 +543,5 @@ footer {
     }
   }
 }
+
 
