@@ -52,12 +52,14 @@ header {
   align-items: center;
 }
 
-.brand {
+.header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 12px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-
 .brand img {
   width: 55px;
   height: 55px;
@@ -543,5 +545,6 @@ footer {
     }
   }
 }
+
 
 
