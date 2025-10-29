@@ -1,7 +1,49 @@
 /* =======================================
-   🔹 UNIFIED HEADER (Desktop + Mobile Same)
+   🔹 THEME VARIABLES
    ======================================= */
+:root {
+  --primary: #0b3d91;   /* Deep Blue */
+  --accent: #228B22;    /* Forest Green */
+  --bg: #f8fafc;
+  --text: #111;
+  --radius: 12px;
+}
 
+/* =======================================
+   🔹 GLOBAL STYLES
+   ======================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--radius);
+}
+
+/* =======================================
+   🔹 UNIFIED HEADER (Same for Desktop & Mobile)
+   ======================================= */
 header {
   background: var(--primary);
   color: #fff;
@@ -58,20 +100,18 @@ header {
   transition: all 0.3s ease-in-out;
 }
 
-/* 🔸 Animated Cross */
+/* Cross Animation */
 #menu-toggle.active .bar:nth-child(1) {
   transform: translateY(12px) rotate(45deg);
 }
-
 #menu-toggle.active .bar:nth-child(2) {
   opacity: 0;
 }
-
 #menu-toggle.active .bar:nth-child(3) {
   transform: translateY(-12px) rotate(-45deg);
 }
 
-/* 🔸 Navigation Menu (Hidden by Default) */
+/* Nav Hidden by Default */
 nav {
   display: none;
   position: absolute;
@@ -85,7 +125,7 @@ nav {
   border-top: 1px solid rgba(255,255,255,0.2);
 }
 
-/* 🔸 When Active */
+/* Show When Active */
 nav.active {
   display: flex;
   animation: slideDown 0.3s ease forwards;
@@ -102,7 +142,7 @@ nav.active {
   }
 }
 
-/* 🔸 Nav Links */
+/* Nav Links */
 .nav-links {
   list-style: none;
   display: flex;
