@@ -1,0 +1,34 @@
+{
+  "activities": [
+    {
+      "date": "2025-10-20",
+      "title": "JOTA–JOTI 2025",
+      "desc": "Participation in JOTA–JOTI 2025 Event (2 Rovers & 2 Rangers).",
+      "file": "assets/JOTA-JOTI Report 2025.pdf"
+    },
+    {
+      "date": "2025-10-10",
+      "title": "Campus Cleanliness Drive",
+      "desc": "Campus Cleanliness Drive organized by Rover & Ranger Unit.",
+      "file": "assets/Campus Cleaning Report 10-10-2025.pdf"
+    },
+    {
+      "date": "2025-09-21",
+      "title": "International Peace Day",
+      "desc": "Celebration of International Peace Day with awareness and unity activities.",
+      "file": "assets/International Peace Day 2025.pdf"
+    },
+    {
+      "date": "2025-08-05",
+      "title": "Tree Plantation Drive",
+      "desc": "Tree Plantation Campaign promoting a greener campus.",
+      "file": "assets/Tree Plantation Drive 2025.pdf"
+    },
+    {
+      "date": "2025-07-25",
+      "title": "Orientation Program",
+      "desc": "Orientation Program for newly enrolled Rovers and Rangers.",
+      "file": "assets/Orientation Program 2025.pdf"
+    }
+  ]
+}
