@@ -81,50 +81,8 @@
     <section id="all-activities" class="container section">
       <h3 data-aos="fade-up">Recent to Past Activities</h3>
       <div class="announcements-box" data-aos="fade-up" data-aos-delay="100">
-        <ul>
-          <li>
-            <a href="assets/JOTA-JOTI Report 2025.pdf" target="_blank">
-              <span class="announcement-date">20-Oct-2025</span>
-              <span class="announcement-text">Participation in JOTA–JOTI 2025 Event (2 Rovers & 2 Rangers).</span>
-              <span class="new-badge">New</span>
-            </a>
-          </li>
-          <li>
-            <a href="assets/Campus Cleaning Report 10-10-2025.pdf" target="_blank">
-              <span class="announcement-date">10-Oct-2025</span>
-              <span class="announcement-text">Campus Cleanliness Drive organized by Rover & Ranger Unit.</span>
-            </a>
-          </li>
-          <li>
-            <a href="assets/International Peace Day 2025.pdf" target="_blank">
-              <span class="announcement-date">21-Sep-2025</span>
-              <span class="announcement-text">Observation of International Peace Day with awareness activity.</span>
-            </a>
-          </li>
-          <li>
-            <a href="assets/Tree Plantation Drive 2025.pdf" target="_blank">
-              <span class="announcement-date">05-Aug-2025</span>
-              <span class="announcement-text">Tree Plantation Campaign promoting a greener campus.</span>
-            </a>
-          </li>
-          <li>
-            <a href="assets/Orientation Program 2025.pdf" target="_blank">
-              <span class="announcement-date">25-Jul-2025</span>
-              <span class="announcement-text">Orientation Program for newly enrolled Rovers and Rangers.</span>
-            </a>
-          </li>
-          <li>
-            <a href="assets/Adventure Camp Report.pdf" target="_blank">
-              <span class="announcement-date">10-Apr-2025</span>
-              <span class="announcement-text">Adventure Camp participation at Shoghi Training Centre.</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="announcement-date">15-Feb-2025</span>
-              <span class="announcement-text">Blood Donation Camp – “Save Lives, Serve Humanity”.</span>
-            </a>
-          </li>
+        <ul id="activity-list">
+          <!-- Activities will load here automatically from JSON -->
         </ul>
       </div>
     </section>
@@ -139,5 +97,29 @@
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="script.js"></script>
+
+  <script>
+    // Fetch activities from JSON and display dynamically
+    fetch('activities.json')
+      .then(response => {
+        if (!response.ok) throw new Error("Failed to load JSON");
+        return response.json();
+      })
+      .then(data => {
+        const list = document.getElementById('activity-list');
+        data.activities.forEach(activity => {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <a href="${activity.file}" target="_blank">
+              <span class="announcement-date">${activity.date}</span>
+              <span class="announcement-text">${activity.desc}</span>
+              <span class="new-badge">New</span>
+            </a>
+          `;
+          list.appendChild(li);
+        });
+      })
+      .catch(err => console.error('Error loading activities:', err));
+  </script>
 </body>
 </html>
