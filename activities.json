@@ -1,34 +1,46 @@
 {
   "activities": [
     {
+      "date": "2025-11-02",
+      "title": "Introductory Session at New Gurukul School, Gopal Nagar",
+      "desc": "An engaging introductory session was conducted by Rovers and Rangers at New Gurukul School, Gopal Nagar to spread awareness about Scouting and Guiding. The session included interactive activities, demonstrations, and an introduction to the values of Scouting.",
+      "file": "assets/Introductory Session New Gurukul School 2025.pdf",
+      "new": true
+    },
+    {
       "date": "2025-10-20",
       "title": "JOTA–JOTI 2025",
       "desc": "Participation in JOTA–JOTI 2025 Event (2 Rovers & 2 Rangers).",
-      "file": "assets/JOTA-JOTI Report 2025.pdf"
+      "file": "assets/JOTA-JOTI Report 2025.pdf",
+      "new": false
     },
     {
       "date": "2025-10-10",
       "title": "Campus Cleanliness Drive",
       "desc": "Campus Cleanliness Drive organized by Rover & Ranger Unit.",
-      "file": "assets/Campus Cleaning Report 10-10-2025.pdf"
+      "file": "assets/Campus Cleaning Report 10-10-2025.pdf",
+      "new": false
     },
     {
       "date": "2025-09-21",
       "title": "International Peace Day",
-      "desc": "Celebration of International Peace Day with awareness and unity activities.",
-      "file": "assets/International Peace Day 2025.pdf"
+      "desc": "Observation of International Peace Day with awareness activity.",
+      "file": "assets/International Peace Day 2025.pdf",
+      "new": false
     },
     {
       "date": "2025-08-05",
       "title": "Tree Plantation Drive",
       "desc": "Tree Plantation Campaign promoting a greener campus.",
-      "file": "assets/Tree Plantation Drive 2025.pdf"
+      "file": "assets/Tree Plantation Drive 2025.pdf",
+      "new": false
     },
     {
       "date": "2025-07-25",
       "title": "Orientation Program",
       "desc": "Orientation Program for newly enrolled Rovers and Rangers.",
-      "file": "assets/Orientation Program 2025.pdf"
+      "file": "assets/Orientation Program 2025.pdf",
+      "new": false
     }
   ]
 }
