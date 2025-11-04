@@ -8,6 +8,98 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <style>
+    /* Activities Section */
+    .activities-container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 2rem auto;
+    }
+
+    .activity-card {
+      background: #fff;
+      border-radius: var(--radius);
+      border: 1px solid #ddd;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .activity-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+
+    .activity-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .activity-header h3 {
+      margin: 0;
+      color: var(--primary);
+      font-size: 1.1rem;
+    }
+
+    .activity-date {
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    .activity-desc {
+      color: var(--text);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .activity-file {
+      background-color: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .activity-file:hover {
+      background-color: var(--accent);
+    }
+
+    .new-badge {
+      background-color: var(--accent);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 20px;
+      margin-left: 10px;
+      animation: blink 1.5s infinite;
+    }
+
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.3; }
+      100% { opacity: 1; }
+    }
+
+    @media (max-width: 600px) {
+      .activity-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+      }
+
+      .activity-file {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -33,7 +125,7 @@
           <li><a href="history.html">History</a></li>
           <li><a href="activities.html" class="active">Activities</a></li>
           <li><a href="announcements.html">Announcements</a></li>
-          <li><a href="achievements.html">Achievements</a></li> 
+          <li><a href="achievements.html">Achievements</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="resources.html">Resources</a></li>
           <li><a href="index.html#contact">Contact</a></li>
@@ -45,19 +137,14 @@
   <section class="hero">
     <div class="container">
       <h2>Our Activities</h2>
-      <p>Explore recent and past events organized by our Rover & Ranger Unit.</p>
+      <p>Explore the events, sessions, and initiatives conducted by our Rover & Ranger Unit.</p>
       <a href="index.html" class="btn">← Back to Homepage</a>
     </div>
   </section>
 
   <main>
-    <section id="activities" class="container section">
-      <h3 data-aos="fade-up">Latest Activities</h3>
-      <div class="activities-box" data-aos="fade-up" data-aos-delay="100">
-        <ul id="activities-list">
-          <li>Loading activities...</li>
-        </ul>
-      </div>
+    <section class="activities-container" data-aos="fade-up" data-aos-delay="100">
+      <div id="activities">Loading activities...</div>
     </section>
   </main>
 
@@ -69,39 +156,49 @@
   <a href="#" id="back-to-top" title="Go to top">↑</a>
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <script>
     AOS.init();
 
-    const sheetUrl =
-      "https://docs.google.com/spreadsheets/d/e/2PACX-1vTkuV7StdAw_mgojcbmqWDO0H7VXi5Xagfn32bhqUd3jigAeAW6KQEE-sGi-YVGCIAcyMQAhgKpoxFO/pub?output=csv";
+    // Google Sheet CSV URL
+    const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTkuV7StdAw_mgojcbmqWDO0H7VXi5Xagfn32bhqUd3jigAeAW6KQEE-sGi-YVGCIAcyMQAhgKpoxFO/pub?output=csv";
 
     fetch(sheetUrl)
       .then(res => res.text())
-      .then(csvText => {
-        const data = Papa.parse(csvText, { header: true }).data;
-        const list = document.getElementById("activities-list");
-        list.innerHTML = "";
+      .then(csv => {
+        const rows = csv.split("\n").slice(1); // skip header
+        const container = document.getElementById("activities");
+        container.innerHTML = "";
 
-        data.forEach(item => {
-          if (item.title && item.date && item.file) {
-            const li = document.createElement("li");
-            li.innerHTML = `
-              <a href="${item.file}" target="_blank">
-                <span class="activity-date">${item.date}</span>
-                <span class="activity-title">${item.title}</span>
-                <p class="activity-desc">${item.description || ""}</p>
-                ${item.new === "TRUE" ? '<span class="new-badge">New</span>' : ""}
-              </a>
-            `;
-            list.appendChild(li);
-          }
+        rows.forEach(row => {
+          const cols = row.split(",");
+          const date = cols[0]?.trim();
+          const title = cols[1]?.trim();
+          const desc = cols[2]?.trim();
+          const file = cols[3]?.trim();
+          const isNew = cols[4]?.trim().toLowerCase() === "true";
+
+          if (!title) return;
+
+          const card = document.createElement("div");
+          card.className = "activity-card";
+          card.innerHTML = `
+            <div class="activity-header">
+              <h3>${title}${isNew ? '<span class="new-badge">New</span>' : ''}</h3>
+              <span class="activity-date">${date}</span>
+            </div>
+            <p class="activity-desc">${desc}</p>
+            <a href="${file}" class="activity-file" target="_blank">View Report</a>
+          `;
+          container.appendChild(card);
         });
+
+        if (container.innerHTML === "") {
+          container.innerHTML = "<p>No activities found.</p>";
+        }
       })
       .catch(err => {
         console.error("Error loading activities:", err);
-        document.getElementById("activities-list").innerHTML =
-          "<li>Unable to load activities.</li>";
+        document.getElementById("activities").innerHTML = "<p>Unable to load activities.</p>";
       });
   </script>
 
