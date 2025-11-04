@@ -1,0 +1,82 @@
+{
+  "service": [
+    {
+      "src": "assets/Peace Day.jpeg",
+      "alt": "Rovers and Rangers participating in a Peace Day march."
+    },
+    {
+      "src": "assets/garden cleaning.jpg",
+      "alt": "Unit members cleaning the college garden as a service project."
+    },
+    {
+      "src": "assets/service-camp.jpg",
+      "alt": "A group photo during a service camp."
+    },
+    {
+      "src": "assets/service-camp-.jpg",
+      "alt": "Rovers serving the community during a camp."
+    },
+    {
+      "src": "assets/images/IMG-20251014-WA0054.jpg",
+      "alt": "Service activity image."
+    },
+    {
+      "src": "assets/images/blood donation 2024.jpeg",
+      "alt": "Blood Donation Camp conducted by the unit."
+    }
+  ],
+
+  "events": [
+    {
+      "src": "assets/scarf day.jpeg",
+      "alt": "Celebrating World Scarf Day with pride."
+    },
+    {
+      "src": "assets/indipendence day.jpeg",
+      "alt": "Unit participating in the Independence Day parade."
+    },
+    {
+      "src": "assets/scarf-day-posters.jpg",
+      "alt": "Creative posters made for Scarf Day."
+    },
+    {
+      "src": "assets/unit banner.jpg",
+      "alt": "The official banner of the Rover and Ranger unit."
+    },
+    {
+      "src": "assets/images/1 (1) (78).jpg",
+      "alt": "Foundation Day celebration."
+    },
+    {
+      "src": "assets/images/1 (1) (67).jpg",
+      "alt": "Pledge on Nasha Mukti."
+    }
+  ],
+
+  "training": [
+    {
+      "src": "assets/images/nipun 2024 rangers.jpeg",
+      "alt": "Nipun camp 2024 Rangers group photo."
+    },
+    {
+      "src": "assets/images/nipun2024 rovers.jpeg",
+      "alt": "Nipun camp 2024 Rovers team."
+    },
+    {
+      "src": "assets/images/pre rdc 2024.jpeg",
+      "alt": "PRE RDC 2024 training session."
+    },
+    {
+      "src": "assets/images/rally nasha mukti .jpeg",
+      "alt": "Nasha Mukti awareness rally."
+    },
+    {
+      "src": "assets/images/1 (1) (38).jpg",
+      "alt": "Rangers with Nipun certificates."
+    },
+    {
+      "src": "assets/images/1 (1) (57).jpg",
+      "alt": "Rovers with Nipun certificates."
+    }
+  ]
+}
