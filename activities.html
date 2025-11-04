@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Activities | Rover & Ranger Unit, NSCBM College Hamirpur</title>
   <link rel="icon" href="assets/unit-logo.png" />
-
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
+
 <body>
   <header>
     <div class="container header">
@@ -42,47 +42,20 @@
     </div>
   </header>
 
-  <div class="logo-strip">
-    <a href="https://www.gchamirpur.org" target="_blank">
-      <img src="assets/colege logo.jpg" alt="College Logo">
-      <div>NSCBM Govt. College Hamirpur</div>
-    </a>
-    <a href="https://hkharsh001.github.io/RoversRangers-Website/">
-      <img src="assets/unit logo.png" alt="Unit Logo">
-      <div>Rover & Ranger Unit</div>
-    </a>
-    <a href="https://bsghp.org" target="_blank">
-      <img src="assets/bsghp.jpg" alt="BSG HP Logo">
-      <div>BSG Himachal Pradesh</div>
-    </a>
-    <a href="https://www.bsgindia.org" target="_blank">
-      <img src="assets/Bharat_Scouts_and_Guides logo.svg.png" alt="BSG India Logo">
-      <div>Bharat Scouts & Guides India</div>
-    </a>
-    <a href="https://www.scout.org" target="_blank">
-      <img src="assets/wosm .png" alt="WOSM Logo">
-      <div>WOSM</div>
-    </a>
-    <a href="https://www.wagggs.org" target="_blank">
-      <img src="assets/waggs.png" alt="WAGGGS Logo">
-      <div>WAGGGS</div>
-    </a>
-  </div>
-
   <section class="hero">
     <div class="container">
-      <h2>All Activities & Events</h2>
-      <p>Explore the recent and past activities of our Rover & Ranger Unit that promote service, discipline, and leadership.</p>
+      <h2>Our Activities</h2>
+      <p>Explore recent and past events organized by our Rover & Ranger Unit.</p>
       <a href="index.html" class="btn">← Back to Homepage</a>
     </div>
   </section>
 
   <main>
-    <section id="all-activities" class="container section">
-      <h3 data-aos="fade-up">Recent to Past Activities</h3>
-      <div class="announcements-box" data-aos="fade-up" data-aos-delay="100">
-        <ul id="activity-list">
-          <!-- Activities will load here automatically from JSON -->
+    <section id="activities" class="container section">
+      <h3 data-aos="fade-up">Latest Activities</h3>
+      <div class="activities-box" data-aos="fade-up" data-aos-delay="100">
+        <ul id="activities-list">
+          <li>Loading activities...</li>
         </ul>
       </div>
     </section>
@@ -96,47 +69,42 @@
   <a href="#" id="back-to-top" title="Go to top">↑</a>
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script src="script.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <script>
-  const sheetUrl =
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTkuV7StdAw_mgojcbmqWDO0H7VXi5Xagfn32bhqUd3jigAeAW6KQEE-sGi-YVGCIAcyMQAhgKpoxFO/pub?output=csv";
+    AOS.init();
 
-  fetch(sheetUrl)
-    .then(res => res.text())
-    .then(csvText => {
-      const rows = csvText.trim().split("\n").slice(1); // skip headers
-      const list = document.getElementById("activities-list");
-      list.innerHTML = "";
+    const sheetUrl =
+      "https://docs.google.com/spreadsheets/d/e/2PACX-1vTkuV7StdAw_mgojcbmqWDO0H7VXi5Xagfn32bhqUd3jigAeAW6KQEE-sGi-YVGCIAcyMQAhgKpoxFO/pub?output=csv";
 
-      rows.forEach(row => {
-        const cols = row.split(",");
-        if (cols.length >= 4) {
-          const date = cols[0].trim();
-          const title = cols[1].trim();
-          const desc = cols[2].trim();
-          const file = cols[3].trim();
-          const isNew = cols[4]?.trim().toLowerCase() === "true";
+    fetch(sheetUrl)
+      .then(res => res.text())
+      .then(csvText => {
+        const data = Papa.parse(csvText, { header: true }).data;
+        const list = document.getElementById("activities-list");
+        list.innerHTML = "";
 
-          const li = document.createElement("li");
-          li.innerHTML = `
-            <a href="${file}" target="_blank">
-              <span class="activity-date">${date}</span>
-              <span class="activity-title">${title}</span>
-              <p class="activity-desc">${desc}</p>
-              ${isNew ? '<span class="new-badge">New</span>' : ''}
-            </a>
-          `;
-          list.appendChild(li);
-        }
+        data.forEach(item => {
+          if (item.title && item.date && item.file) {
+            const li = document.createElement("li");
+            li.innerHTML = `
+              <a href="${item.file}" target="_blank">
+                <span class="activity-date">${item.date}</span>
+                <span class="activity-title">${item.title}</span>
+                <p class="activity-desc">${item.description || ""}</p>
+                ${item.new === "TRUE" ? '<span class="new-badge">New</span>' : ""}
+              </a>
+            `;
+            list.appendChild(li);
+          }
+        });
+      })
+      .catch(err => {
+        console.error("Error loading activities:", err);
+        document.getElementById("activities-list").innerHTML =
+          "<li>Unable to load activities.</li>";
       });
-    })
-    .catch(err => {
-      console.error("Error loading activities sheet:", err);
-      document.getElementById("activities-list").innerHTML =
-        "<li>Unable to load activities at this moment.</li>";
-    });
-</script>
+  </script>
 
+  <script src="script.js"></script>
 </body>
 </html>
