@@ -230,35 +230,41 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="script.js"></script>
   <script>
-  // Load latest 5 announcements from JSON
-  fetch('announcements.json')
-    .then(res => res.json())
-    .then(data => {
-      const list = document.getElementById('home-announcement-list');
-      list.innerHTML = '';
+  // Fetch latest 5 announcements for homepage
+  const homeSheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS3hPoA_Yvodd0o97C4UpygabrBIR09u28tHOVOhzXbL_in8S-dfEIOP-Oyb_dv596GPkacXB-OkM-0/pub?output=csv";
 
-      // Sort by date (newest first, assuming consistent format)
-      const latest = data.slice(0, 5);
+  fetch(homeSheetUrl)
+    .then(res => res.text())
+    .then(csvText => {
+      const rows = csvText.split("\n").slice(1); // skip header
+      const list = document.querySelector("#announcements ul");
+      list.innerHTML = "";
 
-      latest.forEach(item => {
-        const li = document.createElement('li');
-        li.innerHTML = `
-          <a href="${item.file}" target="_blank">
-            <span class="announcement-date">${item.date}</span>
-            <span class="announcement-text">${item.title}</span>
-            ${item.new ? '<span class="new-badge">New</span>' : ''}
-          </a>
-        `;
-        list.appendChild(li);
+      rows.slice(0, 5).forEach(row => { // show only top 5
+        const cols = row.split(",");
+        if (cols.length >= 3) {
+          const date = cols[0].trim();
+          const title = cols[1].trim();
+          const file = cols[2].trim();
+          const isNew = cols[3]?.trim().toLowerCase() === "true";
+
+          const li = document.createElement("li");
+          li.innerHTML = `
+            <a href="${file}" target="_blank">
+              <span class="announcement-date">${date}</span>
+              <span class="announcement-text">${title}</span>
+              ${isNew ? '<span class="new-badge">New</span>' : ""}
+            </a>
+          `;
+          list.appendChild(li);
+        }
       });
     })
     .catch(err => {
-      console.error('Error loading homepage announcements:', err);
-      document.getElementById('home-announcement-list').innerHTML = '<li>Unable to load announcements.</li>';
+      console.error("Error loading homepage announcements:", err);
+      document.querySelector("#announcements ul").innerHTML =
+        "<li>Unable to load announcements.</li>";
     });
-  </script>
+</script>
 </body>
 </html>
-
-
-
