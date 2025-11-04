@@ -143,43 +143,40 @@
 
     const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTkuV7StdAw_mgojcbmqWDO0H7VXi5Xagfn32bhqUd3jigAeAW6KQEE-sGi-YVGCIAcyMQAhgKpoxFO/pub?output=csv";
 
-    fetch(sheetUrl)
-      .then(res => res.text())
-      .then(csv => {
-        const rows = csv.split("\n").slice(1);
-        const list = document.getElementById("activities-list");
-        list.innerHTML = "";
+    fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vTkuV7StdAw_mgojcbmqWDO0H7VXi5Xagfn32bhqUd3jigAeAW6KQEE-sGi-YVGCIAcyMQAhgKpoxFO/pub?output=csv")
+  .then(response => response.text())
+  .then(csv => {
+    const rows = csv.split("\n").slice(1);
+    let activities = rows.map(row => {
+      const cols = row.split(",");
+      return {
+        date: cols[0],
+        title: cols[1],
+        desc: cols[2],
+        file: cols[3]
+      };
+    }).filter(a => a.title && a.title.trim() !== "");
 
-        rows.forEach(row => {
-          const cols = row.split(",");
-          const date = cols[0]?.trim();
-          const title = cols[1]?.trim();
-          const desc = cols[2]?.trim();
-          const link = cols[3]?.trim();
-          const isNew = cols[4]?.trim().toLowerCase() === "true";
+    // Sort by date (latest first)
+    activities.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-          if (!title) return;
+    // Pick latest date
+    const latestDate = activities.length ? activities[0].date : null;
 
-          const li = document.createElement("li");
-          li.innerHTML = `
-            <a href="${link}" target="_blank">
-              <span class="activity-date">${date}</span>
-              <span class="activity-title">${title}</span>
-              <span class="activity-desc">${desc}</span>
-              ${isNew ? '<span class="new-badge">New</span>' : ''}
-            </a>
-          `;
-          list.appendChild(li);
-        });
-
-        if (!list.innerHTML.trim()) {
-          list.innerHTML = "<li>No activities available.</li>";
-        }
-      })
-      .catch(err => {
-        console.error("Error loading activities:", err);
-        document.getElementById("activities-list").innerHTML = "<li>Unable to load activities.</li>";
-      });
+    const container = document.getElementById("activities-list");
+    container.innerHTML = activities.map(a => `
+      <li>
+        <a href="${a.file}" target="_blank">
+          <span class="announcement-date">${a.date}</span>
+          <span class="announcement-text">
+            <strong>${a.title}</strong> – ${a.desc}
+          </span>
+          ${a.date === latestDate ? '<span class="new-badge">New</span>' : ""}
+        </a>
+      </li>
+    `).join("");
+  })
+  .catch(err => console.error("Error loading activities:", err));
   </script>
 
   <script src="script.js"></script>
