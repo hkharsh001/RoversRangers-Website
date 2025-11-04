@@ -129,50 +129,14 @@
   </section>
 
   <section id="announcements" class="container">
-    <h3>Announcements & Notices</h3>
-    <div class="announcements-box">
-      <ul> 
-        <li>
-          <a href="assets/Rules for Unit.pdf" target="_blank">
-            <span class="announcement-date">16-Oct-2025</span>
-            <span class="announcement-text">Rules for Unit </span>
-            <span class="new-badge">New</span>
-          </a>
-        </li>
-        <li>
-          <a href="assets/campus cleanliness report 10-10-2025.pdf" target="_blank">
-            <span class="announcement-date">10-oct-2025</span>
-            <span class="announcement-text">Campus Cleanliness report 10-10-2025.</span>
-            <span class="new-badge">New</span>
-          </a>
-        </li>
-        <li>
-          <a href="assets/Upholding the Ideals of Discipline, Loyalty, Service, and Integrity.pdf" target="_blank">
-            <span class="announcement-date">07-Oct-2025</span>
-            <span class="announcement-text">Upholding the Ideals of Discipline, Loyalty, Service & Integrity (PDF).</span>
-            <span class="new-badge">New</span>
-          </a>
-        </li>
-        <li>
-        
-          <a href="assets/ADVISORY ON FUNDAMENTALS OF BSG.pdf" target="_blank">
-            <span class="announcement-date">05-Oct-2025</span>
-            <span class="announcement-text">ADVISORY ON FUNDAMENTALS OF BSG.</span>
-            
-          </a>
-        </li>
-        <li>
-          <a href="assets/Circular 2025 Nipun Rovers.pdf" target="_blank">
-            <span class="announcement-date">01-Oct-2025</span>
-            <span class="announcement-text">Circular 2025 Nipun Rovers.</span>
-          </a>
-        </li>
-        
-      
-      </ul>
-    </div>
-    <a href="announcements.html" class="read-more" style="display: block; text-align: right;">View All Announcements →</a>
-  </section>
+  <h3>Announcements & Notices</h3>
+  <div class="announcements-box">
+    <ul id="home-announcement-list">
+      <!-- Latest 5 announcements will load here -->
+    </ul>
+  </div>
+  <a href="announcements.html" class="read-more" style="display: block; text-align: right;">View All Announcements →</a>
+</section>
 
   <section id="about" class="container">
     <h3>About Our Unit</h3>
@@ -265,7 +229,36 @@
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="script.js"></script>
+  <script>
+  // Load latest 5 announcements from JSON
+  fetch('announcements.json')
+    .then(res => res.json())
+    .then(data => {
+      const list = document.getElementById('home-announcement-list');
+      list.innerHTML = '';
+
+      // Sort by date (newest first, assuming consistent format)
+      const latest = data.slice(0, 5);
+
+      latest.forEach(item => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <a href="${item.file}" target="_blank">
+            <span class="announcement-date">${item.date}</span>
+            <span class="announcement-text">${item.title}</span>
+            ${item.new ? '<span class="new-badge">New</span>' : ''}
+          </a>
+        `;
+        list.appendChild(li);
+      });
+    })
+    .catch(err => {
+      console.error('Error loading homepage announcements:', err);
+      document.getElementById('home-announcement-list').innerHTML = '<li>Unable to load announcements.</li>';
+    });
+  </script>
 </body>
 </html>
+
 
 
