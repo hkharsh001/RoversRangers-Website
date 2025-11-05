@@ -138,47 +138,51 @@
   <a href="#" id="back-to-top" title="Go to top">↑</a>
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
+<script>
+AOS.init();
 
-    const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTkuV7StdAw_mgojcbmqWDO0H7VXi5Xagfn32bhqUd3jigAeAW6KQEE-sGi-YVGCIAcyMQAhgKpoxFO/pub?output=csv";
+const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTkuV7StdAw_mgojcbmqWDO0H7VXi5Xagfn32bhqUd3jigAeAW6KQEE-sGi-YVGCIAcyMQAhgKpoxFO/pub?output=csv";
 
-    fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vTkuV7StdAw_mgojcbmqWDO0H7VXi5Xagfn32bhqUd3jigAeAW6KQEE-sGi-YVGCIAcyMQAhgKpoxFO/pub?output=csv")
-  .then(response => response.text())
+fetch(sheetUrl)
+  .then(res => res.text())
   .then(csv => {
-    const rows = csv.split("\n").slice(1);
+    const rows = csv.split("\n").filter(r => r.trim() !== "").slice(1);
+    const regex = /,(?=(?:(?:[^"]*"){2})*[^"]*$)/;
     let activities = rows.map(row => {
-      const cols = row.split(",");
+      const cols = row.split(regex).map(c => c.replace(/(^"|"$)/g, "").trim());
       return {
         date: cols[0],
         title: cols[1],
         desc: cols[2],
         file: cols[3]
       };
-    }).filter(a => a.title && a.title.trim() !== "");
+    }).filter(a => a.title);
 
-    // Sort by date (latest first)
-    activities.sort((a, b) => new Date(b.date) - new Date(a.date));
+    const parseDate = d => {
+      const [day, mon, year] = d.split("-");
+      const monthMap = {
+        Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
+        Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11
+      };
+      return new Date(year, monthMap[mon], day);
+    };
 
-    // Pick latest date
-    const latestDate = activities.length ? activities[0].date : null;
+    activities.sort((a, b) => parseDate(b.date) - parseDate(a.date));
+    const latestDate = activities[0]?.date;
 
     const container = document.getElementById("activities-list");
     container.innerHTML = activities.map(a => `
       <li>
         <a href="${a.file}" target="_blank">
           <span class="announcement-date">${a.date}</span>
-          <span class="announcement-text">
-            <strong>${a.title}</strong> – ${a.desc}
-          </span>
+          <span class="announcement-text"><strong>${a.title}</strong> – ${a.desc}</span>
           ${a.date === latestDate ? '<span class="new-badge">New</span>' : ""}
         </a>
       </li>
     `).join("");
   })
   .catch(err => console.error("Error loading activities:", err));
-  </script>
-
-  <script src="script.js"></script>
+</script>
+<script src="script.js"></script>
 </body>
 </html>
