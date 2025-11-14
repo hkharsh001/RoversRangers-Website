@@ -131,11 +131,53 @@
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 Rover & Ranger Unit, NSCBM Govt. College Hamirpur | Charter No: BSGHP-20-044 / 2020</p>
-    <p>Designed by Rover & Ranger Unit</p>
-  </footer>
-  <a href="#" id="back-to-top" title="Go to top">↑</a>
+  <footer style="text-align:center; padding:20px; font-size:14px; color:#ccc;">
+    <p>© 2025 Rover & Ranger Unit, NSCBM Govt. College Hamirpur</p>
+    <p>All Rights Reserved</p>
+
+    <!-- Click trigger -->
+    <p id="credit" style="cursor:pointer; color:#bbb;">
+        Designed by Rover & Ranger Unit
+    </p>
+
+    <!-- Hidden Easter Egg -->
+    <p id="easter" style="display:none; opacity:0; transition:0.5s; color:#7fffd4; font-weight:600;">
+        ⚜️ Developer: Rover Harsh Kumar ⚜️
+    </p>
+
+    <!-- Contact -->
+    <p style="margin-top:10px;">Contact: 
+        <a href="mailto:rrgchamirpur@gmail.com" style="color:#aaa;">rrgchamirpur@gmail.com</a>
+    </p>
+
+    <!-- Social Links -->
+    <p>
+        <a href="https://instagram.com/rrgchamirpur" style="color:#aaa;" target="_blank">Instagram</a>
+     </p>
+</footer>
+
+<script>
+  // Click to reveal Easter egg
+  document.getElementById("credit").addEventListener("click", function () {
+    let egg = document.getElementById("easter");
+    if (egg.style.display === "none") {
+      egg.style.display = "block";
+      setTimeout(() => egg.style.opacity = "1", 50);
+    } else {
+      egg.style.opacity = "0";
+      setTimeout(() => egg.style.display = "none", 300);
+    }
+  });
+
+  // Press "H" to reveal
+  document.addEventListener("keydown", function (e) {
+    if (e.key.toLowerCase() === "h") {
+      let egg = document.getElementById("easter");
+      egg.style.display = "block";
+      setTimeout(() => egg.style.opacity = "1", 50);
+    }
+  });
+</script>  <a href="#" id="back-to-top" title="Go to top">↑</a>
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
