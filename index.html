@@ -230,41 +230,62 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="script.js"></script>
   <script>
-  // Fetch latest 5 announcements for homepage
-  const homeSheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS3hPoA_Yvodd0o97C4UpygabrBIR09u28tHOVOhzXbL_in8S-dfEIOP-Oyb_dv596GPkacXB-OkM-0/pub?output=csv";
+AOS.init();
 
-  fetch(homeSheetUrl)
-    .then(res => res.text())
-    .then(csvText => {
-      const rows = csvText.split("\n").slice(1); // skip header
-      const list = document.querySelector("#announcements ul");
-      list.innerHTML = "";
+const homeSheetUrl =
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vS3hPoA_Yvodd0o97C4UpygabrBIR09u28tHOVOhzXbL_in8S-dfEIOP-Oyb_dv596GPkacXB-OkM-0/pub?output=csv";
 
-      rows.slice(0, 5).forEach(row => { // show only top 5
-        const cols = row.split(",");
-        if (cols.length >= 3) {
-          const date = cols[0].trim();
-          const title = cols[1].trim();
-          const file = cols[2].trim();
-          const isNew = cols[3]?.trim().toLowerCase() === "true";
+fetch(homeSheetUrl)
+  .then(res => res.text())
+  .then(csv => {
 
-          const li = document.createElement("li");
-          li.innerHTML = `
-            <a href="${file}" target="_blank">
-              <span class="announcement-date">${date}</span>
-              <span class="announcement-text">${title}</span>
-              ${isNew ? '<span class="new-badge">New</span>' : ""}
-            </a>
-          `;
-          list.appendChild(li);
-        }
-      });
-    })
-    .catch(err => {
-      console.error("Error loading homepage announcements:", err);
-      document.querySelector("#announcements ul").innerHTML =
-        "<li>Unable to load announcements.</li>";
+    const lines = csv.split("\n").filter(r => r.trim() !== "").slice(1);
+
+    // Regex to safely split CSV (handles commas inside quotes)
+    const regex = /,(?=(?:(?:[^"]*"){2})*[^"]*$)/;
+
+    let announcements = lines.map(row => {
+      const cols = row.split(regex).map(c => c.replace(/(^"|"$)/g, "").trim());
+      return {
+        date: cols[0],
+        title: cols[1],
+        file: cols[2],
+        isNew: cols[3]?.toLowerCase() === "true",
+      };
     });
+
+    // Convert date DD-MMM-YYYY → JS Date
+    const parseDate = d => {
+      const [day, mon, year] = d.split("-");
+      const months = {
+        Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
+        Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11
+      };
+      return new Date(year, months[mon], day);
+    };
+
+    // Sort newest → oldest
+    announcements.sort((a, b) => parseDate(b.date) - parseDate(a.date));
+
+    // Display only top 5
+    const list = document.querySelector("#home-announcement-list");
+    list.innerHTML = announcements.slice(0, 5).map(a => `
+      <li>
+        <a href="${a.file}" target="_blank">
+          <span class="announcement-date">${a.date}</span>
+          <span class="announcement-text">${a.title}</span>
+          ${a.isNew ? '<span class="new-badge">New</span>' : ""}
+        </a>
+      </li>
+    `).join("");
+
+  })
+  .catch(err => {
+    console.error("Error loading homepage announcements:", err);
+    document.querySelector("#home-announcement-list").innerHTML =
+      "<li>Unable to load announcements.</li>";
+  });
 </script>
 </body>
 </html>
+
