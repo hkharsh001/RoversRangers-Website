@@ -23,6 +23,10 @@
     {
       "src": "assets/images/blood donation 2024.jpeg",
       "alt": "Blood Donation Camp conducted by the unit."
+    },
+    {
+      "src":"assets/images/WhatsApp Image 2026-11-07 at 08.44.00.jpeg",
+      "alt": "Vatika Cleaning"
     }
   ],
 
@@ -50,6 +54,18 @@
     {
       "src": "assets/images/1 (1) (67).jpg",
       "alt": "Pledge on Nasha Mukti."
+    },
+    {
+     "src":"assets/images/WhatsApp Image 2026-10-10 at 12.21.32.jpeg",
+      "alt":"scarf day celebration"
+    },
+    {
+      "src":"assets/images/WhatsApp Image 2026-10-10 at 12.21.36.jpeg",
+      "alt":"annual day celebration"
+    },
+    {
+      "src":"assets/images/WhatsApp Image 2026-10-10 at 12.21.40.jpeg",
+      "alt":"independence day celebration"
     }
   ],
 
@@ -81,6 +97,14 @@
     {
       "src":"assets/images/WhatsApp Image 2026-10-10 at 12.21.07.jpeg",
       "alt": "Services rendered during Scouts and Guides camp"
+    },
+    {
+      "src":"assets/images/WhatsApp Image 2026-10-10 at 12.21.53.jpeg",
+      "alt":"Nipun Camp For Rovers"
+    },
+    {
+      "src":"assets/images/WhatsApp Image 2026-11-07 at 07.52.26.jpeg",
+      "alt":"Nipun Camp For Rangers"
     }
   ]
 }
