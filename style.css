@@ -548,3 +548,1204 @@ footer {
 
 
 
+
+
+/* =========================================================
+   MOBILE-FIRST UPDATE — compact header, footer partner logos
+   and tighter spacing. Existing site styles remain intact.
+   ========================================================= */
+
+html { scroll-padding-top: 84px; }
+body { overflow-x: hidden; }
+img { max-width: 100%; }
+
+header {
+  padding: 8px 0;
+  backdrop-filter: blur(12px);
+}
+
+.header {
+  min-height: 58px;
+  gap: 12px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.brand img {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  padding: 3px;
+  border-radius: 9px;
+}
+
+.brand h1 {
+  font-size: clamp(.95rem, 2vw, 1.35rem);
+  line-height: 1.2;
+}
+
+.brand p {
+  font-size: .68rem;
+  line-height: 1.25;
+  opacity: .9;
+}
+
+#menu-toggle {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  gap: 6px;
+  border-radius: 9px;
+  align-items: center;
+}
+
+#menu-toggle .bar {
+  width: 23px;
+  height: 2.5px;
+}
+
+#menu-toggle:focus-visible,
+.nav-links a:focus-visible {
+  outline-color: #ffed4a;
+}
+
+nav {
+  min-width: 0;
+}
+
+nav ul {
+  margin-top: 0;
+  padding-left: 0;
+}
+
+nav ul li a {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.hero {
+  padding: clamp(34px, 6vw, 68px) 18px;
+}
+
+.hero h2 {
+  line-height: 1.25;
+}
+
+.hero p {
+  font-size: 1rem;
+}
+
+section {
+  padding: clamp(30px, 5vw, 54px) 0;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.7rem);
+  line-height: 1.3;
+  margin-bottom: 14px;
+}
+
+#recent-activities {
+  padding: 28px 0;
+}
+
+#recent-activities h3 {
+  margin-bottom: 12px;
+}
+
+.slider-container {
+  border-radius: 12px;
+}
+
+.slide {
+  height: 185px;
+}
+
+.slide img {
+  object-fit: cover;
+}
+
+.announcements-box a {
+  gap: 10px;
+  padding: 12px 14px;
+}
+
+.cards {
+  align-items: stretch;
+}
+
+#activities .cards > .read-more {
+  grid-column: 1 / -1;
+  justify-self: start;
+  margin-top: 0;
+}
+
+.card {
+  padding: 20px;
+}
+
+.gallery img {
+  height: 190px;
+}
+
+.site-footer {
+  background: #082d68;
+  color: #e8eef8;
+  padding: 28px 0 20px;
+  text-align: center;
+  font-size: .88rem;
+}
+
+.site-footer p {
+  margin: 7px 0;
+}
+
+.site-footer a {
+  color: #e8eef8;
+}
+
+.footer-partners {
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,.18);
+}
+
+.footer-partners h3 {
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  margin-bottom: 14px;
+}
+
+.site-footer .logo-strip {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+  padding: 12px;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 14px;
+}
+
+.site-footer .logo-strip a {
+  min-width: 0;
+  min-height: 72px;
+  padding: 7px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #fff;
+  text-decoration: none;
+  font-size: .68rem;
+  line-height: 1.25;
+  border-radius: 9px;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.site-footer .logo-strip a:hover {
+  background: rgba(255,255,255,.1);
+  transform: translateY(-2px);
+}
+
+.site-footer .logo-strip img {
+  width: 38px;
+  height: 32px;
+  object-fit: contain;
+  background: #fff;
+  padding: 3px;
+  border-radius: 6px;
+}
+
+.site-footer #credit {
+  color: #d2dced !important;
+}
+
+.site-footer #easter {
+  color: #7fffd4 !important;
+}
+
+#back-to-top {
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  right: 14px;
+  bottom: 14px;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 901px) {
+  .header { min-height: 64px; }
+  .brand img { width: 48px; height: 48px; flex-basis: 48px; }
+  .nav-links { gap: clamp(9px, 1.1vw, 18px); }
+  .nav-links a { font-size: .83rem; }
+}
+
+@media (max-width: 900px) {
+  header { padding: 6px 0; }
+  .header { min-height: 58px; }
+  nav {
+    top: 100%;
+    max-height: calc(100dvh - 72px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    box-shadow: 0 12px 20px rgba(0,0,0,.2);
+  }
+  nav ul li a {
+    padding: 10px 20px;
+    font-size: .94rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .container { width: min(92%, 540px); }
+  .brand { gap: 6px; }
+  .brand img {
+    width: 34px;
+    height: 34px;
+    flex-basis: 34px;
+    padding: 2px;
+  }
+  .brand h1 { font-size: .91rem; }
+  .brand p { font-size: .59rem; }
+  .hero { padding: 34px 14px; }
+  .hero h2 { font-size: clamp(1.25rem, 6vw, 1.8rem); }
+  .hero p { font-size: .83rem; line-height: 1.5; }
+  .btn { padding: 9px 16px; margin-top: 16px; font-size: .88rem; }
+  section { padding: 28px 0; }
+  h3 { font-size: 1.25rem; margin-bottom: 12px; }
+  #recent-activities { padding: 24px 0; }
+  .slide { width: 58%; height: 132px; padding: 0 5px; }
+  .slider-track { animation-duration: 34s; }
+  .slider-container::before,
+  .slider-container::after { width: 28px; }
+  .announcements-box a {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 4px 9px;
+    padding: 10px 12px;
+    font-size: .82rem;
+  }
+  .announcement-date { font-size: .75rem; }
+  .announcement-text { flex: 1 1 65%; }
+  .new-badge { font-size: .65rem; padding: 2px 7px; }
+  .cards { grid-template-columns: 1fr; gap: 14px; }
+  .card { padding: 16px; }
+  .card ul { padding-left: 20px; }
+  .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+  .gallery img { height: 125px; border-radius: 9px; }
+  .contact p { overflow-wrap: anywhere; font-size: .86rem; }
+  .site-footer { padding: 22px 0 16px; }
+  .site-footer .logo-strip {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    padding: 8px;
+  }
+  .site-footer .logo-strip a {
+    min-height: 68px;
+    font-size: .62rem;
+  }
+  .site-footer .logo-strip img {
+    width: 34px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand h1 { font-size: .82rem; }
+  .brand p { font-size: .54rem; }
+  .brand img { width: 30px; height: 30px; flex-basis: 30px; }
+  .gallery img { height: 112px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* =========================================================
+   PREMIUM GLASS LAYER — Rover & Ranger Unit
+   Appended overrides: keeps the existing layout and content.
+   ========================================================= */
+
+:root {
+  --primary: #082b52;
+  --accent: #16845b;
+  --bg: #f3f7f8;
+  --text: #172b3a;
+  --radius: 18px;
+  --glass-white: rgba(255, 255, 255, 0.68);
+  --glass-border: rgba(255, 255, 255, 0.55);
+  --glass-shadow: 0 16px 40px rgba(8, 35, 58, 0.09);
+}
+
+body {
+  color: var(--text);
+  background:
+    radial-gradient(ellipse at 8% 12%, rgba(22, 132, 91, 0.09), transparent 32%),
+    radial-gradient(ellipse at 92% 35%, rgba(49, 112, 165, 0.10), transparent 30%),
+    linear-gradient(180deg, #f7fafb 0%, #eef4f5 100%);
+  background-attachment: fixed;
+}
+
+/* Premium translucent navigation */
+header {
+  background: rgba(5, 35, 67, 0.86);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 10px 30px rgba(4, 25, 48, 0.16);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  backdrop-filter: blur(18px) saturate(150%);
+}
+
+.brand img {
+  border: 1px solid rgba(255,255,255,.65);
+  box-shadow: 0 5px 16px rgba(0,0,0,.16);
+}
+
+.nav-links a {
+  position: relative;
+  padding: 8px 2px;
+  opacity: .9;
+  transition: opacity .25s ease, color .25s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 1px;
+  height: 2px;
+  border-radius: 2px;
+  background: #8fe0bd;
+  transition: right .25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #a9f0ce;
+  opacity: 1;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  right: 0;
+}
+
+/* Richer hero with layered ambient lighting */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 18% 15%, rgba(102, 220, 168, .24), transparent 35%),
+    radial-gradient(ellipse at 85% 80%, rgba(95, 165, 225, .22), transparent 38%),
+    linear-gradient(135deg, #061d38 0%, #0b4260 52%, #08724f 100%);
+  padding: clamp(58px, 8vw, 100px) 20px;
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero::before {
+  width: 340px;
+  height: 340px;
+  top: -210px;
+  right: 8%;
+  box-shadow: 0 0 0 35px rgba(255,255,255,.025),
+              0 0 0 75px rgba(255,255,255,.02);
+}
+
+.hero::after {
+  width: 220px;
+  height: 220px;
+  bottom: -155px;
+  left: 7%;
+  box-shadow: 0 0 0 28px rgba(255,255,255,.025),
+              0 0 0 58px rgba(255,255,255,.018);
+}
+
+.hero h2 {
+  max-width: 900px;
+  margin-inline: auto;
+  letter-spacing: -.035em;
+  text-shadow: 0 5px 24px rgba(0,0,0,.28);
+}
+
+.hero p {
+  color: rgba(255,255,255,.86);
+}
+
+/* Consistent premium section headings */
+h3 {
+  color: #0a3b5b;
+  letter-spacing: -.025em;
+}
+
+h3::after {
+  content: "";
+  display: block;
+  width: 46px;
+  height: 3px;
+  margin-top: 10px;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #16845b, rgba(22,132,91,0));
+}
+
+.contact h3::after,
+#recent-activities h3::after {
+  margin-inline: auto;
+}
+
+/* Frosted glass content cards */
+.card,
+.announcements-box,
+.slider-container,
+#announcements .announcements-box,
+.site-footer .logo-strip {
+  background: var(--glass-white);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: blur(16px) saturate(145%);
+  backdrop-filter: blur(16px) saturate(145%);
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 28px rgba(8,35,58,.07),
+              inset 0 1px 0 rgba(255,255,255,.85);
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #16845b, #77c9a5, transparent);
+  opacity: .85;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(22,132,91,.25);
+  box-shadow: 0 20px 42px rgba(8,35,58,.13),
+              inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+.card h4 {
+  color: #0a4260;
+  margin-bottom: 8px;
+}
+
+/* Announcements: cleaner rows and calmer hover */
+.announcements-box {
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.announcements-box li {
+  border-bottom-color: rgba(16, 54, 77, .09);
+}
+
+.announcements-box a {
+  transition: background .22s ease, padding .22s ease;
+}
+
+.announcements-box a:hover {
+  background: rgba(22,132,91,.07);
+  padding-left: 19px;
+}
+
+.announcement-date {
+  color: #08714f;
+}
+
+/* Images feel like framed editorial cards */
+.gallery img,
+.slide img {
+  border: 1px solid rgba(255,255,255,.8);
+  box-shadow: 0 12px 28px rgba(8,35,58,.13);
+}
+
+.gallery img:hover {
+  transform: translateY(-4px) scale(1.015);
+  box-shadow: 0 18px 34px rgba(8,35,58,.19);
+}
+
+/* Buttons: restrained green glass / solid action */
+.btn {
+  color: #07543d;
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(255,255,255,.8);
+  border-radius: 999px;
+  box-shadow: 0 8px 22px rgba(0,0,0,.13);
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+
+.btn:hover {
+  color: #fff;
+  background: #16845b;
+  border-color: #16845b;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(0,0,0,.18);
+}
+
+.read-more {
+  color: #08714f;
+  transition: color .2s ease, gap .2s ease;
+}
+
+.read-more:hover {
+  color: #064b38;
+}
+
+/* Footer becomes a deep, refined glass-friendly anchor */
+.site-footer {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 10% 0%, rgba(41,142,105,.22), transparent 36%),
+    linear-gradient(145deg, #061d38, #082f4b 62%, #064332);
+  border-top: 1px solid rgba(255,255,255,.16);
+}
+
+.site-footer .logo-strip {
+  background: rgba(255,255,255,.075);
+  border-color: rgba(255,255,255,.15);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.12);
+}
+
+.site-footer .logo-strip a {
+  border: 1px solid transparent;
+}
+
+.site-footer .logo-strip a:hover {
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.18);
+}
+
+/* Back-to-top button */
+#back-to-top {
+  background: rgba(8, 82, 64, .88);
+  border: 1px solid rgba(255,255,255,.25);
+  box-shadow: 0 10px 26px rgba(4,35,29,.24);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+#back-to-top:hover {
+  background: #16845b;
+  transform: translateY(-3px);
+}
+
+/* Mobile navigation keeps the same glass treatment */
+@media (max-width: 900px) {
+  nav {
+    background: rgba(5, 35, 67, .96);
+    border: 1px solid rgba(255,255,255,.12);
+    border-top: 1px solid rgba(255,255,255,.16);
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+  }
+}
+
+/* Small screens: keep blur lighter for smoother scrolling */
+@media (max-width: 600px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  .card,
+  .announcements-box,
+  .slider-container {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+
+  .card:hover,
+  .gallery img:hover {
+    transform: none;
+  }
+
+  .hero {
+    padding: 42px 14px;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .gallery img,
+  .btn,
+  .nav-links a,
+  .announcements-box a {
+    transition: none !important;
+  }
+}
+
+/* =========================================================
+   SCOUTING HERO — original navy / teal / emerald palette
+   Decorative scout fleur-de-lis + compass, with stronger glass.
+   ========================================================= */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 14% 22%, rgba(34, 139, 112, .46), transparent 42%),
+    radial-gradient(ellipse at 88% 78%, rgba(16, 116, 91, .52), transparent 40%),
+    linear-gradient(132deg, #082b52 0%, #07516a 52%, #087b63 100%);
+}
+
+/* Fine topographic-map contour texture */
+.hero .container {
+  position: relative;
+  z-index: 2;
+  max-width: 980px;
+  padding: clamp(26px, 5vw, 48px) clamp(18px, 4vw, 42px);
+  border: 1px solid rgba(255,255,255,.24);
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.17), rgba(255,255,255,.055));
+  box-shadow:
+    0 24px 65px rgba(2, 20, 39, .20),
+    inset 0 1px 0 rgba(255,255,255,.28),
+    inset 0 -1px 0 rgba(255,255,255,.07);
+  -webkit-backdrop-filter: blur(22px) saturate(155%);
+  backdrop-filter: blur(22px) saturate(155%);
+}
+
+.hero::before {
+  content: "⚜";
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: clamp(-34px, 5vw, 70px);
+  transform: translateY(-50%) rotate(-8deg);
+  color: rgba(255,255,255,.105);
+  font-family: Georgia, serif;
+  font-size: clamp(170px, 29vw, 360px);
+  line-height: 1;
+  text-shadow: 0 10px 45px rgba(0,0,0,.10);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Compass rose watermark on the opposite side */
+.hero::after {
+  content: "✦";
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: clamp(-26px, 7vw, 95px);
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: clamp(145px, 24vw, 285px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 50%;
+  color: rgba(255,255,255,.13);
+  font-family: Georgia, serif;
+  font-size: clamp(100px, 17vw, 210px);
+  line-height: 1;
+  text-shadow:
+    0 0 0 rgba(255,255,255,0),
+    0 0 28px rgba(255,255,255,.08);
+  box-shadow:
+    0 0 0 18px rgba(255,255,255,.025),
+    0 0 0 42px rgba(255,255,255,.018),
+    inset 0 0 35px rgba(255,255,255,.035);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Light map-grid / contour detail behind the glass panel */
+.hero {
+  background-image:
+    repeating-radial-gradient(ellipse at 15% 20%,
+      transparent 0 34px,
+      rgba(255,255,255,.045) 35px 36px,
+      transparent 37px 58px),
+    repeating-radial-gradient(ellipse at 88% 78%,
+      transparent 0 42px,
+      rgba(255,255,255,.04) 43px 44px,
+      transparent 45px 68px),
+    radial-gradient(ellipse at 14% 22%, rgba(34,139,112,.46), transparent 42%),
+    radial-gradient(ellipse at 88% 78%, rgba(16,116,91,.52), transparent 40%),
+    linear-gradient(132deg, #082b52 0%, #07516a 52%, #087b63 100%);
+}
+
+.hero h2 {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  text-shadow: 0 3px 18px rgba(0,0,0,.24);
+}
+
+.hero p {
+  position: relative;
+  z-index: 1;
+  color: rgba(255,255,255,.91);
+}
+
+.hero .btn {
+  position: relative;
+  z-index: 1;
+  background: rgba(255,255,255,.88);
+  border: 1px solid rgba(255,255,255,.72);
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.16),
+    inset 0 1px 0 rgba(255,255,255,.9);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+.hero .btn:hover {
+  background: rgba(8, 132, 91, .94);
+}
+
+/* Slightly stronger frosted-glass finish on content surfaces */
+.card,
+.announcements-box,
+.slider-container {
+  background: rgba(255,255,255,.58);
+  border: 1px solid rgba(255,255,255,.72);
+  box-shadow:
+    0 18px 42px rgba(8,35,58,.085),
+    inset 0 1px 0 rgba(255,255,255,.9);
+  -webkit-backdrop-filter: blur(20px) saturate(155%);
+  backdrop-filter: blur(20px) saturate(155%);
+}
+
+@media (max-width: 600px) {
+  .hero .container {
+    padding: 27px 16px;
+    border-radius: 22px;
+  }
+
+  .hero::before {
+    left: -42px;
+    font-size: 205px;
+    opacity: .8;
+  }
+
+  .hero::after {
+    right: -48px;
+    width: 155px;
+    font-size: 112px;
+  }
+
+  .card,
+  .announcements-box,
+  .slider-container {
+    -webkit-backdrop-filter: blur(12px) saturate(145%);
+    backdrop-filter: blur(12px) saturate(145%);
+  }
+}
+
+/* =========================================================
+   SCOUTING GLASS REFINEMENT — stronger visual identity
+   - Visible hero emblems and layered glass
+   - Subtle site-wide scouting watermarks
+   - Compact mobile dropdown navigation
+   - Slightly faster activity carousel
+   ========================================================= */
+
+/* Keep the original scouting palette, with richer saturation */
+:root {
+  --primary: #0b3d91;
+  --accent: #168b59;
+  --bg: #f5f8f7;
+}
+
+/* Very subtle scouting motifs across the whole site */
+body {
+  position: relative;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(11,61,145,.055), transparent 28%),
+    radial-gradient(circle at 88% 54%, rgba(22,139,89,.055), transparent 30%),
+    linear-gradient(180deg, #f8faf9 0%, #eef4f2 100%);
+}
+
+body::before {
+  content: "⚜     ✦        ⚜          ⌖";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  color: rgba(11, 61, 145, .035);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(48px, 10vw, 118px);
+  line-height: 2.1;
+  letter-spacing: clamp(18px, 8vw, 110px);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  transform: rotate(-13deg) scale(1.15);
+  transform-origin: center;
+}
+
+/* Keep all actual content above the decorative body watermark */
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero: brighter original blue/teal/green gradient with visible emblems */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 16% 22%, rgba(69, 190, 151, .42), transparent 34%),
+    radial-gradient(circle at 84% 78%, rgba(18, 165, 112, .42), transparent 37%),
+    linear-gradient(128deg, #0b3d91 0%, #075d78 48%, #07845d 100%);
+  padding: clamp(54px, 8vw, 92px) 20px;
+}
+
+/* Larger, clearly recognizable fleur-de-lis watermark */
+.hero::before {
+  content: "⚜";
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: -3%;
+  transform: translateY(-50%) rotate(-10deg);
+  color: rgba(255,255,255,.19);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(220px, 36vw, 430px);
+  line-height: 1;
+  text-shadow: 0 8px 42px rgba(0,0,0,.12);
+  pointer-events: none;
+}
+
+/* Compass detail on the right */
+.hero::after {
+  content: "✥";
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  right: -2%;
+  transform: translateY(-50%) rotate(12deg);
+  display: grid;
+  place-items: center;
+  width: clamp(180px, 29vw, 330px);
+  aspect-ratio: 1;
+  border: 2px solid rgba(255,255,255,.19);
+  border-radius: 50%;
+  color: rgba(255,255,255,.20);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(125px, 21vw, 245px);
+  line-height: 1;
+  box-shadow:
+    0 0 0 16px rgba(255,255,255,.045),
+    0 0 0 42px rgba(255,255,255,.028),
+    inset 0 0 32px rgba(255,255,255,.06);
+  pointer-events: none;
+}
+
+/* Make the glass panel more visibly glass-like, not an opaque card */
+.hero .container {
+  position: relative;
+  z-index: 2;
+  max-width: 950px;
+  padding: clamp(30px, 5vw, 54px) clamp(20px, 5vw, 48px);
+  border: 1px solid rgba(255,255,255,.42);
+  border-radius: 30px;
+  background:
+    linear-gradient(135deg,
+      rgba(255,255,255,.25) 0%,
+      rgba(255,255,255,.105) 46%,
+      rgba(255,255,255,.17) 100%);
+  box-shadow:
+    0 28px 70px rgba(1, 25, 53, .24),
+    inset 0 1px 0 rgba(255,255,255,.52),
+    inset 0 -1px 0 rgba(255,255,255,.16);
+  -webkit-backdrop-filter: blur(26px) saturate(165%);
+  backdrop-filter: blur(26px) saturate(165%);
+}
+
+/* Glass highlight along the top edge */
+.hero .container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.85), transparent);
+  pointer-events: none;
+}
+
+.hero h2 {
+  letter-spacing: -.025em;
+  text-shadow: 0 3px 16px rgba(0,0,0,.30);
+}
+
+.hero p {
+  color: rgba(255,255,255,.96);
+  text-shadow: 0 2px 10px rgba(0,0,0,.15);
+}
+
+.hero .btn {
+  background: rgba(255,255,255,.91);
+  color: #075b45;
+  border: 1px solid rgba(255,255,255,.9);
+  box-shadow:
+    0 12px 28px rgba(0,0,0,.20),
+    inset 0 1px 0 #fff;
+}
+
+/* Let subtle site-wide watermark show through the pale sections */
+section:not(.hero) {
+  background-color: transparent;
+}
+
+/* Slightly richer glass finish on the activity / announcement surfaces */
+.card,
+.announcements-box,
+.slider-container {
+  background: rgba(255,255,255,.52);
+  border: 1px solid rgba(255,255,255,.78);
+  box-shadow:
+    0 18px 44px rgba(8,35,58,.085),
+    inset 0 1px 0 rgba(255,255,255,.95);
+  -webkit-backdrop-filter: blur(18px) saturate(155%);
+  backdrop-filter: blur(18px) saturate(155%);
+}
+
+/* Compact, scrollable mobile hamburger dropdown.
+   It no longer expands as a full-width, full-height sheet. */
+@media (max-width: 900px) {
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  nav,
+  nav.active {
+    position: absolute;
+    top: calc(100% + 9px);
+    left: auto;
+    right: max(4%, calc((100% - 540px) / 2));
+    width: min( min(88vw, 350px), 350px);
+    max-height: min(56vh, 390px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border: 1px solid rgba(255,255,255,.22);
+    border-radius: 17px;
+    background: rgba(5, 35, 67, .94);
+    box-shadow:
+      0 20px 48px rgba(0,0,0,.28),
+      inset 0 1px 0 rgba(255,255,255,.12);
+    -webkit-backdrop-filter: blur(22px) saturate(150%);
+    backdrop-filter: blur(22px) saturate(150%);
+    transform-origin: top right;
+  }
+
+  nav:not(.active) {
+    display: none;
+  }
+
+  nav.active {
+    display: block;
+    animation: compactMenuIn .2s ease-out both;
+  }
+
+  nav ul,
+  nav ul.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    margin: 0;
+    padding: 6px;
+  }
+
+  nav ul li {
+    width: 100%;
+    border: 0;
+  }
+
+  nav ul li + li {
+    border-top: 1px solid rgba(255,255,255,.10);
+  }
+
+  nav ul li a {
+    display: flex;
+    align-items: center;
+    min-height: 43px;
+    padding: 9px 13px;
+    border-radius: 9px;
+    font-size: .9rem;
+    line-height: 1.25;
+  }
+
+  nav ul li a:hover,
+  nav ul li a.active {
+    background: rgba(255,255,255,.10);
+  }
+
+  nav ul li a::after {
+    display: none;
+  }
+}
+
+@keyframes compactMenuIn {
+  from { opacity: 0; transform: translateY(-6px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Faster recent-activities carousel: lower duration = faster movement */
+.slider-track {
+  animation-duration: 10s;
+}
+
+@media (max-width: 768px) {
+  .slider-track {
+    animation-duration: 24s;
+  }
+}
+
+@media (max-width: 600px) {
+  .slider-track {
+    animation-duration: 25s;
+  }
+}
+
+/* Mobile balance: emblems remain visible without overwhelming the text */
+@media (max-width: 600px) {
+  .hero {
+    padding: 42px 14px;
+  }
+
+  .hero::before {
+    left: -55px;
+    font-size: 245px;
+    color: rgba(255,255,255,.17);
+  }
+
+  .hero::after {
+    right: -58px;
+    width: 180px;
+    font-size: 132px;
+    color: rgba(255,255,255,.18);
+  }
+
+  .hero .container {
+    padding: 30px 17px;
+    border-radius: 23px;
+    -webkit-backdrop-filter: blur(19px) saturate(155%);
+    backdrop-filter: blur(19px) saturate(155%);
+  }
+
+  .hero h2 {
+    font-size: clamp(1.28rem, 6vw, 1.8rem);
+  }
+
+  .hero p {
+    font-size: .9rem;
+  }
+
+  body::before {
+    font-size: 62px;
+    letter-spacing: 22px;
+    color: rgba(11,61,145,.03);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slider-track {
+    animation: none !important;
+  }
+}
+
+/* CLEAN BACKGROUND OVERRIDE — remove site-wide watermark */
+body::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* Keep the page background calm and premium */
+body {
+  background: linear-gradient(180deg, #f8faf9 0%, #eef4f2 100%) !important;
+}
+
+/* Scouting symbols stay limited to the hero section */
+
+/* =========================================================
+   BRAND COLOUR RESTORE — original royal blue + green identity
+   Glass remains part of the visual identity in both themes.
+   ========================================================= */
+
+/* Light mode: original royal-blue header, softly frosted */
+header {
+  background: rgba(11, 61, 145, .88) !important;
+  border-bottom: 1px solid rgba(255,255,255,.22);
+  box-shadow: 0 10px 28px rgba(7, 38, 92, .18);
+  -webkit-backdrop-filter: blur(20px) saturate(155%);
+  backdrop-filter: blur(20px) saturate(155%);
+}
+
+/* Light mode hero: restore the original blue-to-green gradient */
+.hero {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255,255,255,.10), transparent 34%),
+    radial-gradient(circle at 85% 78%, rgba(255,255,255,.08), transparent 38%),
+    linear-gradient(132deg, #0b3d91 0%, #075b78 48%, #228b22 100%) !important;
+}
+
+/* Preserve the glass panel; make it visibly translucent over the brand gradient */
+.hero .container {
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,.22) 0%,
+    rgba(255,255,255,.10) 48%,
+    rgba(255,255,255,.17) 100%
+  ) !important;
+  border: 1px solid rgba(255,255,255,.42);
+  box-shadow:
+    0 26px 65px rgba(4,25,65,.22),
+    inset 0 1px 0 rgba(255,255,255,.48),
+    inset 0 -1px 0 rgba(255,255,255,.13);
+  -webkit-backdrop-filter: blur(26px) saturate(165%);
+  backdrop-filter: blur(26px) saturate(165%);
+}
+
+/* Header brand marks and menu stay crisp against the royal-blue glass */
+.brand img {
+  border: 1px solid rgba(255,255,255,.72);
+  box-shadow: 0 5px 18px rgba(0,0,0,.18);
+}
+
+#menu-toggle .bar {
+  background: #fff;
+}
