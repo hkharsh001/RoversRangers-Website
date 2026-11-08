@@ -24,9 +24,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rover & Ranger Unit | NSCBM Govt. College Hamirpur</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="icon" href="assets/unit logo.webp" />
 
-  <link rel="stylesheet" href="style.css" />
+  
 
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   
@@ -44,7 +45,7 @@
         </div>
       </div>
 
-      <button id="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+      <button id="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="nav-menu" aria-expanded="false">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -66,32 +67,7 @@
       </nav>
     </div>
 </header>
-    <div class="logo-strip">
-      <a href="https://www.gchamirpur.org" target="_blank">
-        <img src="assets/colege logo.jpg" alt="College Logo">
-        <div>NSCBM Govt. College Hamirpur</div>
-      </a>
-      <a href="https://rrgchamirpur.vercel.app/">
-        <img src="assets/unit logo.webp" alt="Unit Logo">
-        <div>Rover & Ranger Unit</div>
-      </a>
-      <a href="https://bsghp.org" target="_blank">
-        <img src="assets/bsghp.jpg" alt="BSG HP Logo">
-        <div>BSG Himachal Pradesh</div>
-      </a>
-      <a href="https://www.bsgindia.org" target="_blank">
-        <img src="assets/Bharat_Scouts_and_Guides logo.svg.png" alt="BSG India Logo">
-        <div>Bharat Scouts & Guides India</div>
-      </a>
-      <a href="https://www.scout.org" target="_blank">
-        <img src="assets/wosm .png" alt="WOSM Logo">
-        <div>WOSM</div>
-      </a>
-      <a href="https://www.wagggs.org" target="_blank">
-        <img src="assets/waggs.png" alt="WAGGGS Logo">
-        <div>WAGGGS</div>
-      </a>
-    </div>
+
 
   <section class="hero">
     <div class="container">
@@ -208,7 +184,7 @@
   <section id="resources" class="container">
     <h3>Documents & Downloads</h3>
     <ul>
-      <li><a href="assets/Upholding the Ideals of Discipline, Loyalty, Service, and Integrity.pdf" target="_blank">Upholding the Ideals of Discipline, Loyalty, Service & Integrity (PDF)</a></li>
+      <li><a href="assets/Upholding the Ideals of Discipline, Loyalty, Service, and Integrity.pdf" target="_blank" rel="noopener noreferrer">Upholding the Ideals of Discipline, Loyalty, Service & Integrity (PDF)</a></li>
       <li><a href="assets/ACTIVITIES REPORT 2024-25.pdf">Annual Report 2024–25 </a></li>
     </ul>
     <a href="resources.html" class="read-more">More Resources →</a>
@@ -224,8 +200,38 @@
     <a href="assets/enrollment.pdf" class="btn" download>📄 Download Join Form</a>
   </section>
 
-<footer style="text-align:center; padding:20px; font-size:14px; color:#ccc;">
-    <p>© 2025 Rover & Ranger Unit, NSCBM Govt. College Hamirpur</p>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-partners">
+      <h3>Our Scouting & Institutional Partners</h3>
+    <div class="logo-strip">
+      <a href="https://www.gchamirpur.org" target="_blank" rel="noopener noreferrer">
+        <img src="assets/colege logo.jpg" alt="College Logo">
+        <div>NSCBM Govt. College Hamirpur</div>
+      </a>
+      <a href="https://rrgchamirpur.vercel.app/">
+        <img src="assets/unit logo.webp" alt="Unit Logo">
+        <div>Rover & Ranger Unit</div>
+      </a>
+      <a href="https://bsghp.org" target="_blank" rel="noopener noreferrer">
+        <img src="assets/bsghp.jpg" alt="BSG HP Logo">
+        <div>BSG Himachal Pradesh</div>
+      </a>
+      <a href="https://www.bsgindia.org" target="_blank" rel="noopener noreferrer">
+        <img src="assets/Bharat_Scouts_and_Guides logo.svg.png" alt="BSG India Logo">
+        <div>Bharat Scouts & Guides India</div>
+      </a>
+      <a href="https://www.scout.org" target="_blank" rel="noopener noreferrer">
+        <img src="assets/wosm .png" alt="WOSM Logo">
+        <div>WOSM</div>
+      </a>
+      <a href="https://www.wagggs.org" target="_blank" rel="noopener noreferrer">
+        <img src="assets/waggs.png" alt="WAGGGS Logo">
+        <div>WAGGGS</div>
+      </a>
+    </div>
+    </div>
+    <p>© 2026 Rover & Ranger Unit, NSCBM Govt. College Hamirpur</p>
     <p>All Rights Reserved</p>
 
     <!-- Click trigger -->
@@ -245,8 +251,9 @@
 
     <!-- Social Links -->
     <p>
-        <a href="https://instagram.com/rrgchamirpur" style="color:#aaa;" target="_blank">Instagram</a>
+        <a href="https://instagram.com/rrgchamirpur" style="color:#aaa;" target="_blank" rel="noopener noreferrer">Instagram</a>
      </p>
+  </div>
 </footer>
 
 <script>
@@ -277,8 +284,6 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="script.js"></script>
   <script>
-AOS.init();
-
 const homeSheetUrl =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vS3hPoA_Yvodd0o97C4UpygabrBIR09u28tHOVOhzXbL_in8S-dfEIOP-Oyb_dv596GPkacXB-OkM-0/pub?output=csv";
 
@@ -318,7 +323,7 @@ fetch(homeSheetUrl)
     const list = document.querySelector("#home-announcement-list");
     list.innerHTML = announcements.slice(0, 5).map(a => `
       <li>
-        <a href="${a.file}" target="_blank">
+        <a href="${a.file}" target="_blank" rel="noopener noreferrer">
           <span class="announcement-date">${a.date}</span>
           <span class="announcement-text">${a.title}</span>
           ${a.isNew ? '<span class="new-badge">New</span>' : ""}
