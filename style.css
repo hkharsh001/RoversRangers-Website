@@ -1749,3 +1749,41 @@ header {
 #menu-toggle .bar {
   background: #fff;
 }
+
+/* DESKTOP HEADER — prevent navigation overflow */
+@media (min-width: 901px) {
+  .header {
+    width: min(94%, 1400px);
+    max-width: 1400px;
+    gap: 18px;
+    align-items: center;
+  }
+
+  .brand {
+    flex: 0 1 360px;
+    min-width: 0;
+  }
+
+  .brand > div {
+    min-width: 0;
+  }
+
+  .header nav {
+    flex: 1 1 700px;
+    min-width: 0;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 7px 13px;
+    margin: 0;
+  }
+
+  .nav-links a {
+    font-size: clamp(0.74rem, 0.85vw, 0.86rem);
+    white-space: nowrap;
+  }
+}
