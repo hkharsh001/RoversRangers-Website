@@ -3,177 +3,212 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Detailed History of Scouting | Rover & Ranger Unit, NSCBM College Hamirpur</title>
-  <link rel="icon" href="assets/unit-logo.png" />
-
-  <link rel="stylesheet" href="style.css?v=1.0" />
-
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Explore the history of the Scout and Guide Movement, from Brownsea Island to India, Himachal Pradesh and the Rover & Ranger Unit at NSCBM Govt. College Hamirpur." />
+  <meta name="theme-color" content="#174c9a" />
+  <title>History of Scouting | Rover &amp; Ranger Unit, NSCBM Govt. College Hamirpur</title>
+  <link rel="icon" href="assets/unit logo.webp" type="image/webp" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <style>
+    /* History-page components only; global layout and glass effects come from style.css. */
+    .history-section { scroll-margin-top: 100px; }
+    .history-section > p, .history-section .history-card { max-width: 980px; margin-inline: auto; }
+    .history-card { padding: clamp(18px, 3vw, 30px); border: 1px solid rgba(255,255,255,.72); border-radius: 20px; background: rgba(255,255,255,.62); box-shadow: 0 12px 32px rgba(8,35,58,.08); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+    .history-card p:last-child { margin-bottom: 0; }
+    .history-timeline { position: relative; max-width: 1000px; margin: 26px auto 0; padding-left: 28px; border-left: 2px solid rgba(22,112,145,.28); }
+    .history-event { position: relative; margin: 0 0 18px; padding: 19px 21px; border: 1px solid rgba(255,255,255,.8); border-radius: 16px; background: rgba(255,255,255,.68); box-shadow: 0 8px 24px rgba(8,35,58,.07); }
+    .history-event::before { content: ''; position: absolute; left: -37px; top: 24px; width: 15px; height: 15px; border-radius: 50%; background: #138b91; border: 3px solid #e9f5f6; box-shadow: 0 0 0 2px rgba(19,139,145,.22); }
+    .history-year { display: inline-block; margin-bottom: 6px; color: #087b83; font-weight: 700; letter-spacing: .04em; }
+    .history-event h4, .history-card h4 { margin: 0 0 8px; color: var(--primary); font-size: 1.08rem; }
+    .history-event p { margin: 0; }
+    .history-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; max-width: 1000px; margin: 22px auto 0; }
+    .history-grid .history-card { width: 100%; }
+    .history-note { max-width: 980px; margin: 18px auto 0; padding: 14px 18px; border-left: 4px solid var(--accent); border-radius: 10px; background: rgba(22,112,145,.07); }
+    .history-sources { max-width: 980px; margin: 20px auto 0; padding-left: 22px; }
+    .history-sources li { margin: 9px 0; }
+    .history-sources a { color: var(--primary); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+    @media (max-width: 650px) { .history-grid { grid-template-columns: 1fr; } .history-timeline { padding-left: 22px; } .history-event::before { left: -31px; } .history-event { padding: 16px; } }
+  </style>
 </head>
 <body>
   <header>
     <div class="container header">
       <div class="brand">
         <img src="assets/colege logo.jpg" alt="College Logo">
-        <img src="assets/unit logo.png" alt="Unit Logo">
-        <div>
-          <h1>Rover & Ranger Unit</h1>
-          <p>N.S.C.B.M. Govt. College, Hamirpur</p>
-        </div>
+        <img src="assets/unit logo.webp" alt="Unit Logo">
+        <div><h1>Rover &amp; Ranger Unit</h1><p>N.S.C.B.M. Govt. College, Hamirpur (Est. 2007)</p></div>
       </div>
-
-      <button id="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+      <button id="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
       </button>
-
-      <nav id="nav-menu">
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="history.html"class="active">History</a></li>
-          <li><a href="activities.html">Activities</a></li>
-          <li><a href="announcements.html">Announcements</a></li>
-          <li><a href="achievements.html">Achievements</a></li> 
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="resources.html">Resources</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-      </nav>
+      <nav id="nav-menu"><ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="history.html" class="active" aria-current="page">History</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li><a href="announcements.html">Announcements</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul></nav>
     </div>
- </header>
-    <div class="logo-strip">
-       <a href="https://www.gchamirpur.org" target="_blank">
-        <img src="assets/colege logo.jpg" alt="College Logo">
-        <div>NSCBM Govt. College Hamirpur</div>
-      </a>
-      <a href="https://rrgchamirpur.vercel.app/">
-        <img src="assets/unit logo.png" alt="Unit Logo">
-        <div>Rover & Ranger Unit</div>
-      </a>
-      <a href="https://bsghp.org" target="_blank">
-        <img src="assets/bsghp.jpg" alt="BSG HP Logo">
-        <div>BSG Himachal Pradesh</div>
-      </a>
-      <a href="https://www.bsgindia.org" target="_blank">
-        <img src="assets/Bharat_Scouts_and_Guides logo.svg.png" alt="BSG India Logo">
-        <div>Bharat Scouts & Guides India</div>
-      </a>
-      <a href="https://www.scout.org" target="_blank">
-        <img src="assets/wosm .png" alt="WOSM Logo">
-        <div>WOSM</div>
-      </a>
-      <a href="https://www.wagggs.org" target="_blank">
-        <img src="assets/waggs.png" alt="WAGGGS Logo">
-        <div>WAGGGS</div>
-      </a>
-    </div>
- 
+  </header>
 
   <section class="hero">
-    <div class="container">
-      <h2>The Journey of a Global Movement</h2>
-      <p>From a small island camp to a worldwide force for good.</p>
-       <a href="index.html" class="btn">← Back to Homepage</a>
+    <div class="container" data-aos="fade-in">
+      <h2>The History of Scouting &amp; Guiding</h2>
+      <p>More than a century of adventure, learning, leadership and service — from Brownsea Island to our own Rover &amp; Ranger Unit.</p>
+      <a href="index.html" class="btn">← Back to Homepage</a>
     </div>
   </section>
 
   <main>
-    <section id="baden-powell" class="container section">
-        <h3>The Founders: A Lifelong Partnership</h3>
-        <div class="founder-card">
-            <p><strong>Robert Baden-Powell (1857-1941)</strong> founded the Scout Movement based on his military experiences and his belief in training youth for responsible citizenship. After the success of his 1907 Brownsea Island camp and the 1908 publication of <em>"Scouting for Boys,"</em> he retired from the army in 1910 to dedicate his life to the movement he had created.</p>
-            <p>In 1912, he married <strong>Olave Soames</strong>, who became his constant partner in the development of Scouting and Guiding. <strong>Olave Baden-Powell (1889-1977)</strong> was instrumental in the growth of the Girl Guide and Girl Scout movement. She was appointed World Chief Guide in 1930 and traveled extensively, promoting the movement and inspiring millions of girls and young women. Their shared vision shaped Scouting and Guiding into the complementary global forces they are today.</p>
-        </div>
+    <section class="container section history-section" id="origins">
+      <h3 data-aos="fade-up">The Idea Behind the Movement</h3>
+      <div class="history-card" data-aos="fade-up">
+        <p>The Scout Movement grew from the belief that young people learn best when they are trusted with responsibility, given practical challenges and encouraged to serve others. Its founder, <strong>Robert Stephenson Smyth Baden-Powell (1857–1941)</strong>, was a British Army officer whose experiences in observation, outdoor skills, planning and teamwork influenced his approach to youth education.</p>
+        <p>Baden-Powell did not intend to create only a programme of outdoor activities. He wanted to offer a method through which young people could develop character, self-reliance, resourcefulness, citizenship and a sense of duty. The method combined learning by doing, small-group work through the Patrol System, outdoor adventure, personal progression and service to the community.</p>
+        <p><strong>Olave Baden-Powell (1889–1977)</strong> became a major figure in the development of Guiding. After her marriage to Robert Baden-Powell in 1912, she devoted much of her life to the movement. She was appointed World Chief Guide in 1930 and travelled widely to encourage the participation and leadership of girls and young women.</p>
+      </div>
     </section>
 
-    <section id="the-beginning" class="container section">
-        <h3>The Birth of an Idea (1907-1908)</h3>
-        <p>To test his concepts, Baden-Powell organized an experimental camp on <strong>Brownsea Island from August 1-8, 1907</strong>. He gathered 22 boys from diverse backgrounds and organized them into four patrols: the Wolves, Bulls, Curlews, and Ravens. For a week, they engaged in pioneering, observation, and self-reliance skills. This camp is universally regarded as the birth of the Scout Movement.</p>
-        <p>Following its success, <strong><em>"Scouting for Boys"</em></strong> was published in 1908 in six parts. The book was an instant phenomenon, sparking a grassroots movement as boys across Britain and the world began forming Scout Patrols. It went on to become one of the best-selling books of the 20th century.</p>
-    </section>
-    
-    <section id="global-expansion" class="container section">
-        <h3>Global Growth and New Sections (1909-1922)</h3>
-        <p>The movement's appeal was universal. A 1909 rally at London's Crystal Palace unexpectedly included a group of girls demanding to be included, which led to the creation of the <strong>Girl Guides</strong> in 1910. The movement also expanded to include different age groups: the <strong>Wolf Cubs</strong> section for younger boys was started in 1916, inspired by Rudyard Kipling's <em>The Jungle Book</em>, and the <strong>Rover Scouts</strong> section was established in 1918 to provide a program for young men over 17. The first <strong>World Scout Jamboree</strong> in 1920 in London solidified Scouting as an international brotherhood.</p>
-    </section>
-
-    <section id="scouts-in-war" class="container section">
-      <h3>The Role of Scouts in World Events</h3>
-      <p>The Scout Movement's commitment to duty and service was put to the test during the First and Second World Wars. Too young to enlist, Scouts took on critical civil defense roles on the home front. They served as coast watchers, messengers, air raid wardens, stretcher bearers, and fire-fighters. Their training in first aid, signaling, and observation made them invaluable assets. This service demonstrated the practical application of the Scout motto, "Be Prepared," and earned the movement immense respect.</p>
-    </section>
-
-    <section id="scouting-in-india" class="container section">
-        <h3>The Rise of Scouting in India</h3>
-        <p>Scouting was introduced in India in 1909 but was initially limited to European and Anglo-Indian youth. Seeing its potential, Indian leaders independently formed their own movements. <strong>Dr. Annie Besant's</strong> "Indian Boy Scouts Association" (1916) was intertwined with the Theosophical Society and aimed at fostering universal brotherhood. In contrast, <strong>Pandit Madan Mohan Malaviya's</strong> "Sewa Samiti Scout Association" (1917) was deeply rooted in Indian culture and the Hindu faith, with a strong emphasis on <em>Sewa</em> (selfless service).</p>
-        <p>These parallel movements, along with others, were crucial in adapting the principles of Scouting to the Indian context and making it accessible to all Indian youth.</p>
-    </section>
-    
-    <section id="unification" class="container section">
-        <h3>Unification: The Bharat Scouts and Guides</h3>
-        <p>After India's Independence, Prime Minister <strong>Jawaharlal Nehru</strong> and Education Minister <strong>Maulana Abul Kalam Azad</strong> championed the cause of merging all scouting bodies into a single national organization. After extensive efforts, this was achieved on <strong>November 7, 1950</strong>, with the formation of <strong>The Bharat Scouts and Guides (BSG)</strong>. The All India Girl Guides Association merged on August 15, 1951. The newly formed BSG received official recognition from WOSM and WAGGGS in 1951, cementing its place in the global family of Scouting and Guiding.</p>
+    <section class="container section history-section" id="world-timeline">
+      <h3 data-aos="fade-up">A Global Movement: Key Milestones</h3>
+      <p data-aos="fade-up" style="text-align:center;max-width:850px;margin:-12px auto 10px;">Explore the major events that shaped Scouting and Guiding around the world.</p>
+      <div class="history-timeline">
+        <article class="history-event" data-aos="fade-up"><span class="history-year">1907</span><h4>The Brownsea Island Experimental Camp</h4><p>From 1–8 August, Baden-Powell organised an experimental camp on Brownsea Island, Dorset, England. Around 20 boys from different backgrounds took part. They practised camping, observation, tracking, cooking, woodcraft, teamwork and self-reliance in small patrols. The camp tested the educational ideas that became the foundation of Scouting.</p></article>
+        <article class="history-event" data-aos="fade-up"><span class="history-year">1908</span><h4><em>Scouting for Boys</em> is Published</h4><p>Baden-Powell published <em>Scouting for Boys</em>, first issued in instalments and then as a book. It was intended as a practical guide, but young people began forming Scout patrols and groups of their own. The publication helped turn the experimental idea into a rapidly growing youth movement.</p></article>
+        <article class="history-event" data-aos="fade-up"><span class="history-year">1909–1910</span><h4>Rapid Expansion and the Beginning of Guiding</h4><p>A large Scout rally at Crystal Palace in London in 1909 demonstrated the movement's growing popularity. Girls also attended and expressed their wish to participate. In 1910, the Girl Guides movement was formally organised with the support of Agnes Baden-Powell, Robert's sister, creating a pathway for girls to take part in outdoor learning, skills and service.</p></article>
+        <article class="history-event" data-aos="fade-up"><span class="history-year">1912</span><h4>Robert and Olave Baden-Powell</h4><p>Robert Baden-Powell married Olave St Clair Soames. Olave became a central leader in the development of Guiding and later served as World Chief Guide. Their work helped the Scout and Guide movements grow as connected but distinct youth movements across many countries.</p></article>
+        <article class="history-event" data-aos="fade-up"><span class="history-year">1914–1918</span><h4>Service During the First World War</h4><p>During the First World War, Scouts supported communities through messenger duties, coast watching and other local service roles. The Patrol System also proved valuable because young people could take responsibility within their groups when many adult leaders were away. The experience reinforced the practical meaning of preparedness and service.</p></article>
+        <article class="history-event" data-aos="fade-up"><span class="history-year">1916</span><h4>The Wolf Cub Section</h4><p>A programme for younger boys, known as Wolf Cubs, was introduced. It used age-appropriate activities and stories, including themes inspired by Rudyard Kipling's <em>The Jungle Book</em>, to introduce younger members to teamwork, outdoor learning and the values of Scouting.</p></article>
+        <article class="history-event" data-aos="fade-up"><span class="history-year">1918</span><h4>Rover Scouts for Older Youth</h4><p>Rover Scouts were introduced for older boys and young men who wanted to continue their Scouting journey beyond the younger Scout section. Rovering placed emphasis on personal responsibility, outdoor adventure, fellowship, leadership and service — principles that remain central to Rover programmes.</p></article>
+        <article class="history-event" data-aos="fade-up"><span class="history-year">1920</span><h4>The First World Scout Jamboree</h4><p>The first World Scout Jamboree was held in Olympia, London. It brought Scouts from different countries together and helped strengthen the idea of international friendship and brotherhood. At the gathering, Baden-Powell was acclaimed Chief Scout of the World.</p></article>
+        <article class="history-event" data-aos="fade-up"><span class="history-year">1930</span><h4>Olave Baden-Powell Becomes World Chief Guide</h4><p>Olave Baden-Powell was appointed World Chief Guide. Her leadership and international visits helped strengthen Guiding and encouraged girls and young women to take active roles in their communities.</p></article>
+        <article class="history-event" data-aos="fade-up"><span class="history-year">1941–1945</span><h4>Scouting During the Second World War</h4><p>Scout members in many places contributed to civilian support and community welfare during the Second World War. Activities varied by country and local circumstances, but first aid, communication, practical assistance and service remained important expressions of the Scout commitment to helping others.</p></article>
+      </div>
     </section>
 
-    <section id="bsg-hp" class="container section">
-        <h3>The Movement in Himachal Pradesh</h3>
-        <p>Following the national unification, the Scouting and Guiding movement was formally organized in Himachal Pradesh. <strong>The Bharat Scouts & Guides, Himachal Pradesh</strong>, was established as the state-level association to administer the movement's activities. The state association, with its headquarters in Shimla, oversees the training, events, and advancement of Scouts, Guides, Rovers, and Rangers across all districts, carrying forward the mission of character building and community service in the Himalayan region.</p>
-    </section>
-    
-    <section id="modern-scouting" class="container section">
-      <h3>Modern Scouting for a Better World</h3>
-      <p>Today, Scouting continues to evolve while staying true to its core values. The movement actively contributes to global peace and sustainable development. Initiatives like <strong>Messengers of Peace</strong>, launched in 2011, have seen Scouts contribute billions of hours to community service projects worldwide. Furthermore, through the <strong>"Scouts for SDGs"</strong> initiative, the movement mobilizes its 57 million members to work towards achieving the UN Sustainable Development Goals, focusing on issues like environmental protection, gender equality, and poverty reduction. This commitment ensures that Scouting remains a relevant and powerful force for positive change in the 21st century.</p>
+    <section class="container section history-section" id="india">
+      <h3 data-aos="fade-up">The Growth of Scouting and Guiding in India</h3>
+      <div class="history-card" data-aos="fade-up">
+        <p>Scouting reached India during the early twentieth century. The Bharat Scouts and Guides records 1909 as the year in which organised Scouting began in India, when Captain T. H. Baker established a Scout Troop in Bangalore. Other troops were subsequently formed in places including Calcutta, Kirkee (Pune), Shimla, Madras, Jabalpur and Lonavla.</p>
+        <p>In its early years, many of these Scout troops were registered with the Imperial Headquarters in London and were largely open to European and Anglo-Indian children. Indian young people and reformers also worked to make the movement accessible in the Indian context. Separate organisations and associations emerged, reflecting different approaches to education, citizenship, service and national identity.</p>
+        <p>Guiding also developed in India. The first Guide Company in India was started at Jabalpur in 1911. The movement expanded to other cities, and the first company of Indian Girl Guides was formed in Pune in 1916. Lady Abala Bose was appointed the first Indian Guide Commissioner in 1917, an important step in Indian leadership within Guiding.</p>
+      </div>
+      <div class="history-grid">
+        <div class="history-card" data-aos="fade-up"><h4>Different Associations</h4><p>Before independence, several Scout and Guide organisations functioned separately. Attempts to bring them together were made in 1921 and again in 1937. Differences over organisational arrangements and the wording of the Promise, particularly references to allegiance to the Crown, complicated unification.</p></div>
+        <div class="history-card" data-aos="fade-up" data-aos-delay="100"><h4>Indian Leadership and Service</h4><p>Indian leaders and educationists supported the development of Scouting and Guiding. Their efforts helped shape a movement that could reflect India's own civic values and serve young people across communities, regions and backgrounds.</p></div>
+      </div>
     </section>
 
+    <section class="container section history-section" id="bsg">
+      <h3 data-aos="fade-up">The Formation of The Bharat Scouts and Guides</h3>
+      <div class="history-card" data-aos="fade-up">
+        <p>After independence, efforts to unite the different Scout and Guide organisations gained momentum. National leaders including <strong>Jawaharlal Nehru</strong> and <strong>Maulana Abul Kalam Azad</strong>, along with prominent Scout leaders such as <strong>Dr. H. N. Kunzru</strong>, <strong>Pandit Sri Ram Bajpai</strong> and <strong>Justice Vivian Bose</strong>, supported the process. Dr. Tara Chand, Education Secretary to the Government of India, also contributed to finalising the merger arrangements.</p>
+        <p>On <strong>7 November 1950</strong>, the unified organisation came into existence under the name <strong>The Bharat Scouts and Guides (BSG)</strong>. The All India Girl Guides Association formally joined the organisation on <strong>15 August 1951</strong>. This unification created a national platform for Scouting and Guiding in independent India.</p>
+        <p>The BSG is a voluntary, non-political and secular educational movement. Its purpose is to support the development of young people so they can reach their physical, intellectual, social, emotional and spiritual potential and contribute as responsible citizens. Its principles are commonly expressed through <strong>Duty to God, Duty to Others and Duty to Self</strong>.</p>
+      </div>
+      <div class="history-grid">
+        <div class="history-card" data-aos="fade-up"><h4>National Organisation</h4><p>The national organisation coordinates the programme, training, advancement and activities of Scouts, Guides, Rovers and Rangers through its state and local structures.</p></div>
+        <div class="history-card" data-aos="fade-up" data-aos-delay="100"><h4>International Recognition</h4><p>The unification of the national movement enabled India's Scout and Guide organisation to participate as one national association in the wider international Scouting and Guiding community.</p></div>
+      </div>
+    </section>
+
+    <section class="container section history-section" id="himachal">
+      <h3 data-aos="fade-up">A Century of Scouting in Himachal Pradesh</h3>
+      <div class="history-card" data-aos="fade-up">
+        <p>According to the history published by The Bharat Scouts and Guides, Himachal Pradesh, Scouting in the region began in <strong>1911</strong>, when nine Scout troops comprising British and Anglo-Indian boys were present in Shimla, then the summer capital of British India. In that period, participation was restricted and did not yet reflect the inclusive character of the movement today.</p>
+        <p>The state history also records <strong>Tara Devi</strong> as an important early centre. A Scout Training Centre was established there in 1930, with land gifted by L. B. Goad to the Shimla Punjab Boys Scouts Association. After independence, the first Independence Day celebration at Tara Devi took place on <strong>15 August 1948</strong>.</p>
+        <p>An important milestone for Guiding in the region came on <strong>27 October 1951</strong>, when the Guide Hut at Shimla was donated by H. E. Chandu Lal Trivedi, then Governor of Punjab. These milestones form part of the early institutional history of Scouting and Guiding in the Himalayan region.</p>
+        <p>Today, The Bharat Scouts and Guides, Himachal Pradesh State Association supports Scouting and Guiding activities across the state, including training, camps, advancement and service initiatives. Its work connects the values of the movement with the needs and opportunities of communities in the Himalayan environment.</p>
+      </div>
+      <div class="history-note" data-aos="fade-up"><strong>Himachal connection:</strong> The region's mountains, forests, villages and varied terrain provide a meaningful setting for outdoor education, environmental responsibility, teamwork, disaster awareness and community service.</div>
+    </section>
+
+    <section class="container section history-section" id="rover-ranger">
+      <h3 data-aos="fade-up">The Rover and Ranger Section</h3>
+      <div class="history-card" data-aos="fade-up">
+        <p>The Rover and Ranger programme provides an opportunity for young adults to continue their development through the Scout and Guide method. It builds on the foundations of earlier sections and encourages members to take greater responsibility for their learning, decisions and contribution to society.</p>
+        <p>Rovers and Rangers learn through a combination of practical skills, outdoor experiences, teamwork, leadership, personal progression and service. They may organise community initiatives, support public events, participate in camps and training, promote environmental awareness and assist younger members. The programme is not limited to earning badges; it aims to turn values into everyday action.</p>
+        <p>The Rover/Ranger spirit is closely connected with the idea of service. Members are encouraged to identify needs in their communities, plan meaningful responses, work with others and reflect on the impact of their efforts. In this way, the section helps young people move from participation towards responsible leadership.</p>
+      </div>
+    </section>
+
+    <section class="container section history-section" id="unit-history">
+      <h3 data-aos="fade-up">Rover &amp; Ranger Unit — N.S.C.B.M. Govt. College, Hamirpur</h3>
+      <div class="history-card" data-aos="fade-up">
+        <p>The Rover &amp; Ranger Unit of <strong>N.S.C.B.M. Govt. College, Hamirpur</strong> is part of this wider tradition of youth development and service. The unit's institutional history records its establishment in <strong>2007</strong>. Since then, it has provided students with a platform to learn practical skills, develop leadership, build fellowship and contribute to the college and wider community.</p>
+        <p>The unit's work reflects the central purpose of Scouting and Guiding: learning through action and putting service into practice. Activities such as training sessions, camps, campus cleanliness initiatives, environmental work, awareness programmes and participation in institutional and community events help members develop confidence, discipline, cooperation and a sense of responsibility.</p>
+        <p>As a college-based unit, it also creates opportunities for students to carry the values of the movement beyond campus life. Rovers and Rangers are encouraged to become active citizens who respect others, care for their surroundings, respond constructively to community needs and contribute to a better society.</p>
+        <p><strong>Our guiding spirit:</strong> To serve the Nation and to create a better World.</p>
+      </div>
+      <div class="history-note" data-aos="fade-up">The unit's present-day activities and milestones are documented separately in the <a href="activities.html">Activities</a>, <a href="achievements.html">Achievements</a> and <a href="gallery.html">Gallery</a> sections of this website.</div>
+    </section>
+
+    <section class="container section history-section" id="scouting-today">
+      <h3 data-aos="fade-up">Scouting Today: Creating a Better World</h3>
+      <div class="history-card" data-aos="fade-up">
+        <p>Modern Scouting continues to combine adventure, education and service while responding to contemporary challenges. Across the movement, young people take part in projects related to peace, environmental protection, health, inclusion, community resilience and sustainable development.</p>
+        <p>Global initiatives such as <strong>Messengers of Peace</strong> encourage Scouts to build understanding and contribute to peaceful communities through practical service. The <strong>Scouts for SDGs</strong> initiative connects youth action with the United Nations Sustainable Development Goals, encouraging local projects that contribute to a more sustainable and equitable world.</p>
+        <p>Although uniforms, activities and programme structures may differ between countries, the central idea remains consistent: young people should be equipped with the skills, values and confidence to make a positive difference. The Scout Promise and Law, learning by doing, the Patrol System, outdoor experiences and service continue to give the movement its distinctive character.</p>
+      </div>
+    </section>
+
+    <section class="container section history-section" id="sources">
+      <h3 data-aos="fade-up">Explore the History Further</h3>
+      <p data-aos="fade-up" style="text-align:center;max-width:850px;margin:-12px auto 20px;">The historical overview above has been expanded using official Scouting and Guiding history resources. Explore the original sources for further reading.</p>
+      <ul class="history-sources" data-aos="fade-up">
+        <li><a href="https://www.scout.org/who-we-are/scout-movement/scoutings-history" target="_blank" rel="noopener noreferrer">World Organization of the Scout Movement (WOSM) — Scouting's History</a></li>
+        <li><a href="https://bsgindia.org/history.php" target="_blank" rel="noopener noreferrer">The Bharat Scouts and Guides — History of Scouting in India</a></li>
+        <li><a href="https://www.bsghp.org/aboutus.php?key=History" target="_blank" rel="noopener noreferrer">The Bharat Scouts and Guides, Himachal Pradesh — State History</a></li>
+        <li><a href="https://www.nationaltrust.org.uk/visit/dorset/brownsea-island/history-of-brownsea-island" target="_blank" rel="noopener noreferrer">National Trust — History of Brownsea Island</a></li>
+      </ul>
+      <p class="history-note" data-aos="fade-up"><strong>Historical note:</strong> Dates and milestones are presented according to the cited organisational histories. Early Scouting in India developed through several parallel organisations, so some accounts describe its earliest beginnings differently; this page follows the BSG's published account for its national history and the BSG Himachal Pradesh account for the state's history.</p>
+    </section>
   </main>
- <a href="#" id="back-to-top" title="Go to top">↑</a>
-  <footer style="text-align:center; padding:20px; font-size:14px; color:#ccc;">
-    <p>© 2025 Rover & Ranger Unit, NSCBM Govt. College Hamirpur</p>
-    <p>All Rights Reserved</p>
 
-    <!-- Click trigger -->
-    <p id="credit" style="cursor:pointer; color:#bbb;">
-        Designed by Rover & Ranger Unit
-    </p>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-partners">
+        <h3>Our Scouting &amp; Institutional Partners</h3>
+        <div class="logo-strip">
+          <a href="https://www.gchamirpur.org" target="_blank" rel="noopener noreferrer"><img src="assets/colege logo.jpg" alt="College Logo"><div>NSCBM Govt. College Hamirpur</div></a>
+          <a href="https://rrgchamirpur.vercel.app/"><img src="assets/unit logo.webp" alt="Unit Logo"><div>Rover &amp; Ranger Unit</div></a>
+          <a href="https://bsghp.org" target="_blank" rel="noopener noreferrer"><img src="assets/bsghp.jpg" alt="BSG HP Logo"><div>BSG Himachal Pradesh</div></a>
+          <a href="https://www.bsgindia.org" target="_blank" rel="noopener noreferrer"><img src="assets/Bharat_Scouts_and_Guides logo.svg.png" alt="BSG India Logo"><div>Bharat Scouts &amp; Guides India</div></a>
+          <a href="https://www.scout.org" target="_blank" rel="noopener noreferrer"><img src="assets/wosm .png" alt="WOSM Logo"><div>WOSM</div></a>
+          <a href="https://www.wagggs.org" target="_blank" rel="noopener noreferrer"><img src="assets/waggs.png" alt="WAGGGS Logo"><div>WAGGGS</div></a>
+        </div>
+      </div>
+      <p>© 2026 Rover &amp; Ranger Unit, NSCBM Govt. College Hamirpur</p>
+      <p>All Rights Reserved</p>
+      <p id="credit" style="cursor:pointer;color:#bbb;">Designed by Rover &amp; Ranger Unit</p>
+      <p id="easter" style="display:none;opacity:0;transition:0.5s;color:#7fffd4;font-weight:600;">⚜️ Developer: Rover Harsh Kumar ⚜️</p>
+      <p style="margin-top:10px;">Contact: <a href="mailto:bsgrrgchamirpur@gmail.com" style="color:#aaa;">bsgrrgchamirpur@gmail.com</a></p>
+      <p><a href="https://instagram.com/rrgchamirpur" style="color:#aaa;" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+    </div>
+  </footer>
 
-    <!-- Hidden Easter Egg -->
-    <p id="easter" style="display:none; opacity:0; transition:0.5s; color:#7fffd4; font-weight:600;">
-        ⚜️ Developer: Rover Harsh Kumar ⚜️
-    </p>
-
-    <!-- Contact -->
-    <p style="margin-top:10px;">Contact: 
-        <a href="mailto:bsgrrgchamirpur@gmail.com" style="color:#aaa;">bsgrrgchamirpur@gmail.com</a>
-    </p>
-
-    <!-- Social Links -->
-    <p>
-        <a href="https://instagram.com/rrgchamirpur" style="color:#aaa;" target="_blank">Instagram</a>
-     </p>
-</footer>
-
-<script>
-  // Click to reveal Easter egg
-  document.getElementById("credit").addEventListener("click", function () {
-    let egg = document.getElementById("easter");
-    if (egg.style.display === "none") {
-      egg.style.display = "block";
-      setTimeout(() => egg.style.opacity = "1", 50);
-    } else {
-      egg.style.opacity = "0";
-      setTimeout(() => egg.style.display = "none", 300);
-    }
-  });
-
-  // Press "H" to reveal
-  document.addEventListener("keydown", function (e) {
-    if (e.key.toLowerCase() === "h") {
-      let egg = document.getElementById("easter");
-      egg.style.display = "block";
-      setTimeout(() => egg.style.opacity = "1", 50);
-    }
-  });
-</script>
+  <script>
+    document.getElementById("credit")?.addEventListener("click", function () {
+      const egg = document.getElementById("easter");
+      if (!egg) return;
+      if (egg.style.display === "none") { egg.style.display = "block"; setTimeout(() => egg.style.opacity = "1", 50); }
+      else { egg.style.opacity = "0"; setTimeout(() => egg.style.display = "none", 300); }
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key.toLowerCase() === "h") {
+        const egg = document.getElementById("easter");
+        if (!egg) return;
+        egg.style.display = "block"; setTimeout(() => egg.style.opacity = "1", 50);
+      }
+    });
+  </script>
+  <a href="#" id="back-to-top" title="Go to top" aria-label="Back to top">↑</a>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
