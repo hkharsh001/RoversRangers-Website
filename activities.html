@@ -3,42 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Explore the activities, events, training programmes and community service initiatives of the Rover & Ranger Unit, NSCBM Govt. College Hamirpur." />
-  <title>Activities & Events | Rover & Ranger Unit, NSCBM College Hamirpur</title>
+  <title>Activities | Rover & Ranger Unit, NSCBM College Hamirpur</title>
   <link rel="icon" href="assets/unit-logo.png" />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <style>
-    /* Page-specific activity feed; the site's shared visual system remains in style.css. */
-    #all-activities { padding-top: clamp(30px, 5vw, 54px); padding-bottom: clamp(40px, 6vw, 64px); }
-    .activities-intro { max-width: 760px; margin: 0 auto 26px; text-align: center; color: #536273; }
-    .activities-feed { display: grid; gap: 14px; max-width: 920px; margin: 0 auto; }
-    .activity-entry { position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,.78); border-radius: 18px; background: rgba(255,255,255,.68); -webkit-backdrop-filter: blur(18px) saturate(145%); backdrop-filter: blur(18px) saturate(145%); box-shadow: 0 10px 28px rgba(18,55,91,.08), inset 0 1px 0 rgba(255,255,255,.8); transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
-    .activity-entry:hover { transform: translateY(-3px); border-color: rgba(34,139,34,.35); box-shadow: 0 15px 34px rgba(18,55,91,.13), inset 0 1px 0 rgba(255,255,255,.9); }
-    .activity-entry__link { display: grid; grid-template-columns: minmax(125px, 155px) minmax(0,1fr) auto; align-items: center; gap: 18px; min-height: 100px; padding: 20px 22px; color: inherit; text-decoration: none; }
-    .activity-entry__date { display: inline-flex; align-items: center; gap: 8px; color: #0b3d91; font-size: .88rem; font-weight: 700; }
-    .activity-entry__date::before { content: '◷'; display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 10px; background: rgba(11,61,145,.09); font-size: 1.05rem; }
-    .activity-entry__content { min-width: 0; }
-    .activity-entry__title { display: block; color: #183b63; font-size: 1.02rem; font-weight: 700; line-height: 1.45; }
-    .activity-entry__desc { display: block; margin-top: 5px; color: #5d6b7a; font-size: .9rem; line-height: 1.6; }
-    .activity-entry__action { color: #228b22; font-size: 1.45rem; font-weight: 600; transition: transform .2s ease; }
-    .activity-entry__link:hover .activity-entry__action { transform: translateX(4px); }
-    .activity-new { justify-self: end; padding: 5px 10px; border-radius: 999px; background: linear-gradient(120deg,#0b3d91,#228b22); color: #fff; font-size: .7rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
-    .activity-entry__meta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-    .activity-file { display: inline-flex; align-items: center; gap: 6px; margin-top: 9px; color: #0b6b46; font-size: .82rem; font-weight: 600; }
-    .feed-message { max-width: 920px; margin: 0 auto; padding: 22px; border: 1px solid rgba(11,61,145,.12); border-radius: 16px; background: rgba(255,255,255,.72); color: #536273; text-align: center; }
-    .feed-message strong { display: block; margin-bottom: 4px; color: #183b63; }
-    @media (max-width: 680px) {
-      .activity-entry__link { grid-template-columns: 1fr auto; gap: 8px 12px; padding: 17px; }
-      .activity-entry__date { grid-column: 1 / -1; font-size: .8rem; }
-      .activity-entry__content { grid-column: 1; }
-      .activity-entry__action { grid-column: 2; grid-row: 2; }
-      .activity-entry__title { font-size: .96rem; }
-      .activity-entry__desc { font-size: .84rem; }
-      .activity-new { grid-column: 2; grid-row: 1; }
+    /* Activities styled like announcements */
+    .activities-box {
+      border: 1px solid #ddd;
+      border-radius: var(--radius);
+      background-color: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
-    @media (prefers-reduced-motion: reduce) { .activity-entry, .activity-entry__action { transition: none; } }
+
+    .activities-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .activities-box li {
+      border-bottom: 1px solid #eee;
+    }
+
+    .activities-box li:last-child {
+      border-bottom: none;
+    }
+
+    .activities-box a {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 15px;
+      text-decoration: none;
+      color: var(--text);
+      transition: background-color 0.3s ease;
+    }
+
+    .activities-box a:hover {
+      background-color: #f7f7f7;
+    }
+
+    .activity-date {
+      font-weight: 600;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .activity-title {
+      font-weight: 600;
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    .activity-desc {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .new-badge {
+      background-color: var(--accent);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 20px;
+      margin-left: auto;
+      animation: blink 1.5s infinite;
+    }
+
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.2; }
+      100% { opacity: 1; }
+    }
   </style>
 </head>
 <body>
@@ -46,21 +85,23 @@
     <div class="container header">
       <div class="brand">
         <img src="assets/colege logo.jpg" alt="College Logo">
-        <img src="assets/unit logo.webp" alt="Unit Logo">
+        <img src="assets/unit logo.png" alt="Unit Logo">
         <div>
           <h1>Rover & Ranger Unit</h1>
-          <p>N.S.C.B.M. Govt. College, Hamirpur (Est. 2007)</p>
+          <p>N.S.C.B.M. Govt. College, Hamirpur</p>
         </div>
       </div>
-      <button id="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="nav-menu" aria-expanded="false">
-        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      <button id="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </button>
       <nav id="nav-menu">
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="history.html">History</a></li>
-          <li><a href="activities.html" class="active" aria-current="page">Activities</a></li>
+          <li><a href="activities.html" class="active">Activities</a></li>
           <li><a href="announcements.html">Announcements</a></li>
           <li><a href="achievements.html">Achievements</a></li>
           <li><a href="gallery.html">Gallery</a></li>
@@ -72,186 +113,148 @@
   </header>
 
   <section class="hero">
-    <div class="container" data-aos="fade-in">
-      <h2>Activities & Events</h2>
-      <p>Every activity is an opportunity to learn, lead and serve. Explore the events, training programmes and community initiatives of our Rovers and Rangers.</p>
+    <div class="container">
+      <h2>All Activities & Events</h2>
+      <p>Stay updated with the latest events, service projects, and activities from our unit.</p>
       <a href="index.html" class="btn">← Back to Homepage</a>
     </div>
   </section>
 
   <main>
     <section id="all-activities" class="container section">
-      <h3 data-aos="fade-up" style="text-align:center;">Our Activities</h3>
-      <p class="activities-intro" data-aos="fade-up">A record of our unit's journey through service, learning, teamwork and participation — arranged from latest to oldest.</p>
-      <div id="activities-status" class="feed-message" role="status" aria-live="polite">Loading the latest activities…</div>
-      <div id="activities-list" class="activities-feed" aria-live="polite"></div>
+      <h3 data-aos="fade-up">Latest to Oldest</h3>
+      <div class="activities-box" data-aos="fade-up" data-aos-delay="100">
+        <ul id="activities-list">
+          <li>Loading activities...</li>
+        </ul>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-partners">
-        <h3>Our Scouting & Institutional Partners</h3>
-        <div class="logo-strip">
-          <a href="https://www.gchamirpur.org" target="_blank" rel="noopener noreferrer"><img src="assets/colege logo.jpg" alt="College Logo"><div>NSCBM Govt. College Hamirpur</div></a>
-          <a href="https://rrgchamirpur.vercel.app/"><img src="assets/unit logo.webp" alt="Unit Logo"><div>Rover & Ranger Unit</div></a>
-          <a href="https://bsghp.org" target="_blank" rel="noopener noreferrer"><img src="assets/bsghp.jpg" alt="BSG HP Logo"><div>BSG Himachal Pradesh</div></a>
-          <a href="https://www.bsgindia.org" target="_blank" rel="noopener noreferrer"><img src="assets/Bharat_Scouts_and_Guides logo.svg.png" alt="BSG India Logo"><div>Bharat Scouts & Guides India</div></a>
-          <a href="https://www.scout.org" target="_blank" rel="noopener noreferrer"><img src="assets/wosm .png" alt="WOSM Logo"><div>WOSM</div></a>
-          <a href="https://www.wagggs.org" target="_blank" rel="noopener noreferrer"><img src="assets/waggs.png" alt="WAGGGS Logo"><div>WAGGGS</div></a>
-        </div>
-      </div>
-      <p>© 2026 Rover & Ranger Unit, NSCBM Govt. College Hamirpur</p>
-      <p>All Rights Reserved</p>
-      <p id="credit" style="cursor:pointer; color:#d2dced;">Designed by Rover & Ranger Unit</p>
-      <p id="easter" style="display:none; opacity:0; transition:opacity .5s; color:#7fffd4; font-weight:600;">⚜️ Developer: Rover Harsh Kumar ⚜️</p>
-      <p style="margin-top:10px;">Contact: <a href="mailto:bsgrrgchamirpur@gmail.com">bsgrrgchamirpur@gmail.com</a></p>
-      <p><a href="https://instagram.com/rrgchamirpur" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+  <section class="footer-partners container">
+    <h3>Our Scouting & Institutional Partners</h3>
+    <div class="logo-strip">
+      <a href="https://www.gchamirpur.org" target="_blank" rel="noopener noreferrer">
+        <img src="assets/colege logo.jpg" alt="College Logo">
+        <div>NSCBM Govt. College Hamirpur</div>
+      </a>
+      <a href="https://rrgchamirpur.vercel.app/">
+        <img src="assets/unit logo.png" alt="Unit Logo">
+        <div>Rover & Ranger Unit</div>
+      </a>
+      <a href="https://bsghp.org" target="_blank" rel="noopener noreferrer">
+        <img src="assets/bsghp.jpg" alt="BSG HP Logo">
+        <div>BSG Himachal Pradesh</div>
+      </a>
+      <a href="https://www.bsgindia.org" target="_blank" rel="noopener noreferrer">
+        <img src="assets/Bharat_Scouts_and_Guides logo.svg.png" alt="BSG India Logo">
+        <div>Bharat Scouts & Guides India</div>
+      </a>
+      <a href="https://www.scout.org" target="_blank" rel="noopener noreferrer">
+        <img src="assets/wosm .png" alt="WOSM Logo">
+        <div>WOSM</div>
+      </a>
+      <a href="https://www.wagggs.org" target="_blank" rel="noopener noreferrer">
+        <img src="assets/waggs.png" alt="WAGGGS Logo">
+        <div>WAGGGS</div>
+      </a>
     </div>
-  </footer>
+  </section>
 
-  <a href="#" id="back-to-top" title="Go to top" aria-label="Back to top">↑</a>
+  <footer style="text-align:center; padding:20px; font-size:14px; color:#ccc;">
+    <p>© 2025 Rover & Ranger Unit, NSCBM Govt. College Hamirpur</p>
+    <p>All Rights Reserved</p>
+
+    <!-- Click trigger -->
+    <p id="credit" style="cursor:pointer; color:#bbb;">
+        Designed by Rover & Ranger Unit
+    </p>
+
+    <!-- Hidden Easter Egg -->
+    <p id="easter" style="display:none; opacity:0; transition:0.5s; color:#7fffd4; font-weight:600;">
+        ⚜️ Developer: Rover Harsh Kumar ⚜️
+    </p>
+
+    <!-- Contact -->
+    <p style="margin-top:10px;">Contact: 
+        <a href="mailto:bsgrrgchamirpur@gmail.com" style="color:#aaa;">bsgrrgchamirpur@gmail.com</a>
+    </p>
+
+    <!-- Social Links -->
+    <p>
+        <a href="https://instagram.com/rrgchamirpur" style="color:#aaa;" target="_blank">Instagram</a>
+     </p>
+</footer>
+
+<script>
+  // Click to reveal Easter egg
+  document.getElementById("credit").addEventListener("click", function () {
+    let egg = document.getElementById("easter");
+    if (egg.style.display === "none") {
+      egg.style.display = "block";
+      setTimeout(() => egg.style.opacity = "1", 50);
+    } else {
+      egg.style.opacity = "0";
+      setTimeout(() => egg.style.display = "none", 300);
+    }
+  });
+
+  // Press "H" to reveal
+  document.addEventListener("keydown", function (e) {
+    if (e.key.toLowerCase() === "h") {
+      let egg = document.getElementById("easter");
+      egg.style.display = "block";
+      setTimeout(() => egg.style.opacity = "1", 50);
+    }
+  });
+</script>  <a href="#" id="back-to-top" title="Go to top">↑</a>
+
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script src="script.js"></script>
-  <script>
-    // Preserve the existing footer Easter egg interaction.
-    const credit = document.getElementById('credit');
-    const egg = document.getElementById('easter');
-    function revealEgg() {
-      if (!egg) return;
-      egg.style.display = 'block';
-      requestAnimationFrame(() => egg.style.opacity = '1');
-    }
-    if (credit && egg) credit.addEventListener('click', () => {
-      if (egg.style.display === 'none' || !egg.style.display) revealEgg();
-      else { egg.style.opacity = '0'; window.setTimeout(() => egg.style.display = 'none', 300); }
-    });
-    document.addEventListener('keydown', event => {
-      if (event.key.toLowerCase() === 'h' && !['INPUT','TEXTAREA'].includes(document.activeElement?.tagName)) revealEgg();
-    });
+<script>
+AOS.init();
 
-    // Existing Google Sheets CSV source and column order are preserved.
-    const activitiesSheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTkuV7StdAw_mgojcbmqWDO0H7VXi5Xagfn32bhqUd3jigAeAW6KQEE-sGi-YVGCIAcyMQAhgKpoxFO/pub?output=csv';
-    const list = document.getElementById('activities-list');
-    const status = document.getElementById('activities-status');
+const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTkuV7StdAw_mgojcbmqWDO0H7VXi5Xagfn32bhqUd3jigAeAW6KQEE-sGi-YVGCIAcyMQAhgKpoxFO/pub?output=csv";
 
-    function parseCSV(text) {
-      const rows = [];
-      let row = [], cell = '', quoted = false;
-      for (let i = 0; i < text.length; i++) {
-        const ch = text[i], next = text[i + 1];
-        if (ch === '"' && quoted && next === '"') { cell += '"'; i++; }
-        else if (ch === '"') quoted = !quoted;
-        else if (ch === ',' && !quoted) { row.push(cell.trim()); cell = ''; }
-        else if ((ch === '\\n' || ch === '\\r') && !quoted) {
-          if (ch === '\\r' && next === '\\n') i++;
-          row.push(cell.trim());
-          if (row.some(value => value !== '')) rows.push(row);
-          row = []; cell = '';
-        } else cell += ch;
-      }
-      row.push(cell.trim());
-      if (row.some(value => value !== '')) rows.push(row);
-      return rows;
-    }
+fetch(sheetUrl)
+  .then(res => res.text())
+  .then(csv => {
+    const rows = csv.split("\n").filter(r => r.trim() !== "").slice(1);
+    const regex = /,(?=(?:(?:[^"]*"){2})*[^"]*$)/;
+    let activities = rows.map(row => {
+      const cols = row.split(regex).map(c => c.replace(/(^"|"$)/g, "").trim());
+      return {
+        date: cols[0],
+        title: cols[1],
+        desc: cols[2],
+        file: cols[3]
+      };
+    }).filter(a => a.title);
 
-    function parseActivityDate(value) {
-      const match = String(value || '').trim().match(/^(\d{1,2})-([A-Za-z]{3})-(\d{4})$/);
-      if (!match) return new Date(0);
-      const months = { Jan:0, Feb:1, Mar:2, Apr:3, May:4, Jun:5, Jul:6, Aug:7, Sep:8, Oct:9, Nov:10, Dec:11 };
-      const month = months[match[2][0].toUpperCase() + match[2].slice(1).toLowerCase()];
-      return month === undefined ? new Date(0) : new Date(Number(match[3]), month, Number(match[1]));
-    }
+    const parseDate = d => {
+      const [day, mon, year] = d.split("-");
+      const monthMap = {
+        Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
+        Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11
+      };
+      return new Date(year, monthMap[mon], day);
+    };
 
-    function safeDocumentUrl(value) {
-      const raw = String(value || '').trim();
-      if (!raw) return '';
-      try {
-        const url = new URL(raw, window.location.href);
-        return ['http:', 'https:'].includes(url.protocol) ? url.href : '';
-      } catch { return ''; }
-    }
+    activities.sort((a, b) => parseDate(b.date) - parseDate(a.date));
+    const latestDate = activities[0]?.date;
 
-    function renderActivities(items) {
-      list.replaceChildren();
-      const latestDate = items[0]?.date || '';
-      items.forEach(activity => {
-        const item = document.createElement('article');
-        item.className = 'activity-entry';
-        item.setAttribute('data-aos', 'fade-up');
-        const linkUrl = safeDocumentUrl(activity.file);
-        const content = document.createElement(linkUrl ? 'a' : 'div');
-        content.className = 'activity-entry__link';
-        if (linkUrl) { content.href = linkUrl; content.target = '_blank'; content.rel = 'noopener noreferrer'; }
-
-        const date = document.createElement('span');
-        date.className = 'activity-entry__date';
-        date.textContent = activity.date || 'Date not specified';
-        content.appendChild(date);
-
-        const body = document.createElement('span');
-        body.className = 'activity-entry__content';
-        const title = document.createElement('span');
-        title.className = 'activity-entry__title';
-        title.textContent = activity.title;
-        body.appendChild(title);
-        if (activity.desc) {
-          const desc = document.createElement('span');
-          desc.className = 'activity-entry__desc';
-          desc.textContent = activity.desc;
-          body.appendChild(desc);
-        }
-        if (linkUrl) {
-          const file = document.createElement('span');
-          file.className = 'activity-file';
-          file.textContent = '↗ View activity details';
-          body.appendChild(file);
-        }
-        content.appendChild(body);
-
-        if (activity.date && activity.date === latestDate) {
-          const badge = document.createElement('span');
-          badge.className = 'activity-new';
-          badge.textContent = 'Latest';
-          content.appendChild(badge);
-        } else if (linkUrl) {
-          const arrow = document.createElement('span');
-          arrow.className = 'activity-entry__action';
-          arrow.setAttribute('aria-hidden', 'true');
-          arrow.textContent = '→';
-          content.appendChild(arrow);
-        }
-        item.appendChild(content);
-        list.appendChild(item);
-      });
-      status.hidden = true;
-      if (typeof AOS !== 'undefined') AOS.refresh();
-    }
-
-    async function loadActivities() {
-      try {
-        const response = await fetch(activitiesSheetUrl, { cache: 'no-store' });
-        if (!response.ok) throw new Error('The activity sheet could not be reached.');
-        const csv = await response.text();
-        const rows = parseCSV(csv);
-        const activities = rows.slice(1).map(cols => ({
-          date: (cols[0] || '').trim(),
-          title: (cols[1] || '').trim(),
-          desc: (cols[2] || '').trim(),
-          file: (cols[3] || '').trim()
-        })).filter(activity => activity.title)
-          .sort((a, b) => parseActivityDate(b.date) - parseActivityDate(a.date));
-        if (!activities.length) {
-          status.innerHTML = '<strong>No activities to display yet.</strong>Please check back soon for updates from the unit.';
-          return;
-        }
-        renderActivities(activities);
-      } catch (error) {
-        console.error('Error loading activities:', error);
-        status.innerHTML = '<strong>Activities could not be loaded right now.</strong>Please check your internet connection or visit again shortly.';
-      }
-    }
-    loadActivities();
-  </script>
+    const container = document.getElementById("activities-list");
+    container.innerHTML = activities.map(a => `
+      <li>
+        <a href="${a.file}" target="_blank">
+          <span class="announcement-date">${a.date}</span>
+          <span class="announcement-text"><strong>${a.title}</strong> – ${a.desc}</span>
+          ${a.date === latestDate ? '<span class="new-badge">New</span>' : ""}
+        </a>
+      </li>
+    `).join("");
+  })
+  .catch(err => console.error("Error loading activities:", err));
+</script>
+<script src="script.js"></script>
 </body>
 </html>
