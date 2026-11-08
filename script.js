@@ -1,119 +1,144 @@
+/* =========================================================
+   ROVER & RANGER UNIT — FINAL script.js
+   Includes:
+   - AOS initialization
+   - Accessible responsive hamburger menu
+   - Compact mobile menu behaviour
+   - Close menu on link click, outside click and Escape
+   - Back-to-top button
+   ========================================================= */
+
 document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+  const backToTopButton = document.getElementById("back-to-top");
 
-  // A simple throttle function to limit how often a function can run.
-  // This is used to improve performance of scroll events.
-  const throttle = (func, limit) => {
-    let inThrottle;
-    return function() {
-      const args = arguments;
-      const context = this;
-      if (!inThrottle) {
-        func.apply(context, args);
-        inThrottle = true;
-        setTimeout(() => inThrottle = false, limit);
-      }
-    };
-  };
-
-  // ===== AOS (ANIMATE ON SCROLL) INITIALIZATION =====
-  // Check if the AOS library is loaded before initializing
+  /* AOS is optional; the website still works if its CDN is unavailable. */
   if (typeof AOS !== "undefined") {
     AOS.init({
-      duration: 800,
+      duration: 650,
       once: true,
-      offset: 100
+      offset: 70
     });
   }
 
-  // ===== MOBILE MENU LOGIC =====
-  const menuToggle = document.getElementById("menu-toggle");
-  const navMenu = document.getElementById("nav-menu");
+  /* -------------------------
+     RESPONSIVE HAMBURGER MENU
+     ------------------------- */
 
-  // Function to close the mobile menu
-  const closeMenu = () => {
+  const isMobileNav = () =>
+    window.matchMedia("(max-width: 900px)").matches;
+
+  const openMenu = () => {
+    if (!menuToggle || !navMenu) return;
+
+    navMenu.classList.add("active");
+    menuToggle.classList.add("active");
+    menuToggle.setAttribute("aria-expanded", "true");
+    menuToggle.setAttribute("aria-label", "Close navigation menu");
+  };
+
+  const closeMenu = (returnFocus = false) => {
+    if (!menuToggle || !navMenu) return;
+
     navMenu.classList.remove("active");
     menuToggle.classList.remove("active");
     menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open navigation menu");
+
+    if (returnFocus) {
+      menuToggle.focus();
+    }
   };
 
   if (menuToggle && navMenu) {
-    // Toggle menu on button click
-    menuToggle.addEventListener("click", (e) => {
-      e.stopPropagation(); // Prevent the 'document' click listener from closing it immediately
-      navMenu.classList.toggle("active");
-      menuToggle.classList.toggle("active");
-      const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
-      menuToggle.setAttribute("aria-expanded", !isExpanded);
+    menuToggle.addEventListener("click", (event) => {
+      event.stopPropagation();
+
+      const isExpanded =
+        menuToggle.getAttribute("aria-expanded") === "true";
+
+      if (isExpanded) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
     });
 
-    // Close menu when a navigation link is clicked
-    const navLinks = navMenu.querySelectorAll("a");
-    navLinks.forEach(link => {
-      link.addEventListener("click", () => {
-        if (navMenu.classList.contains("active")) {
-          closeMenu();
-        }
-      });
+    // Close after selecting a navigation destination.
+    navMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => closeMenu());
     });
 
-    // Close menu when clicking outside of it
-    document.addEventListener("click", (e) => {
-      if (navMenu.classList.contains("active") && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+    // Close when tapping outside the menu.
+    document.addEventListener("click", (event) => {
+      if (
+        isMobileNav() &&
+        navMenu.classList.contains("active") &&
+        !navMenu.contains(event.target) &&
+        !menuToggle.contains(event.target)
+      ) {
+        closeMenu();
+      }
+    });
+
+    // Escape key closes the menu and returns focus to its button.
+    document.addEventListener("keydown", (event) => {
+      if (
+        event.key === "Escape" &&
+        navMenu.classList.contains("active")
+      ) {
+        closeMenu(true);
+      }
+    });
+
+    // Reset menu state when switching to desktop width.
+    window.addEventListener("resize", () => {
+      if (!isMobileNav()) {
         closeMenu();
       }
     });
   }
 
+  /* -------------------------
+     BACK-TO-TOP BUTTON
+     ------------------------- */
 
-  // ===== SCROLL-DEPENDENT FEATURES =====
-  const backToTopButton = document.getElementById("back-to-top");
-  const sections = document.querySelectorAll("section[id]");
-  const navLinksForScroll = document.querySelectorAll("#nav-menu a[href^='#']"); // Only target on-page links
+  let scrollTicking = false;
 
-  const handleScroll = () => {
-    const scrollY = window.pageYOffset;
+  const updateScrollUI = () => {
+    const scrollPosition = window.scrollY || window.pageYOffset;
 
-    // --- Back to Top Button Visibility ---
     if (backToTopButton) {
-      if (scrollY > 300) {
-        backToTopButton.classList.add("visible");
-      } else {
-        backToTopButton.classList.remove("visible");
-      }
+      backToTopButton.classList.toggle(
+        "visible",
+        scrollPosition > 300
+      );
     }
 
-    // --- Active Nav Link on Scroll ---
-    if (sections.length > 0 && navLinksForScroll.length > 0) {
-      let currentSectionId = "";
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (scrollY >= sectionTop - 150) { // Adjust offset as needed
-          currentSectionId = section.getAttribute("id");
-        }
-      });
-
-      navLinksForScroll.forEach(link => {
-        link.classList.remove("active");
-        // Check if the link's href matches the current section's id
-        if (link.getAttribute("href").substring(1) === currentSectionId) {
-          link.classList.add("active");
-        }
-      });
-    }
+    scrollTicking = false;
   };
 
-  // Attach the throttled scroll handler
-  window.addEventListener("scroll", throttle(handleScroll, 100));
-  
-  // --- Back to Top Button Click Event ---
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!scrollTicking) {
+        window.requestAnimationFrame(updateScrollUI);
+        scrollTicking = true;
+      }
+    },
+    { passive: true }
+  );
+
+  updateScrollUI();
+
   if (backToTopButton) {
-    backToTopButton.addEventListener("click", (e) => {
-      e.preventDefault();
+    backToTopButton.addEventListener("click", (event) => {
+      event.preventDefault();
       window.scrollTo({
         top: 0,
         behavior: "smooth"
       });
     });
   }
-
 });
