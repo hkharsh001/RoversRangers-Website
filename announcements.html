@@ -9,6 +9,101 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <style>
+    /* Institutional partners — page-specific styling */
+    .logo-strip {
+      width: min(100% - 32px, 1100px);
+      margin: 36px auto 28px;
+      padding: 28px 22px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: center;
+      justify-items: center;
+      gap: 28px 22px;
+      box-sizing: border-box;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      box-shadow: 0 8px 28px rgba(20, 55, 90, 0.10);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .logo-strip a {
+      width: 100%;
+      min-width: 0;
+      min-height: 112px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 8px;
+      box-sizing: border-box;
+      color: #234b83;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 14px;
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    .logo-strip a:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .logo-strip img {
+      display: block;
+      width: 76px;
+      height: 76px;
+      max-width: 100%;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .logo-strip a div {
+      color: #234b83;
+      font-size: 0.92rem;
+      line-height: 1.35;
+      font-weight: 600;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 600px) {
+      .logo-strip {
+        width: calc(100% - 28px);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px 10px;
+        margin: 26px auto 22px;
+        padding: 18px 12px;
+        border-radius: 16px;
+      }
+
+      .logo-strip a {
+        min-height: 104px;
+        padding: 10px 5px;
+        gap: 8px;
+      }
+
+      .logo-strip img {
+        width: 64px;
+        height: 64px;
+      }
+
+      .logo-strip a div {
+        font-size: 0.78rem;
+      }
+    }
+
+    .partners-heading {
+      text-align: center;
+      margin: 34px auto 12px;
+      padding: 0 16px;
+      color: var(--text);
+    }
+
+  </style>
 </head>
 <body>
   <header>
@@ -42,32 +137,7 @@
     </div>
   </header>
 
-  <div class="logo-strip">
-    <a href="https://www.gchamirpur.org" target="_blank">
-      <img src="assets/colege logo.jpg" alt="College Logo">
-      <div>NSCBM Govt. College Hamirpur</div>
-    </a>
-    <a href="https://hkharsh001.github.io/RoversRangers-Website/">
-      <img src="assets/unit logo.png" alt="Unit Logo">
-      <div>Rover & Ranger Unit</div>
-    </a>
-    <a href="https://bsghp.org" target="_blank">
-      <img src="assets/bsghp.jpg" alt="BSG HP Logo">
-      <div>BSG Himachal Pradesh</div>
-    </a>
-    <a href="https://www.bsgindia.org" target="_blank">
-      <img src="assets/Bharat_Scouts_and_Guides logo.svg.png" alt="BSG India Logo">
-      <div>Bharat Scouts & Guides India</div>
-    </a>
-    <a href="https://www.scout.org" target="_blank">
-      <img src="assets/wosm .png" alt="WOSM Logo">
-      <div>WOSM</div>
-    </a>
-    <a href="https://www.wagggs.org" target="_blank">
-      <img src="assets/waggs.png" alt="WAGGGS Logo">
-      <div>WAGGGS</div>
-    </a>
-  </div>
+
 
   <section class="hero">
     <div class="container">
@@ -87,9 +157,38 @@
       </div>
     </section>
   </main>
-
-<footer style="text-align:center; padding:20px; font-size:14px; color:#ccc;">
-    <p>© 2025 Rover & Ranger Unit, NSCBM Govt. College Hamirpur</p>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-partners">
+      <h3>Our Scouting & Institutional Partners</h3>
+    <div class="logo-strip">
+      <a href="https://www.gchamirpur.org" target="_blank" rel="noopener noreferrer">
+        <img src="assets/colege logo.jpg" alt="College Logo">
+        <div>NSCBM Govt. College Hamirpur</div>
+      </a>
+      <a href="https://rrgchamirpur.vercel.app/">
+        <img src="assets/unit logo.webp" alt="Unit Logo">
+        <div>Rover & Ranger Unit</div>
+      </a>
+      <a href="https://bsghp.org" target="_blank" rel="noopener noreferrer">
+        <img src="assets/bsghp.jpg" alt="BSG HP Logo">
+        <div>BSG Himachal Pradesh</div>
+      </a>
+      <a href="https://www.bsgindia.org" target="_blank" rel="noopener noreferrer">
+        <img src="assets/Bharat_Scouts_and_Guides logo.svg.png" alt="BSG India Logo">
+        <div>Bharat Scouts & Guides India</div>
+      </a>
+      <a href="https://www.scout.org" target="_blank" rel="noopener noreferrer">
+        <img src="assets/wosm .png" alt="WOSM Logo">
+        <div>WOSM</div>
+      </a>
+      <a href="https://www.wagggs.org" target="_blank" rel="noopener noreferrer">
+        <img src="assets/waggs.png" alt="WAGGGS Logo">
+        <div>WAGGGS</div>
+      </a>
+    </div>
+    </div>
+    <p>© 2026 Rover & Ranger Unit, NSCBM Govt. College Hamirpur</p>
     <p>All Rights Reserved</p>
 
     <!-- Click trigger -->
@@ -104,14 +203,16 @@
 
     <!-- Contact -->
     <p style="margin-top:10px;">Contact: 
-        <a href="mailto:bsgrrgchamirpur@gmail.com" style="color:#aaa;">bsgrrgchamirpur@gmail.com</a>
+        <a href="mailto:bdgrrgchamirpur@gmail.com" style="color:#aaa;">bsgrrgchamirpur@gmail.com</a>
     </p>
 
     <!-- Social Links -->
     <p>
-        <a href="https://instagram.com/rrgchamirpur" style="color:#aaa;" target="_blank">Instagram</a>
+        <a href="https://instagram.com/rrgchamirpur" style="color:#aaa;" target="_blank" rel="noopener noreferrer">Instagram</a>
      </p>
+  </div>
 </footer>
+
 
 <script>
   // Click to reveal Easter egg
